@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="idSlideR" prefHeight="400.0" prefWidth="616.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ejer20minicalcu.FXMLMiniCalcuController">
+   <children>
+      <Label layoutX="19.0" layoutY="20.0" text="A">
+         <font>
+            <Font size="33.0" />
+         </font></Label>
+      <TextField fx:id="idNum1" layoutX="18.0" layoutY="56.0" prefHeight="24.0" prefWidth="109.0" />
+      <Label layoutX="150.0" layoutY="20.0" text="B">
+         <font>
+            <Font size="33.0" />
+         </font></Label>
+      <TextField fx:id="idNum2" layoutX="150.0" layoutY="56.0" prefHeight="24.0" prefWidth="116.0" />
+      <Label fx:id="idLabelResult" layoutX="42.0" layoutY="338.0" text="RESULTADO :">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <VBox layoutX="19.0" layoutY="115.0" prefHeight="183.0" prefWidth="241.0" spacing="15.0">
+         <children>
+            <Label prefHeight="16.0" prefWidth="328.0" text="OPERACIONES">
+               <font>
+                  <Font name="System Bold Italic" size="22.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="idR1" mnemonicParsing="false" selected="true" text="Suma">
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+               <toggleGroup>
+                  <ToggleGroup fx:id="grupoOp" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="idR2" mnemonicParsing="false" text="Producto" toggleGroup="$grupoOp">
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+            </RadioButton>
+            <RadioButton fx:id="idR3" mnemonicParsing="false" text="A elevado a B" toggleGroup="$grupoOp">
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+            </RadioButton>
+            <Button fx:id="idBCalcular" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#calcula" prefHeight="38.0" prefWidth="102.0" text="CALCULAR">
+               <VBox.margin>
+                  <Insets left="50.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="idBReset" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#reset" prefHeight="38.0" prefWidth="102.0" text="RESET">
+               <VBox.margin>
+                  <Insets left="50.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <Label fx:id="idLabelError" layoutX="31.0" layoutY="92.0" text="Label" textFill="#e52507" visible="false" />
+      <Slider fx:id="idSlide1" layoutX="276.0" layoutY="189.0" max="50.0" orientation="VERTICAL" prefHeight="122.0" prefWidth="23.0" showTickLabels="true" showTickMarks="true" />
+      <Label layoutX="276.0" layoutY="318.0" text="A">
+         <font>
+            <Font size="33.0" />
+         </font>
+      </Label>
+      <Slider fx:id="idSlide2" layoutX="318.0" layoutY="189.0" max="50.0" orientation="VERTICAL" prefHeight="122.0" prefWidth="23.0" showTickLabels="true" showTickMarks="true" />
+      <Label layoutX="318.0" layoutY="318.0" text="B">
+         <font>
+            <Font size="33.0" />
+         </font>
+      </Label>
+      <Label layoutX="368.0" layoutY="318.0" text="R">
+         <font>
+            <Font size="33.0" />
+         </font>
+      </Label>
+      <Slider fx:id="idSlideR" blockIncrement="1.0" layoutX="368.0" layoutY="40.0" majorTickUnit="20.0" minorTickCount="5" orientation="VERTICAL" prefHeight="271.0" prefWidth="23.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+      <Pane layoutX="402.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <ProgressIndicator fx:id="idIndicador" layoutX="23.0" layoutY="28.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="144.0" prefWidth="154.0" progress="0.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

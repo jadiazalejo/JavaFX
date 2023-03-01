@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>JavaFX Slider </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-10"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">JavaFX (2ª parte)</a></li>
+   <li><a href="alertas_y_dilogos.html" class="daddy">Alertas y diálogos</a>
+   <ul class="other-section">
+      <li><a href="textinputdialog_y_choicedialog.html" class="no-ch">TextInputDialog y ChoiceDialog</a></li>
+   </ul>
+   </li>
+   <li><a href="indicadores_de_progreso.html" class="no-ch">Indicadores de progreso</a></li>
+   <li class="current-page-parent"><a href="listas_y_cajas.html" class="current-page-parent daddy">Listas y cajas</a>
+   <ul>
+      <li><a href="javafx_listview.html" class="no-ch">JavaFX ListView</a></li>
+      <li><a href="javafx_choicebox.html" class="no-ch">JavaFX ChoiceBox</a></li>
+      <li><a href="javafx_combobox.html" class="no-ch">JavaFX ComboBox</a></li>
+      <li id="active"><a href="javafx_slider.html" class="active no-ch">JavaFX Slider</a></li>
+   </ul>
+   </li>
+   <li><a href="ejemplo_completo.html" class="no-ch">Ejemplo completo</a></li>
+   <li><a href="mens.html" class="daddy">Menús</a>
+   <ul class="other-section">
+      <li><a href="javafx_menubar.html" class="no-ch">JavaFX MenuBar</a></li>
+      <li><a href="javafx_toolbar.html" class="no-ch">JavaFX ToolBar</a></li>
+   </ul>
+   </li>
+   <li><a href="fechas_javafx_datepicker.html" class="no-ch">Fechas JavaFX DatePicker</a></li>
+   <li><a href="ejercicios.html" class="no-ch">Ejercicios</a></li>
+   <li><a href="otros_layout.html" class="no-ch">Otros Layout</a></li>
+   <li><a href="otros_controles_imageview_colorpicker_y_filechooser.html" class="no-ch">Otros controles: ImageView, ColorPicker y FileChooser</a></li>
+   <li><a href="javafx_effects.html" class="no-ch">JavaFX Effects</a></li>
+   <li><a href="javafx_media__javafx_video_and_audio_support.html" class="no-ch">JavaFX Media - JavaFX Video and Audio Support</a></li>
+   <li><a href="bibliografia.html" class="no-ch">Bibliografia</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="javafx_combobox.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="ejemplo_completo.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">JavaFX Slider</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id16">
+<div class="iDevice emphasis0">
+<div id="ta16_85" class="block iDevice_content">
+<h3 style="text-align: left;">JavaFX Slider</h3>
+<p><span style="color: #000000;">El control <strong>Slider</strong> de JavaFX proporciona una forma para que el usuario seleccione (o muestre) un valor dentro de un intervalo dado, deslizando un controlador al punto deseado que representa el valor deseado.</span></p>
+<p><span style="color: #000000;">El Control Slider JavaFX está representado por la clase <em><strong>JavaFX javafx.scene.control.Slider</strong></em>. Por ejemplo:</span></p>
+<p><img src="javafx-slider-1.png" alt="" width="300" height="217" /></p>
+<div class="highlighted-code language-java line-numbers hightlight-4">
+<div>
+<pre><code>public void start(Stage primaryStage) {
+        primaryStage.setTitle("JavaFX App");
+
+        Slider slider = new Slider(0, 100, 0);
+
+        VBox vBox = new VBox(slider);
+        Scene scene = new Scene(vBox, 960, 600);
+
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+</code></pre>
+</div>
+</div>
+<h3>Crear un control Slider</h3>
+<p><span style="color: #000000;">Para usar un control Slider JavaFX, se debe crear una instancia de la clase Slider. Por ejemplo:</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Slider slider = new Slider(0, 100, 0);</code></pre>
+</div>
+</div>
+<p><span style="color: #000000;">El constructor Slider utilizado en el ejemplo toma tres parámetros: el <strong>valor mínimo</strong>, el <strong>valor máximo</strong> y el <strong>valor inicial</strong>. El valor mínimo es el valor que representa deslizar el controlador completamente hacia la izquierda. Este es el comienzo del intervalo en el que el usuario puede seleccionar un valor. El valor máximo es el valor que representa deslizar el controlador completamente hacia la derecha. Este es el final del intervalo en el que el usuario puede seleccionar un valor. El valor inicial es el valor en el que debe ubicarse el identificador, cuando se le presenta al usuario al principio.</span></p>
+<p><span style="color: #000000;">En esta ocasión tendremos las dos posibilidades:</span></p>
+<ul>
+<li><span style="color: #000000;">Especificar todos sus atributo de visualización desde el método initialize()</span></li>
+<li><span style="color: #000000;">Desde SceneBuilder establecer todos estos valores</span></li>
+</ul>
+<p style="padding-left: 30px;"><span style="color: #000000;"><img src="slader_02.png" alt="" width="283" height="384" /></span></p>
+<h3>Lectura del valor del control Slider</h3>
+<p><span style="color: #000000;">Puede leer el valor seleccionado de un control Slider se utiliza el método <strong>getValue()</strong>. Por ejemplo:</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>double value = slider.getValue();</code></pre>
+</div>
+</div>
+<h3>Major Tick Unidad</h3>
+<p><span style="color: #000000;">Podemos configurar la unidad de marca principal de un control Slider JavaFX. La unidad de marca principal es cuántas unidades cambia el valor cada vez que el usuario mueve el control Slider una marca. Por ejemplo, aquí se establece la unidad de marca principal de un control deslizante JavaFX en 8:</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Slider slider = new Slider(0, 100, 0);
+
+slider.setMajorTickUnit(8.0);</code></pre>
+</div>
+</div>
+<p><span style="color: #000000;">Este control Slider cambiará su valor con 8.0 hacia arriba o hacia abajo cada vez que se mueva el controlador del control deslizante.</span></p>
+<h3>Minor Tick Count</h3>
+<p><span style="color: #000000;">También podemos establecer el recuento de ticks menores de un control Slider JavaFX a través del método <strong>setMinorTickCount()</strong>. El recuento de ticks menores especifica cuántos ticks menores hay entre dos de los ticks principales. Por ejemplo, aquí se establece el recuento de ticks menores en 2:</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Slider slider = new Slider(0, 100, 0);
+
+slider.setMajorTickUnit(8.0);
+
+slider.setMinorTickCount(3);</code></pre>
+</div>
+</div>
+<p><span style="color: #000000;">El Control Slider configurado aquí tiene 8,0 unidades de valor entre cada marca principal, y entre cada una de estas marcas principales tiene 3 marcas menores.</span></p>
+<h3>Snap Handle to Ticks</h3>
+<p><span style="color: #000000;">Podemos hacer que el control Slider de JavaFX se ajuste a los ticks utilizando el método Slider <strong>setSnapToTicks()</strong>, pasando un valor de parámetro de true. Ejemplo:</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>slider.setSnapToTicks(true);</code></pre>
+</div>
+</div>
+<h3>Show Tick Marks</h3>
+<p><span style="color: #000000;">Podemos hacer que el Control Slider JavaFX muestre marcas para las marcas cuando representa el control deslizante. Lo haremos utilizando su método <strong>setShowTickMarks()</strong>. Ejemplo:</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>slider.setShowTickMarks(true);</code></pre>
+</div>
+</div>
+<p><img src="javafx-slider-2.png" alt="" width="300" height="210" /></p>
+<h3>Show Tick Labels</h3>
+<p><span style="color: #000000;">Podemos hacer que el Slider JavaFX muestre etiquetas de marca para las marcas cuando representa el control deslizante. Lo haremos utilizando su método <strong>setShowTickLabels()</strong>. Ejemplo:</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>slider.setShowTickLabels(true);</code></pre>
+</div>
+</div>
+<p><img src="javafx-slider-3.png" alt="" width="300" height="225" /></p>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="javafx_combobox.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="ejemplo_completo.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

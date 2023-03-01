@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>JavaFX MenuBar </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-21"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">JavaFX (2ª parte)</a></li>
+   <li><a href="alertas_y_dilogos.html" class="daddy">Alertas y diálogos</a>
+   <ul class="other-section">
+      <li><a href="textinputdialog_y_choicedialog.html" class="no-ch">TextInputDialog y ChoiceDialog</a></li>
+   </ul>
+   </li>
+   <li><a href="indicadores_de_progreso.html" class="no-ch">Indicadores de progreso</a></li>
+   <li><a href="listas_y_cajas.html" class="daddy">Listas y cajas</a>
+   <ul class="other-section">
+      <li><a href="javafx_listview.html" class="no-ch">JavaFX ListView</a></li>
+      <li><a href="javafx_choicebox.html" class="no-ch">JavaFX ChoiceBox</a></li>
+      <li><a href="javafx_combobox.html" class="no-ch">JavaFX ComboBox</a></li>
+      <li><a href="javafx_slider.html" class="no-ch">JavaFX Slider</a></li>
+   </ul>
+   </li>
+   <li><a href="ejemplo_completo.html" class="no-ch">Ejemplo completo</a></li>
+   <li class="current-page-parent"><a href="mens.html" class="current-page-parent daddy">Menús</a>
+   <ul>
+      <li id="active"><a href="javafx_menubar.html" class="active no-ch">JavaFX MenuBar</a></li>
+      <li><a href="javafx_toolbar.html" class="no-ch">JavaFX ToolBar</a></li>
+   </ul>
+   </li>
+   <li><a href="fechas_javafx_datepicker.html" class="no-ch">Fechas JavaFX DatePicker</a></li>
+   <li><a href="ejercicios.html" class="no-ch">Ejercicios</a></li>
+   <li><a href="otros_layout.html" class="no-ch">Otros Layout</a></li>
+   <li><a href="otros_controles_imageview_colorpicker_y_filechooser.html" class="no-ch">Otros controles: ImageView, ColorPicker y FileChooser</a></li>
+   <li><a href="javafx_effects.html" class="no-ch">JavaFX Effects</a></li>
+   <li><a href="javafx_media__javafx_video_and_audio_support.html" class="no-ch">JavaFX Media - JavaFX Video and Audio Support</a></li>
+   <li><a href="bibliografia.html" class="no-ch">Bibliografia</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="mens.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="javafx_toolbar.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">JavaFX MenuBar</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id23">
+<div class="iDevice emphasis0">
+<div id="ta23_85" class="block iDevice_content">
+<p><span style="color: #000000;">La barra de menú JavaFX (<strong>MenuBar</strong>) proporciona a las aplicaciones JavaFX un <strong>menú desplegable visual</strong> similar al que tienen la mayoría de las aplicaciones de escritorio en la parte superior de la ventana de la aplicación. La barra de menús de JavaFX está representada por la clase <strong>javafx.scene.control.MenuBar</strong>.</span></p>
+<p><img src="javafx-menubar-1.png" alt="" width="593" height="359" /></p>
+<h3>Creación de una instancia de MenuBar</h3>
+<p>Antes de poder utilizar la barra de menús de JavaFX, se debe crear una instancia de la barra de menús.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>MenuBar menuBar = new MenuBar();</code></pre>
+</div>
+</div>
+<p><span style="color: #000000;">Podemos arrastrar el control MenuBar hasta nuestro escenario, no está en la pestaña Menu (como podríamos pensar) es un Control.</span></p>
+<p><span style="color: #000000;"><img src="menuBar_01.png" alt="" width="279" height="248" /></span></p>
+<p><span style="color: #000000;">Una vez tenemos el control en nuestra vista podemos dar su dimensión.</span></p>
+<p><span style="color: #000000;"><img src="menuBar_02.png" alt="" width="460" height="217" /></span></p>
+<h3>Añadir una barra de menú al gráfico de escena</h3>
+<p><span style="color: #000000;">Antes de que una barra de menú se vuelva visible, se deberá añadir al gráfico de escena JavaFX.</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public class JavaFXApp extends Application {
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) {
+        primaryStage.setTitle("JavaFX App");
+
+        MenuBar menuBar = new MenuBar();
+
+        VBox vBox = new VBox(menuBar);
+
+        Scene scene = new Scene(vBox, 960, 600);
+
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+}</code></pre>
+</div>
+</div>
+<p><span style="color: #000000;">NOTA: se añade el MenuBar al diseño raíz (VBox) de la escena JavaFX. Esto coloca la barra de menú en la parte superior de la ventana de la aplicación.</span></p>
+<p><span style="color: #000000;"><strong>IMPORTANTE: en el ejemplo anterior no hemos añadido ningún menú o elemento de menú a la barra de menús, por lo que si ejecutamos el ejemplo, en realidad no se verá la barra de menús.</strong></span></p>
+<h3>Creación de instancias de menú</h3>
+<p><span style="color: #000000;">Una vez que se ha creado la instancia de <strong>MenuBar</strong>, podemos añadir instancias de <strong>Menu</strong> (<strong>javafx.scene.control.Menu</strong>) . </span></p>
+<p><span style="color: #000000;">Una instancia de Menu representa un único menú vertical con elementos de menú anidados.</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Menu menu1 = new Menu("Menu 1");
+MenuBar menuBar = new MenuBar();
+menuBar.getMenus().add(menu1);</code></pre>
+</div>
+</div>
+<p><span style="color: #000000;">Por defecto, si lo hemos añadido desde SceneBuilder tendremos tres instancias de menú (File, Edit y Help), podemos modificarlas, quitarlas o añadir más.</span></p>
+<h3>Gráficos de menú</h3>
+<p><span style="color: #000000;">Podemos establecer un ícono gráfico para un Menú llamando a su método <strong>setGraphic()</strong>. El icono gráfico se mostrará junto a la etiqueta de texto del menú. Aquí hay un ejemplo de configuración de un icono gráfico para una instancia de menú JavaFX:</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code> Image image = new Image(getClass().getResource("alta32.png").toString());
+ ImageView imageView32 = new ImageView(image);
+ mAlta.setGraphic(imageView32);</code></pre>
+</div>
+</div>
+<p><span style="color: #000000;">Esta opción no la tendremos como atributo de la instancia de Menu, por lo que si queremos poner iconos a nuestras opciones de menú debemos:</span></p>
+<ul>
+<li><span style="color: #000000;">crear una carpeta en nuestro proyecto para organizar nuestras imágenes, si no son muy grandes mucho mejor.</span></li>
+<li><span style="color: #000000;">Arrastrar un control ImageView sobre el control al que queremos añadir el icono.</span></li>
+</ul>
+<p style="padding-left: 30px;"><img src="menubar_image.png" alt="" width="282" height="324" /></p>
+<ul>
+<li><span style="color: #000000;">Modificaremos el tamaño del icono para que sea del tamaño deseado. Esto lo haremos desde la pestaña layoud del control ImageView, tributos Fit width y Fit Heigth.</span></li>
+</ul>
+<p style="padding-left: 30px;"><span style="color: #000000;"><img src="menuImage.png" alt="" width="452" height="144" /></span></p>
+<h3>Eventos de menú</h3>
+<p><span style="color: #000000;">Una instancia de <strong>Menu</strong> JavaFX puede activar varios eventos que puede escuchar en su aplicación. Los eventos más utilizados son:</span></p>
+<ul>
+<li><span style="color: #000000;">onShowing (mostrando)<br /></span></li>
+<li><span style="color: #000000;">onShow (mostrado)<br /></span></li>
+<li><span style="color: #000000;">nonHiding (ocultando)<br /></span></li>
+<li><span style="color: #000000;">onHidden (ocultado)<br /></span></li>
+</ul>
+<p><span style="color: #000000;">Cuando se hace clic en un menú con el ratón, se muestra su contenido. Esta acción activa <strong>el evento onShowing</strong> <strong>antes</strong> de que el menú comience a mostrar sus elementos de menú. <strong>Una vez que el menú está completamente visible, se activa el evento onShown.</strong></span></p>
+<p><span style="color: #000000;">Cuando se hace clic con el ratón en un menú mostrado (abierto), se oculta su contenido nuevamente. Esta acción activa el <strong>evento onHiding</strong> antes de que el menú comience a ocultar sus elementos de menú. Una vez que el menú está completamente oculto, se activa <strong>el evento onHidden.</strong></span></p>
+<p><span style="color: #000000;">Podemos configurar detectores de eventos de menú para los eventos anteriores mediante <strong>los métodos setOnShowing(), setOnShown(), setOnHiding() y setOnHidden()</strong>. Por ejemplo:</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Menu menu = new Menu("Menu 1");
+
+menu.setOnShowing(e -&gt; { System.out.println("Showing Menu 1"); });
+menu.setOnShown  (e -&gt; { System.out.println("Shown Menu 1"); });
+menu.setOnHiding (e -&gt; { System.out.println("Hiding Menu 1"); });
+menu.setOnHidden (e -&gt; { System.out.println("Hidden Menu 1"); });</code></pre>
+</div>
+</div>
+<p><span style="color: #000000;">Los detectores de eventos del menú establecidos anteriormente solo imprimen un mensaje en la consola cuando se activan los eventos. Podríamos hacer algo más avanzado en caso de que lo necesitemos.</span></p>
+<h3>Añadir MenuItem</h3>
+<p><span style="color: #000000;">Una vez que hayamos creado una instancia de Menu, debemos añadir una o más instancias de <strong>MenuItem</strong>. Cada MenuItem corresponde a un elemento de menú en el menú al que se agrega.</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Menu menu = new Menu("Menu 1");
+MenuItem menuItem1 = new MenuItem("Item 1");
+MenuItem menuItem2 = new MenuItem("Item 2");
+
+menu.getItems().add(menuItem1);
+menu.getItems().add(menuItem2);
+
+MenuBar menuBar = new MenuBar();
+menuBar.getMenus().add(menu);</code></pre>
+</div>
+</div>
+<p><strong>Así es como se vería la barra de menú JavaFX resultante, si se usara en una aplicación JavaFX:</strong></p>
+<h3><img src="javafx-menubar-3.png" alt="" width="260" height="166" /><br /><br />Gráficos de MenuItem</h3>
+<p>Podemos añadir un icono a un elemento del menú. Se añade un ícono gráfico a un MenuItem llamando a su método <strong>setGraphic()</strong>, pasando como parámetro el gráfico que se desea usar para el MenuItem dado.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>        Image image = new Image(getClass().getResource("alta32.png").toString());
+        ImageView imageView32 = new ImageView(image);
+
+        image = new Image(getClass().getResource("muestra32.png").toString());
+        ImageView muestra32 = new ImageView(image);
+
+        mAlta.setGraphic(imageView32);
+        mMuestra.setGraphic(muestra32);</code></pre>
+</div>
+</div>
+<p><span style="color: #000000;">Esta opción no la tendremos como atributo de la instancia de <strong>MenuItem</strong>, por lo que si queremos poner iconos a nuestras opciones de menuItem debemos:</span></p>
+<ul>
+<li><span style="color: #000000;">crear una carpeta en nuestro proyecto para organizar nuestras imágenes, si no son muy grandes mucho mejor.</span></li>
+<li><span style="color: #000000;">Arrastrar un control ImageView sobre el control al que queremos añadir el icono.</span></li>
+<li><span style="color: #000000;">Modificaremos el tamaño del icono para que sea del tamaño deseado. Esto lo haremos desde la pestaña layoud del control ImageView, tributos Fit width y Fit Heigth.</span></li>
+</ul>
+<p><span style="color: #000000;">Así es como se ve una barra de menú JavaFX con iconos gráficos añadidos a sus elementos de menú:</span></p>
+<h3><img src="javafx-menubar-4.png" alt="" width="188" height="225" /><br /><br />Eventos de MenuItem</h3>
+<p><span style="color: #000000;">Las configuraciones de MenuBar creadas en los ejemplos anteriores no reaccionan si selecciona cualquiera de los elementos del menú. Para responder a la selección de un MenuItem, se debe configurar un detector de eventos en el MenuItem.</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>MenuItem menuItem1 = new MenuItem("Item 1");
+
+menuItem1.setOnAction(e -&gt; {
+    System.out.println("Menu Item 1 Selected");
+});</code></pre>
+</div>
+</div>
+<p><span style="color: #000000;">Observe que Java Lambda se agregó como parámetro al método setOnAction() de MenuItem . Esta expresión lambda se ejecuta cuando se selecciona el elemento del menú.</span></p>
+<p><span style="color: #000000;">De la misma forma, podemos escribir un método, y asociarlo al evento desde Scene Builder, utilizando el desplegable de la sección Code una vez seleccionado el MenuItem.</span></p>
+<h3>Submenús</h3>
+<p><span style="color: #000000;">La barra de menús de JavaFX admite varias capas de menús. Un menú anidado dentro de otro menú se denomina <strong>submenú</strong>. La clase Menu hereda la clase MenuItem y, por lo tanto, puede usarse como un elemento de menú dentro de otra instancia de Menú. Por ejemplo:</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Menu menu = new Menu("Menu 1");
+
+Menu subMenu = new Menu("Menu 1.1");
+MenuItem menuItem11 = new MenuItem("Item 1.1.1");
+subMenu.getItems().add(menuItem11);
+menu.getItems().add(subMenu);
+
+MenuItem menuItem1 = new MenuItem("Item 1");
+menu.getItems().add(menuItem1);
+
+MenuItem menuItem2 = new MenuItem("Item 2");
+menu.getItems().add(menuItem2);
+
+MenuBar menuBar = new MenuBar();
+menuBar.getMenus().add(menu);</code></pre>
+</div>
+</div>
+<p><span style="color: #000000;">La barra de menú de JavaFX resultante del ejemplo anterior se verá similar a esto:</span></p>
+<p><img src="javafx-menubar-6.png" alt="" width="290" height="194" /></p>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="mens.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="javafx_toolbar.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

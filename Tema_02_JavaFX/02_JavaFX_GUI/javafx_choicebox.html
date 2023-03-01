@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>JavaFX ChoiceBox </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-4"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">JavaFX (2ª parte)</a></li>
+   <li><a href="alertas_y_dilogos.html" class="daddy">Alertas y diálogos</a>
+   <ul class="other-section">
+      <li><a href="textinputdialog_y_choicedialog.html" class="no-ch">TextInputDialog y ChoiceDialog</a></li>
+   </ul>
+   </li>
+   <li><a href="indicadores_de_progreso.html" class="no-ch">Indicadores de progreso</a></li>
+   <li class="current-page-parent"><a href="listas_y_cajas.html" class="current-page-parent daddy">Listas y cajas</a>
+   <ul>
+      <li><a href="javafx_listview.html" class="no-ch">JavaFX ListView</a></li>
+      <li id="active"><a href="javafx_choicebox.html" class="active no-ch">JavaFX ChoiceBox</a></li>
+      <li><a href="javafx_combobox.html" class="no-ch">JavaFX ComboBox</a></li>
+      <li><a href="javafx_slider.html" class="no-ch">JavaFX Slider</a></li>
+   </ul>
+   </li>
+   <li><a href="ejemplo_completo.html" class="no-ch">Ejemplo completo</a></li>
+   <li><a href="mens.html" class="daddy">Menús</a>
+   <ul class="other-section">
+      <li><a href="javafx_menubar.html" class="no-ch">JavaFX MenuBar</a></li>
+      <li><a href="javafx_toolbar.html" class="no-ch">JavaFX ToolBar</a></li>
+   </ul>
+   </li>
+   <li><a href="fechas_javafx_datepicker.html" class="no-ch">Fechas JavaFX DatePicker</a></li>
+   <li><a href="ejercicios.html" class="no-ch">Ejercicios</a></li>
+   <li><a href="otros_layout.html" class="no-ch">Otros Layout</a></li>
+   <li><a href="otros_controles_imageview_colorpicker_y_filechooser.html" class="no-ch">Otros controles: ImageView, ColorPicker y FileChooser</a></li>
+   <li><a href="javafx_effects.html" class="no-ch">JavaFX Effects</a></li>
+   <li><a href="javafx_media__javafx_video_and_audio_support.html" class="no-ch">JavaFX Media - JavaFX Video and Audio Support</a></li>
+   <li><a href="bibliografia.html" class="no-ch">Bibliografia</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="javafx_listview.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="javafx_combobox.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">JavaFX ChoiceBox</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id14">
+<div class="iDevice emphasis0">
+<div id="ta14_85" class="block iDevice_content">
+<h3 style="text-align: left;">JavaFX ChoiceBox</h3>
+<p><span style="color: #000000;">El control <strong>ChoiceBox</strong> de JavaFX permite a los usuarios elegir una opción de una lista predefinida de opciones. </span></p>
+<p><span style="color: #000000;">El control ChoiceBox de JavaFX está representado por la clase<em><strong> javafx.scene.control.ChoiceBox</strong></em>.</span></p>
+<h3>Creación de un ChoiceBox</h3>
+<p><span style="color: #000000;">Podemos crea un ChoiceBox simplemente creando una nueva instancia de la clase ChoiceBox.</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>ChoiceBox ChoiceBox = new ChoiceBox();</code></pre>
+</div>
+</div>
+<p><span style="color: #000000;">En SceneBuilder arrastramos el control a nuestra escena. De nuevo nuestro entorno gráfico no nos permite añadir los items del control, deberemos utilizar los métodos correspondientes.</span></p>
+<p><strong>En el método initialize del controlador añadiremos las opciones al control y marcaremos la opción más probable como seleccionada, por ejemplo:</strong></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>@Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+        choiceBox.getItems().add("Opción 1");
+        choiceBox.getItems().add("Opción 2");
+        choiceBox.getItems().add("Opción 3");
+        choiceBox.getSelectionModel().selectFirst();
+    }</code></pre>
+</div>
+</div>
+<h3>Añadir opciones a un ChoiceBox</h3>
+<p><span style="color: #000000;">Podemos añadir opciones a un ChoiceBox obteniendo su colección de elementos (getItems()) y añadiéndole los elementos (add()). Por ejemplo:</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>choiceBox.getItems().add("Opción 1");
+choiceBox.getItems().add("Opción 2");
+choiceBox.getItems().add("Opción 3");</code></pre>
+</div>
+</div>
+<h3>Añadir un ChoiceBox al gráfico de escena</h3>
+<p><span style="color: #000000;">Para hacer visible un ChoiceBox, se debe añadir al escenario gráfico. Esto significa que debe añadir ChoiceBox a un objeto de escena o a algún componente de diseño que luego se adjunta al objeto de escena.</span></p>
+<p><img src="choiceBox_01.png" alt="" width="261" height="263" /><img src="choiceBox_02.png" alt="" width="309" height="397" /></p>
+<h3>Lectura del valor seleccionado</h3>
+<p><span style="color: #000000;">Podemos leer el valor seleccionado de un ChoiceBox a través de su método <strong>getValue()</strong>. Si no se selecciona ninguna opción, el método getValue() devuelve null. Por ejemplo:</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>String value = (String) choiceBox.getValue();</code></pre>
+</div>
+</div>
+<h3>Escuchando la selección</h3>
+<p><strong>Es posible escuchar los cambios de selección en un ChoiceBox de JavaFX configurando un oyente de acción en el ChoiceBox a través de su método setOnAction().</strong></p>
+<p><strong>No busques este método en Scene Builder, porque no aparece, lo tendremos que añadir antes o después de añadir sus elementos.</strong></p>
+<p><strong>Por ejemplo:</strong></p>
+<div class="highlighted-code language-java line-numbers hightlight-8-14">
+<div>
+<pre><code>       int selectedIndex;
+
+        choiceBox01.getItems().add("Choice 1");
+        choiceBox01.getItems().add("Choice 2");
+        choiceBox01.getItems().add("Choice 3");
+        // marcamos el primero como seleccionado
+        choiceBox01.getSelectionModel().select(0);
+        choiceBox01.setOnAction((event) -&gt; {
+                selectedIndex = choiceBox01.getSelectionModel().getSelectedIndex();
+                Object selectedItem = choiceBox01.getSelectionModel().getSelectedItem();
+
+                System.out.println("Selection made: [" + selectedIndex + "] " + selectedItem);
+                System.out.println("   ChoiceBox.getValue(): " + choiceBox01.getValue());
+        });</code></pre>
+</div>
+</div>
+<p><img src="choiceBox_03.png" alt="" width="348" height="387" /></p>
+<p><span style="color: #000000;">run:</span><br /><span style="color: #000000;">Selection made: [1] Choice 2</span><br /><span style="color: #000000;">ChoiceBox.getValue(): Choice 2</span><br /><span style="color: #000000;">Selection made: [2] Choice 3</span><br /><span style="color: #000000;">ChoiceBox.getValue(): Choice 3</span><br /><span style="color: #000000;">BUILD SUCCESSFUL (total time: 11 seconds)</span></p>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="javafx_listview.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="javafx_combobox.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

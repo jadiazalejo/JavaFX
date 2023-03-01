@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>JavaFX Media - JavaFX Video and Audio Support </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-16"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">JavaFX (2ª parte)</a></li>
+   <li><a href="alertas_y_dilogos.html" class="daddy">Alertas y diálogos</a>
+   <ul class="other-section">
+      <li><a href="textinputdialog_y_choicedialog.html" class="no-ch">TextInputDialog y ChoiceDialog</a></li>
+   </ul>
+   </li>
+   <li><a href="indicadores_de_progreso.html" class="no-ch">Indicadores de progreso</a></li>
+   <li><a href="listas_y_cajas.html" class="daddy">Listas y cajas</a>
+   <ul class="other-section">
+      <li><a href="javafx_listview.html" class="no-ch">JavaFX ListView</a></li>
+      <li><a href="javafx_choicebox.html" class="no-ch">JavaFX ChoiceBox</a></li>
+      <li><a href="javafx_combobox.html" class="no-ch">JavaFX ComboBox</a></li>
+      <li><a href="javafx_slider.html" class="no-ch">JavaFX Slider</a></li>
+   </ul>
+   </li>
+   <li><a href="ejemplo_completo.html" class="no-ch">Ejemplo completo</a></li>
+   <li><a href="mens.html" class="daddy">Menús</a>
+   <ul class="other-section">
+      <li><a href="javafx_menubar.html" class="no-ch">JavaFX MenuBar</a></li>
+      <li><a href="javafx_toolbar.html" class="no-ch">JavaFX ToolBar</a></li>
+   </ul>
+   </li>
+   <li><a href="fechas_javafx_datepicker.html" class="no-ch">Fechas JavaFX DatePicker</a></li>
+   <li><a href="ejercicios.html" class="no-ch">Ejercicios</a></li>
+   <li><a href="otros_layout.html" class="no-ch">Otros Layout</a></li>
+   <li><a href="otros_controles_imageview_colorpicker_y_filechooser.html" class="no-ch">Otros controles: ImageView, ColorPicker y FileChooser</a></li>
+   <li><a href="javafx_effects.html" class="no-ch">JavaFX Effects</a></li>
+   <li id="active"><a href="javafx_media__javafx_video_and_audio_support.html" class="active no-ch">JavaFX Media - JavaFX Video and Audio Support</a></li>
+   <li><a href="bibliografia.html" class="no-ch">Bibliografia</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="javafx_effects.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="bibliografia.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">JavaFX Media - JavaFX Video and Audio Support</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id37">
+<div class="iDevice emphasis0">
+<div id="ta37_85" class="block iDevice_content">
+<h2>JavaFX Media</h2>
+<p>JavaFX Media API permite a los usuarios incorporar audio y video en las aplicaciones de Internet enriquecidas (RIA). La API de medios de JavaFX puede distribuir el contenido de los medios a través de diferentes tipos de dispositivos, como TV, dispositivos móviles, tabletas y muchos más.</p>
+<p>Vamos a ver la capacidad de JavaFX para manejar los archivos multimedia de forma interactiva. Para ello, JavaFX proporciona el paquete <strong>javafx.scene.media</strong> que contiene todas las clases necesarias. javafx.scene.media contiene las siguientes clases.</p>
+<p>javafx.scene.media.Media<br />javafx.scene.media.MediaPlayer<br />javafx.scene.media.MediaStatus<br />javafx.scene.media.MediaView</p>
+<h3>Media Events</h3>
+<p>El equipo de JavaFX ha diseñado una API de medios para que se base en eventos.</p>
+<p>En lugar de escribir código para un botón a través de EventHandler, se implementa un código que responde a la activación de los eventos OnXXXX del reproductor multimedia, donde XXXX es el nombre del evento.</p>
+<p>Las interfaces funcionales <strong>java.lang.Runnable</strong> se utilizan como callbacks que se invocan cuando se encuentra un evento. Al reproducir el contenido multimedia en javafx, crearíamos las expresiones Lambda (interfaces java.lang.Runnable) para establecerlas en el evento onReady.</p>
+<p>Por ejemplo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>    Media media = new Media(url);  
+    MediaPlayer mediaPlayer = new MediaPlayer(media);  
+    Runnable playMusic = () -&gt; mediaPlayer.play();  
+    mediaPlayer.setOnReady(playMusic);  </code></pre>
+</div>
+</div>
+<p>La variable playMusic se asigna a una expresión lambda. Esto se pasa al método setOnReady() del reproductor multimedia. La expresión Lambda se invocará cuando se encuentre el evento onReady.</p>
+<p>Los posibles eventos de medios y reproductores de medios se analizan en la siguiente tabla:</p>
+<table class="exe-table" style="width: 783px; border-style: solid;" border="1">
+<tbody>
+<tr>
+<th style="width: 105.817px;">Class</th>
+<th style="width: 172.517px;">Set On Method</th>
+<th style="width: 395.4px;">Description</th>
+</tr>
+<tr>
+<td style="width: 105.817px;">Media</td>
+<td style="width: 172.517px;">setOnError()</td>
+<td style="width: 395.4px;">Este método se invoca cuando se produce un error. Es la parte de la clase Media.</td>
+</tr>
+<tr>
+<td style="width: 105.817px;">MediaPlayer</td>
+<td style="width: 172.517px;">setOnEndOfMedia()</td>
+<td style="width: 395.4px;">El método se invoca cuando se alcanza el final de la reproducción multimedia.</td>
+</tr>
+<tr>
+<td style="width: 105.817px;">MediaPlayer</td>
+<td style="width: 172.517px;">setOnError()</td>
+<td style="width: 395.4px;">Este método se invoca cuando se produce un error.</td>
+</tr>
+<tr>
+<td style="width: 105.817px;">MediaPlayer</td>
+<td style="width: 172.517px;">setOnHalted()</td>
+<td style="width: 395.4px;">Este método se invoca cuando el estado de los medios cambia a detenido.</td>
+</tr>
+<tr>
+<td style="width: 105.817px;">MediaPlayer</td>
+<td style="width: 172.517px;">setOnMarker()</td>
+<td style="width: 395.4px;">Este método se invoca cuando se activa el evento Marker.</td>
+</tr>
+<tr>
+<td style="width: 105.817px;">MediaPlayer</td>
+<td style="width: 172.517px;">setOnPaused()</td>
+<td style="width: 395.4px;">Este método se invoca cuando ocurre un evento de pausa.</td>
+</tr>
+<tr>
+<td style="width: 105.817px;">MediaPlayer</td>
+<td style="width: 172.517px;">setOnPlaying()</td>
+<td style="width: 395.4px;">Este método se invoca cuando ocurre el evento de reproducción.</td>
+</tr>
+<tr>
+<td style="width: 105.817px;">MediaPlayer</td>
+<td style="width: 172.517px;">setOnReady()</td>
+<td style="width: 395.4px;">Este método se invoca cuando el medio está en estado listo.</td>
+</tr>
+<tr>
+<td style="width: 105.817px;">MediaPlayer</td>
+<td style="width: 172.517px;">setOnRepeat()</td>
+<td style="width: 395.4px;">Este método se invoca cuando se establece la propiedad de repetición.</td>
+</tr>
+<tr>
+<td style="width: 105.817px;">MediaPlayer</td>
+<td style="width: 172.517px;">setOnStalled()</td>
+<td style="width: 395.4px;">Este método se invoca cuando el reproductor multimedia está bloqueado.</td>
+</tr>
+<tr>
+<td style="width: 105.817px;">MediaPlayer</td>
+<td style="width: 172.517px;">setOnStopped()</td>
+<td style="width: 395.4px;">Este método se invoca cuando el reproductor multimedia se ha detenido.</td>
+</tr>
+<tr>
+<td style="width: 105.817px;">MediaView</td>
+<td style="width: 172.517px;">setOnError()</td>
+<td style="width: 395.4px;">Este método se invoca cuando se produce un error en la vista de medios.</td>
+</tr>
+</tbody>
+</table>
+<p>Debemos notar que la clase MediaPlayer contiene la mayor cantidad de eventos activados, mientras que las clases MediaView y Media contienen un evento cada una.</p>
+<h3>Propiedades</h3>
+<p>Las propiedades de la clase se describen en la siguiente tabla. Todas las propiedades son de solo lectura excepto onError.</p>
+<p></p>
+<table class="exe-table" style="border-style: solid;" border="1">
+<tbody>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>duration</td>
+<td>La duración de los medios de origen en segundos. Esta propiedad es de tipo objeto de la clase Duración.</td>
+</tr>
+<tr>
+<td>error</td>
+<td>Esta es una propiedad establecida en el valor de excepción de medios cuando ocurre un error. Esta propiedad es del tipo objeto de la clase MediaException.</td>
+</tr>
+<tr>
+<td>height</td>
+<td>La altura de los medios de origen en píxeles. Esta es una propiedad de tipo entero.</td>
+</tr>
+<tr>
+<td>onError</td>
+<td>El controlador de eventos al que se llama cuando se produce el error. El método setOnError() se usa para establecer esta propiedad.</td>
+</tr>
+<tr>
+<td>width</td>
+<td>El ancho de los medios de origen en píxeles. Esta es una propiedad de tipo entero</td>
+</tr>
+</tbody>
+</table>
+<h3 class="h3">Constructores</h3>
+<p>Hay un solo constructor</p>
+<p style="padding-left: 30px;">public Media (java.lang.String source): crea una instancia de la clase Media con el archivo fuente especificado.</p>
+<h2>JavaFX MediaPlayer</h2>
+<p>Las propiedades de la clase junto con los métodos setter se describen en la siguiente tabla.</p>
+<div style="display: block; clear: both; text-align: center; margin: 10px auto 20px; width: 0px; height: 0px; overflow: hidden;" id="62e41191-8dfd-468e-a4ed-2777209ebf5e" data-section="62e41191-8dfd-468e-a4ed-2777209ebf5e" class="_ap_apex_ad" data-xpath="#city &gt; table:eq(0) &gt; tbody:eq(0) &gt; tr:eq(0) &gt; td:eq(0) &gt; p:eq(11)" data-section-id="" data-ap-network="adpTags" data-render-time="1666267805593" data-refresh-time="1666270660295" data-timeout="11160">
+<div id="ADP_37780_728X250_62e41191-8dfd-468e-a4ed-2777209ebf5e" style="text-align: center; margin: 0 auto;"><iframe width="0" height="0" style="position: absolute; width: 0px; height: 0px; left: 0px; right: 0px; z-index: -1; border: 0px none;" id="google_ads_iframe_/103512698,22511567001/22794806201_1" srcdoc="&lt;body&gt;&lt;/body&gt;" data-gtm-yt-inspected-4="true" data-mce-fragment="1"></iframe></div>
+</div>
+<table class="exe-table" style="width: 913px;" border="1">
+<tbody>
+<tr>
+<th style="width: 191.967px;">Property</th>
+<th style="width: 343.533px;">Property</th>
+<th style="width: 356.167px;">Setter Methods</th>
+</tr>
+<tr>
+<td style="width: 191.967px;">autoPlay</td>
+<td style="width: 343.533px;">Esta es la propiedad de tipo booleano. El valor real indica que la reproducción comenzará lo antes posible.</td>
+<td style="width: 356.167px;">setAutoPlay(Boolean value)</td>
+</tr>
+<tr>
+<td style="width: 191.967px;">balance</td>
+<td style="width: 343.533px;">Esta es una propiedad de tipo doble. Indica el balance de la salida de audio.</td>
+<td style="width: 356.167px;">setBalance(double value)</td>
+</tr>
+<tr>
+<td style="width: 191.967px;">mute</td>
+<td style="width: 343.533px;">Es una propiedad de tipo booleano. Indica si el audio está silenciado o no.</td>
+<td style="width: 356.167px;">SetMute(boolean value)</td>
+</tr>
+<tr>
+<td style="width: 191.967px;">onEndOfMedia</td>
+<td style="width: 343.533px;">Es una propiedad de tipo objeto de la interfaz Runnable. Se establece en un controlador de eventos que se invocará cuando se alcance el final del archivo multimedia.</td>
+<td style="width: 356.167px;">setOnEndOfMedia(java.lang.Runnable value)</td>
+</tr>
+<tr>
+<td style="width: 191.967px;">onError</td>
+<td style="width: 343.533px;">Es una propiedad de tipo objeto de la interfaz Runnable. Indica el controlador de eventos que se invocará cuando el estado cambie a detenido.</td>
+<td style="width: 356.167px;">setOnHalted(java.lang.Runnable value)</td>
+</tr>
+<tr>
+<td style="width: 191.967px;">onMarker</td>
+<td style="width: 343.533px;">Es una propiedad de tipo objeto de la clase MediaMarkerEvent. Indica el controlador de eventos que se invocará cuando la hora actual alcance el marcador de medios.</td>
+<td style="width: 356.167px;">setOnMarker(EventHandler&lt;MediaMarkerEvent&gt; onMarker )</td>
+</tr>
+<tr>
+<td style="width: 191.967px;">onPaused</td>
+<td style="width: 343.533px;">Es una propiedad de tipo objeto de la interfaz Runnable. Indica el EventHandler que se invocará cuando el estado cambie a en pausa.</td>
+<td style="width: 356.167px;">setOnPaused(java.lang.Runnable value)</td>
+</tr>
+<tr>
+<td style="width: 191.967px;">onPlaying</td>
+<td style="width: 343.533px;">Es una propiedad de tipo objeto de la interfaz Runnable. Indica el EventHandler que se invocará cuando el estado cambie a reproducción.</td>
+<td style="width: 356.167px;">setOnPlaying(java.lang.Runnable value)</td>
+</tr>
+<tr>
+<td style="width: 191.967px;">onReady</td>
+<td style="width: 343.533px;">Es una propiedad de tipo objeto de la interfaz Runnable. Indica el EventHandler que se invocará cuando el estado cambie a Listo.</td>
+<td style="width: 356.167px;">setOnReady(java.lang.Runnable value)</td>
+</tr>
+<tr>
+<td style="width: 191.967px;">onRepeat</td>
+<td style="width: 343.533px;">Es una propiedad de tipo objeto de la clase MediaMarkerEvent. Indica el EventHandler que se invocará cuando la hora actual alcance la hora de parada y se repetirá.</td>
+<td style="width: 356.167px;">setOnRepeat(java.lang.Runnable value)</td>
+</tr>
+<tr>
+<td style="width: 191.967px;">onStalled</td>
+<td style="width: 343.533px;">Es una propiedad de tipo objeto de la interfaz Runnable. Indica el Controlador de eventos que se invocará cuando el estado cambie a Estancado.</td>
+<td style="width: 356.167px;">setOnStalled(java.lang.Runnable value)</td>
+</tr>
+<tr>
+<td style="width: 191.967px;">onStopped</td>
+<td style="width: 343.533px;">Es una propiedad de tipo objeto de la interfaz Runnable. Indica el EventHandler que se invocará cuando el estado cambie a Detenido.</td>
+<td style="width: 356.167px;">setOnStopped(java.lang.Runnable value)</td>
+</tr>
+<tr>
+<td style="width: 191.967px;">startTime</td>
+<td style="width: 343.533px;">Esta propiedad es del tipo objeto de la clase Duración. Indica el momento en que los medios deben comenzar a reproducirse.</td>
+<td style="width: 356.167px;">setStartTime(Duration value)</td>
+</tr>
+<tr>
+<td style="width: 191.967px;">status</td>
+<td style="width: 343.533px;">Esta es la propiedad de solo lectura. Indica el estado actual del reproductor multimedia.</td>
+<td style="width: 356.167px;">Can not be set as it is read only property.</td>
+</tr>
+<tr>
+<td style="width: 191.967px;">stopTime</td>
+<td style="width: 343.533px;">Esta propiedad es un tipo de objeto de la clase Duración. Indica el intervalo de tiempo en el que los medios deben dejar de reproducirse.</td>
+<td style="width: 356.167px;">setStopTime(double value)</td>
+</tr>
+<tr>
+<td style="width: 191.967px;">totalDuration</td>
+<td style="width: 343.533px;">Es una propiedad de tipo objeto de la clase Duración. Indica el tiempo total durante el cual se debe reproducir el medio.</td>
+<td style="width: 356.167px;">Can not be set as it is read only property.</td>
+</tr>
+<tr>
+<td style="width: 191.967px;">volume</td>
+<td style="width: 343.533px;">Es una propiedad de tipo doble. Indica el volumen al que deben reproducirse los medios.</td>
+<td style="width: 356.167px;">setVolume(double value)</td>
+</tr>
+</tbody>
+</table>
+<p class="h3"><a href="https://docs.oracle.com/javase/8/javafx/api/javafx/scene/media/MediaPlayer.html" target="_blank" rel="noopener">Más información</a></p>
+<h3 class="h3">Constructores</h3>
+<p>Hay un solo constructor</p>
+<div class="codeblock">
+<div class="dp-highlighter">
+<p style="padding-left: 30px;"><span><span class="keyword">public</span> MediaPlayer (Media media)  </span></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id38">
+<div class="iDevice emphasis0">
+<div id="ta38_85" class="block iDevice_content">
+<h2>Reproducción de audio</h2>
+<p>Podemos cargar los archivos de audio con extensiones como .mp3, .wav y .aifff usando <strong>JavaFX Media API</strong>. También podemos reproducir el audio en formato de transmisión en vivo HTTP. Es la nueva característica introducida en JavaFX 8 que también se conoce como HLS.</p>
+<p>Reproducir archivos de audio en JavaFX es simple. Para este propósito, necesitamos instanciar la clase javafx.scene.media.Media pasando la ruta del archivo de audio en su constructor. A continuación se describen los pasos necesarios para reproducir archivos de audio.</p>
+<p>Crea una instancia de la clase javafx.scene.media.Media pasando la ubicación del archivo de audio en su constructor. Usa la siguiente línea de código para este propósito.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>    Media media = new Media("http://path/file_name.mp3");  </code></pre>
+</div>
+</div>
+<p>Pasa el objeto de la clase Media a la nueva instancia del objeto javafx.scene.media.MediaPlayer.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>    Mediaplayer mediaPlayer = new MediaPlayer(media);  </code></pre>
+</div>
+</div>
+<p>Invoca el método play() del objeto MediaPlayer cuando se active el evento onReady.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>    MediaPlayer.setAutoPlay(true);  </code></pre>
+</div>
+</div>
+<p>El archivo multimedia se puede ubicar en un servidor web o en el sistema de archivos local. El método <strong>SetAutoPlay()</strong> es el atajo para configurar el controlador de eventos <strong>setOnReady()</strong> con la expresión lambda para manejar el evento.</p>
+<p>Ejemplo</p>
+<p>En el siguiente ejemplo, el archivo de audio ubicado en "/home/javatpoint/Downloads/test.mp3" en nuestro sistema se reproduce al ejecutar esta aplicación.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>    public class JavaFX_Media Example extends Application{  
+      
+        @Override  
+        public void start (Stage primaryStage) throws Exception {  
+            // TODO Auto-generated method stub  
+            //Initialising path of the media file, replace this with your file path   
+            String path = "/home/javatpoint/Downloads/test.mp3";  
+              
+            //Instantiating Media class  
+            Media media = new Media(new File(path).toURI().toString());  
+              
+            //Instantiating MediaPlayer class   
+            MediaPlayer mediaPlayer = new MediaPlayer(media);  
+              
+            //by setting this property to true, the audio will be played   
+            mediaPlayer.setAutoPlay(true);  
+            primaryStage.setTitle("Playing Audio");  
+            primaryStage.show();  
+        }  
+        public static void main(String[] args) {  
+            launch(args);  
+        }  
+    }  </code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id39">
+<div class="iDevice emphasis0">
+<div id="ta39_85" class="block iDevice_content">
+<h2>Reproducción de vídeo</h2>
+<p>Reproducir video en JavaFX es bastante simple. Necesitamos usar la misma API que hemos usado en el caso de reproducir archivos de audio. En el caso de reproducir video, necesitamos usar el nodo MediaView para mostrar el video en la escena.</p>
+<p>Para este propósito, necesitamos instanciar la clase MediaView pasando el objeto Mediaplayer a su constructor. Debido al hecho de que MediaView es un nodo JavaFX, podremos aplicarle efectos.</p>
+<p>En esta parte del tutorial, discutiremos los pasos involucrados en la reproducción de archivos multimedia de video y algunos ejemplos al respecto.<br />Pasos para reproducir archivos de video en JavaFX</p>
+<ul>
+<li>Crea una instancia de la clase javafx.scene.media.Media pasando la ubicación del archivo de audio en su constructor. Use la siguiente línea de código para este propósito.</li>
+</ul>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Media media = new Media("http://ruta/nombre_de_archivo.mp3");</code></pre>
+</div>
+</div>
+<ul>
+<li>Pasa el objeto de la clase Media a la nueva instancia del objeto javafx.scene.media.MediaPlayer.</li>
+</ul>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Mediaplayer mediaPlayer = new MediaPlayer(media);</code></pre>
+</div>
+</div>
+<ul>
+<li>Invoca el método play() del objeto MediaPlayer cuando se active el evento onReady.</li>
+</ul>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>mediaPlayer.setAutoPlay(true);</code></pre>
+</div>
+</div>
+<ul>
+<li>Crea una instancia de la clase MediaView y pase el objeto Mediaplayer a su constructor.</li>
+</ul>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>    MediaView mediaView = new MediaView (mediaPlayer)  </code></pre>
+</div>
+</div>
+<ul>
+<li>Añade el nodo MediaView al grupo y configure la escena.</li>
+</ul>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>    Group root = new Group();  
+    root.getChildren().add(mediaView)  
+    Scene scene = new Scene(root,600,400);  
+    primaryStage.setTitle("Playing Video");  
+    primaryStage.show();  </code></pre>
+</div>
+</div>
+<p>Por ejemplo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>    public class JavaFX_Media Example extends Application  
+    {  
+      
+        @Override  
+        publicvoid start(Stage primaryStage) throws Exception {  
+            // TODO Auto-generated method stub  
+            //Initialising path of the media file, replace this with your file path   
+            String path = "/home/javatpoint/Downloads/test.mp4";  
+              
+            //Instantiating Media class  
+            Media media = new Media(new File(path).toURI().toString());  
+              
+            //Instantiating MediaPlayer class   
+            MediaPlayer mediaPlayer = new MediaPlayer(media);  
+              
+            //Instantiating MediaView class   
+            MediaView mediaView = new MediaView(mediaPlayer);  
+              
+            //by setting this property to true, the Video will be played   
+            mediaPlayer.setAutoPlay(true);  
+              
+            //setting group and scene   
+            Group root = new Group();  
+            root.getChildren().add(mediaView);  
+            Scene scene = new Scene(root,500,400);  
+            primaryStage.setScene(scene);  
+            primaryStage.setTitle("Playing video");  
+            primaryStage.show();  
+        }  
+        publicstaticvoid main(String[] args) {  
+            launch(args);  
+        }  
+          
+    }  </code></pre>
+</div>
+</div>
+<p><img src="javafx-playing-video.png" alt="" width="506" height="443" /></p>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="javafx_effects.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="bibliografia.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

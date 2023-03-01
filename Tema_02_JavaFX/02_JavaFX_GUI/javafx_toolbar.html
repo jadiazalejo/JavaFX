@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>JavaFX ToolBar </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-20"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">JavaFX (2ª parte)</a></li>
+   <li><a href="alertas_y_dilogos.html" class="daddy">Alertas y diálogos</a>
+   <ul class="other-section">
+      <li><a href="textinputdialog_y_choicedialog.html" class="no-ch">TextInputDialog y ChoiceDialog</a></li>
+   </ul>
+   </li>
+   <li><a href="indicadores_de_progreso.html" class="no-ch">Indicadores de progreso</a></li>
+   <li><a href="listas_y_cajas.html" class="daddy">Listas y cajas</a>
+   <ul class="other-section">
+      <li><a href="javafx_listview.html" class="no-ch">JavaFX ListView</a></li>
+      <li><a href="javafx_choicebox.html" class="no-ch">JavaFX ChoiceBox</a></li>
+      <li><a href="javafx_combobox.html" class="no-ch">JavaFX ComboBox</a></li>
+      <li><a href="javafx_slider.html" class="no-ch">JavaFX Slider</a></li>
+   </ul>
+   </li>
+   <li><a href="ejemplo_completo.html" class="no-ch">Ejemplo completo</a></li>
+   <li class="current-page-parent"><a href="mens.html" class="current-page-parent daddy">Menús</a>
+   <ul>
+      <li><a href="javafx_menubar.html" class="no-ch">JavaFX MenuBar</a></li>
+      <li id="active"><a href="javafx_toolbar.html" class="active no-ch">JavaFX ToolBar</a></li>
+   </ul>
+   </li>
+   <li><a href="fechas_javafx_datepicker.html" class="no-ch">Fechas JavaFX DatePicker</a></li>
+   <li><a href="ejercicios.html" class="no-ch">Ejercicios</a></li>
+   <li><a href="otros_layout.html" class="no-ch">Otros Layout</a></li>
+   <li><a href="otros_controles_imageview_colorpicker_y_filechooser.html" class="no-ch">Otros controles: ImageView, ColorPicker y FileChooser</a></li>
+   <li><a href="javafx_effects.html" class="no-ch">JavaFX Effects</a></li>
+   <li><a href="javafx_media__javafx_video_and_audio_support.html" class="no-ch">JavaFX Media - JavaFX Video and Audio Support</a></li>
+   <li><a href="bibliografia.html" class="no-ch">Bibliografia</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="javafx_menubar.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="fechas_javafx_datepicker.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">JavaFX ToolBar</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id22">
+<div class="iDevice emphasis0">
+<div id="ta22_85" class="block iDevice_content">
+<p><span style="color: #000000;">La clase <strong>ToolBar</strong> de JavaFX (<strong>javafx.scene.control.ToolBar)</strong> es una barra horizontal o vertical que contiene botones o iconos que normalmente se utilizan para seleccionar diferentes herramientas de una aplicación JavaFX. </span></p>
+<p><span style="color: #000000;">ToolBar no es un control, es un container, como HBox, VBox, Anchor, etc.</span></p>
+<p><span style="color: #000000;">En realidad, una barra de herramientas JavaFX puede contener otros controles JavaFX además de botones e iconos. De hecho, se puede insertar cualquier control JavaFX en una barra de herramientas.</span></p>
+<h3>Creación de una barra de herramientas</h3>
+<p><span style="color: #000000;">Para crear una barra de herramientas JavaFX, primero se debe crear una instancia de la clase.</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>ToolBar toolBar = new ToolBar();</code></pre>
+</div>
+</div>
+<h3>Añadir de elementos a una barra de herramientas</h3>
+<p><span style="color: #000000;">Una vez que se ha creado una barra de herramientas JavaFX, se pueden añadir elementos (componentes JavaFX). Para añadir elementos a una barra de herramientas, debemos obtener su colección de elementos y añadir el nuevo elemento a esa colección. Por ejemplo:</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Button button = new Button("Click Me");
+
+toolBar.getItems().add(button);</code></pre>
+</div>
+</div>
+<h3>Añadir una barra de herramientas al gráfico de escena</h3>
+<p><span style="color: #000000;">Para hacer visible una barra de herramientas JavaFX, se debe añadir al gráfico de escena JavaFX.</span></p>
+<p><span style="color: #000000;">Por ejemplo:</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public class ToolBarExample extends Application {
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) {
+        primaryStage.setTitle("JavaFX App");
+
+        ToolBar toolBar = new ToolBar();
+
+        Button button1 = new Button("Button 1");
+        toolBar.getItems().add(button1);
+
+        Button button2 = new Button("Button 2");
+        toolBar.getItems().add(button2);
+
+        VBox vBox = new VBox(toolBar);
+
+        Scene scene = new Scene(vBox, 960, 600);
+
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+}
+</code></pre>
+</div>
+</div>
+<p><span style="color: #000000;">La vista de JavaFX resultante de este ejemplo de barra de herramientas sería similar a esto:</span></p>
+<p><img src="javafx-toolbar-1.png" alt="" width="225" height="144" /></p>
+<h3>Barra de herramientas orientada verticalmente</h3>
+<p><span style="color: #000000;">De forma predeterminada, una barra de herramientas JavaFX muestra los elementos que se le añaden en una fila horizontal. Es posible hacer que la barra de herramientas muestre los elementos verticalmente, de modo que la barra de herramientas se convierta en una barra de herramientas vertical. Para hacer que la barra de herramientas muestre sus elementos verticalmente, hay que utilizar su método <strong>setOrientation()</strong>.</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>toolBar.setOrientation(Orientation.VERTICAL);</code></pre>
+</div>
+</div>
+<p><span style="color: #000000;">Aquí hay una captura de pantalla de cómo se ve la barra de herramientas JavaFX de la sección anterior en orientación vertical:</span></p>
+<h3><img src="javafx-toolbar-2.png" alt="" width="200" height="170" /><br /><br />Separación de los elementos en una barra de herramientas</h3>
+<p><span style="color: #000000;">Podemos insertar un separador visual a una barra de herramientas JavaFX. El separador visual normalmente se muestra como una línea vertical u horizontal entre los elementos de la barra de herramientas.</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Button button1 = new Button("Button 1");
+toolBar.getItems().add(button1);
+
+toolBar.getItems().add(new Separator());
+
+Button button2 = new Button("Button 2");
+toolBar.getItems().add(button2);</code></pre>
+</div>
+</div>
+<p><span style="color: #000000;">Resultado:</span></p>
+<p><img src="javafx-toolbar-3.png" alt="" width="253" height="167" /></p>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="javafx_menubar.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="fechas_javafx_datepicker.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Ejemplo completo </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-23"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">JavaFX (2ª parte)</a></li>
+   <li><a href="alertas_y_dilogos.html" class="daddy">Alertas y diálogos</a>
+   <ul class="other-section">
+      <li><a href="textinputdialog_y_choicedialog.html" class="no-ch">TextInputDialog y ChoiceDialog</a></li>
+   </ul>
+   </li>
+   <li><a href="indicadores_de_progreso.html" class="no-ch">Indicadores de progreso</a></li>
+   <li><a href="listas_y_cajas.html" class="daddy">Listas y cajas</a>
+   <ul class="other-section">
+      <li><a href="javafx_listview.html" class="no-ch">JavaFX ListView</a></li>
+      <li><a href="javafx_choicebox.html" class="no-ch">JavaFX ChoiceBox</a></li>
+      <li><a href="javafx_combobox.html" class="no-ch">JavaFX ComboBox</a></li>
+      <li><a href="javafx_slider.html" class="no-ch">JavaFX Slider</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="ejemplo_completo.html" class="active no-ch">Ejemplo completo</a></li>
+   <li><a href="mens.html" class="daddy">Menús</a>
+   <ul class="other-section">
+      <li><a href="javafx_menubar.html" class="no-ch">JavaFX MenuBar</a></li>
+      <li><a href="javafx_toolbar.html" class="no-ch">JavaFX ToolBar</a></li>
+   </ul>
+   </li>
+   <li><a href="fechas_javafx_datepicker.html" class="no-ch">Fechas JavaFX DatePicker</a></li>
+   <li><a href="ejercicios.html" class="no-ch">Ejercicios</a></li>
+   <li><a href="otros_layout.html" class="no-ch">Otros Layout</a></li>
+   <li><a href="otros_controles_imageview_colorpicker_y_filechooser.html" class="no-ch">Otros controles: ImageView, ColorPicker y FileChooser</a></li>
+   <li><a href="javafx_effects.html" class="no-ch">JavaFX Effects</a></li>
+   <li><a href="javafx_media__javafx_video_and_audio_support.html" class="no-ch">JavaFX Media - JavaFX Video and Audio Support</a></li>
+   <li><a href="bibliografia.html" class="no-ch">Bibliografia</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="javafx_slider.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="mens.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Ejemplo completo</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id17">
+<div class="iDevice emphasis0">
+<div id="ta17_85" class="block iDevice_content">
+<p><span style="color: #000000;">Antes de continuar viendo los controles de tipo menú, vamos a realizar un ejemplo <strong>completo</strong>, en que veremos:</span></p>
+<ul>
+<li><span style="color: #000000;">Algunos ejemplos de los controles visto hasta ahora.</span></li>
+<li><span style="color: #000000;">Como utilizar varias vistas o ventanas.</span></li>
+<li><span style="color: #000000;">Como pasar objetos a diferentes vistas o ventanas.</span></li>
+</ul>
+<p><span style="color: #000000;">Vamos a crear una clase Empleado, con atributos de todo tipo.</span></p>
+<p><span style="color: #000000;">Tendremos una primera clase, nuestro punto de partida:</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>public class EjemploMVCEmpleados extends Application</code></pre>
+</div>
+</div>
+<p><span style="color: #000000;">Crearemos una <strong>Vista principal donde solo tendremos dos botones</strong>, otra <strong>vista para introducir los datos del empleado en un objeto tipo Empleado</strong> (primer botón) y una s<strong>egunda vista para mostrar los datos del objeto creado en la otra vista</strong> (segundo botón).</span></p>
+<p><span style="color: #000000;"><strong>Si instanciamos</strong> el objeto Empleado en cada una de las vistas <strong>los datos se perderán</strong>, serán objetos distintos, y cuando la ventana se cierre el objeto desaparecerá. Para mantener el objeto existente, <strong>lo instanciaremos en el controlador de la vista principal</strong>, lo añadiremos en la vista para darlo de alta, y lo recibiremos con datos. Lo añadiremos cuando queramos mostrarlo y se visualizarán los datos introducidos en la otra vista.</span></p>
+<p><span style="color: #000000;">La aplicación tendrá la siguiente estructura:</span></p>
+<p><img src="ejemploC_01.png" alt="" width="402" height="309" /></p>
+<ul>
+<li><span style="color: #000000;"><strong>EjemploMVCEmpleados.java</strong> programa principal.</span></li>
+<li><span style="color: #000000;"><strong>Empleado.java</strong> clase definición de un empleado</span></li>
+<li><span style="color: #000000;"><strong>FXMLPrincipal.fxml</strong> vista principal</span></li>
+<li><span style="color: #000000;"><strong>FXMLPrincipalController.java</strong> controlador de la vista principal</span></li>
+<li><span style="color: #000000;"><strong>FXMLAlta.fxml</strong> vista para dar de alta al empleado</span></li>
+<li><span style="color: #000000;"><strong>FXMLAltaController.java</strong> controlador de la vista alta empleado</span></li>
+<li><span style="color: #000000;"><strong>FXMLMuestra.fxml</strong> vista para mostrar datos del empleado</span></li>
+<li><span style="color: #000000;"><strong>FXMLMuestraController.java</strong> controlador de la vista muestra empleado</span></li>
+</ul>
+<p><strong>El esquema de llamadas sería el siguiente:</strong></p>
+<p><img src="esquemaEjemplo.png" alt="" width="799" height="799" /></p>
+<p><span style="color: #000000;">Comenzaremos por nuestra clase Empleado y nuestro programa principal:</span></p>
+<p><span style="color: #000000;">Clase Empleado:</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>public class Empleado {
+
+    //Atributos miembro
+    private String nombre;
+    private String dni;
+    private String direccion;
+    private String telefono;
+    private int edad;
+    private String dpto;
+    private boolean estado; //Fijo o eventual
+    private float sueldo_bruto;
+
+
+    public Empleado(String nombre, String dni, String direccion,
+            String telefono, String dpto, boolean estado,
+            float sueldo_bruto, int edad) {
+        this.nombre = nombre;
+        this.dni = dni;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.dpto = dpto;
+        this.estado = estado;
+        this.sueldo_bruto = sueldo_bruto;
+        this.edad = edad;
+    }
+
+    public Empleado() {
+        nombre = "";
+        dni="";
+    }
+
+    public void setNombre(String n) {
+        nombre = n;
+    }
+    
+    public String getNombre() {
+        return nombre;
+    }
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+    public String getDni() {
+        return dni;
+    }
+
+    public float getSueldo_bruto() {
+        return sueldo_bruto;
+    }
+
+    public void setSueldo_bruto(float sueldo_bruto) {
+        this.sueldo_bruto = sueldo_bruto;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getDpto() {
+        return dpto;
+    }
+
+    public void setDpto(String dpto) {
+        this.dpto = dpto;
+    }
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
+
+    //método
+    public void muestraInfo() {
+        System.out.println("NOMBRE: " + nombre);
+        System.out.println("DNI: " + dni);
+        System.out.println("SUELDO BRUTO: " + sueldo_bruto);
+
+    }
+    
+     @Override
+    public String toString() {
+        return "Empleado{" + "nombre=" + nombre + ", dni=" + dni + ", direccion=" + direccion + ", telefono=" + telefono + ",<br /> edad=" + edad + ", dpto=" + dpto + ", estado=" + estado + ", sueldo_bruto=" + sueldo_bruto + '}';
+    }
+
+    public float calculaSalarioNeto() {
+        float neto, anual_bruto;
+        anual_bruto = sueldo_bruto * 12;
+        if (anual_bruto &lt; 12000) {
+            neto = anual_bruto - (anual_bruto * 0.2f);
+        }
+        if (anual_bruto &gt;= 12000 &amp;&amp; anual_bruto &lt; 25000) {
+            neto = anual_bruto - (anual_bruto * 0.3f);
+        } else {
+            neto = anual_bruto - (anual_bruto * 0.4f);
+        }
+        return neto;
+    }
+
+}</code></pre>
+</div>
+</div>
+<p><span style="color: #000000;">Clase Principal:</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>public class EjemploMVCEmpleados extends Application{
+
+    @Override
+    public void start(Stage primaryStage) throws IOException { 
+        Parent root = FXMLLoader.load(getClass().getResource("/Vistas/FXMLprincipal.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setTitle("Ejemplo Empleado");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+    
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+</code></pre>
+</div>
+</div>
+<p><span style="color: #000000;">Referenciamos la vista, le añadimos la escena (Scene) y ésta al escenario (Stage). Cambiamos el título de la ventana y la hacemos visible.</span></p>
+<p><img src="ejemploC_02.png" alt="" width="706" height="429" /></p>
+<p><span style="color: #000000;">Su vista FXMLPrincipal.fxml</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;?import javafx.scene.control.Button?&gt;
+&lt;?import javafx.scene.control.Label?&gt;
+&lt;?import javafx.scene.layout.AnchorPane?&gt;
+&lt;?import javafx.scene.text.Font?&gt;
+
+&lt;AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" 
+            xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="Vistas.FXMLPrincipalController"&gt;
+   &lt;children&gt;
+      &lt;Label alignment="CENTER" layoutY="40.0" prefHeight="45.0" prefWidth="699.0" 
+             text="Ejemplo práctico MVC Empleados" textAlignment="CENTER"&gt;
+         &lt;font&gt;
+            &lt;Font size="37.0" /&gt;
+         &lt;/font&gt;
+      &lt;/Label&gt;
+      &lt;Button fx:id="btnAlta" layoutX="268.0" layoutY="124.0" mnemonicParsing="false" 
+              onAction="#handleButtonAction" prefHeight="76.0" prefWidth="164.0" text="Alta Empleado"&gt;
+         &lt;font&gt;
+            &lt;Font size="18.0" /&gt;
+         &lt;/font&gt;
+      &lt;/Button&gt;
+      &lt;Button fx:id="btnMostrar" layoutX="240.0" layoutY="219.0" mnemonicParsing="false" 
+              onAction="#handleButtonAction" prefHeight="76.0" prefWidth="220.0" text="Mostrar Empleado"&gt;
+         &lt;font&gt;
+            &lt;Font size="18.0" /&gt;
+         &lt;/font&gt;
+      &lt;/Button&gt;
+   &lt;/children&gt;
+&lt;/AnchorPane&gt;</code></pre>
+</div>
+</div>
+<p><span style="color: #000000;">Los id de los botones, únicos controles de esta vista son: <strong>btnAlta</strong> y <strong>btnMostrar</strong>. Los dos tienen asignado el método <strong>handButtonAction</strong> como método a ejecutar cuando se pulse el botón correspondiente.</span></p>
+<p><span style="color: #000000;">El controlador relacionado con esta vista es: FXMLPrincipalController.java</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>public class FXMLPrincipalController implements Initializable {
+
+    Empleado empleado = new Empleado();
+
+    @FXML
+    private Button btnAlta;
+    @FXML
+    private Button btnMostrar;
+
+    @FXML
+    private void handleButtonAction(ActionEvent event) {
+        Button boton = (Button) event.getSource();
+        if (boton.getText().equals("Alta Empleado")) {
+            try {
+                FXMLLoader fxml = new FXMLLoader(getClass().getResource("FXMLAlta.fxml"));
+                AnchorPane rootC = fxml.&lt;AnchorPane&gt;load();
+                Scene scene = new Scene(rootC);
+                Stage altaStage = new Stage();
+                altaStage.setTitle("Alta Empleados");
+                altaStage.setScene(scene);
+                altaStage.initModality(Modality.APPLICATION_MODAL);
+                altaStage.show();
+                FXMLAltaController cc = fxml.getController();
+                cc.setDatos(empleado);
+            } catch (IOException ex) {
+                System.out.println("Error al crear la vista");
+            }
+        } else {
+            try {
+                FXMLLoader fxml = new FXMLLoader(getClass().getResource("FXMLMuestra.fxml"));
+                AnchorPane rootC = fxml.&lt;AnchorPane&gt;load();
+                Scene scene = new Scene(rootC);
+                Stage altaStage = new Stage();
+                altaStage.setTitle("Muestra Empleados");
+                altaStage.setScene(scene);
+                altaStage.initModality(Modality.APPLICATION_MODAL);
+                altaStage.show();
+                FXMLMuestraController cc = fxml.getController();
+                cc.setDatos(empleado);
+            } catch (IOException ex) {
+                System.out.println("Error al crear la vista");
+            }
+        }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }
+}</code></pre>
+</div>
+</div>
+<p><span style="color: #000000;">El método se ejecuta cuando ocurre el evento de que el usuario ha pulsado un botón, recoge el texto de botón y así diferenciamos las dos acciones, alta o mostrar.</span></p>
+<p><span style="color: #000000;">Este será el único sitio en el que instanciaremos el objeto Empleado, porque si lo hiciéramos de nuevo perderíamos los valores de sus propiedades.</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>    Empleado empleado = new Empleado();</code></pre>
+</div>
+</div>
+<p><span style="color: #000000;">Muy importante son las siguientes lineas, que a través de la referencia a la vista recogemos su controlador y ejecutamos un método que inyecta el objeto de tipo empleado. El tipo de controlador es FXMLAltaController, el controlador de la vista Alta.</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>FXMLAltaController cc = fxml.getController();
+cc.setDatos(empleado);</code></pre>
+</div>
+</div>
+<p><span style="color: #000000;">Esto tanto en el botón de Alta como en el de Muestra.</span></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id18">
+<div class="iDevice emphasis0">
+<div id="ta18_85" class="block iDevice_content">
+<p><span style="color: #000000;">La vista de alta de empleado podría ser el siguiente (tienes que diseñarla):</span></p>
+<p><img src="EjemploCAlta.png" width="704" height="631" /></p>
+<p><span style="color: #000000;">Los id de los controles serán  los siguientes, y serán los utilizados desde el controlador:</span></p>
+<ul>
+<li><span style="color: #000000;">TextField dni, nombre, telefono, sueldo</span></li>
+<li><span style="color: #000000;">TextArea direcc</span></li>
+<li><span style="color: #000000;">Slider edad</span></li>
+<li><span style="color: #000000;">Label edadValor</span></li>
+<li><span style="color: #000000;">ComboBox dpto</span></li>
+<li><span style="color: #000000;">RadioButton indefinido, eventual</span></li>
+<li><span style="color: #000000;">Button btnAceptar;</span></li>
+</ul>
+<p><span style="color: #000000;">Y en el controlador, por simplificar no vamos a validar los datos, solo vamos a probar el paso de objetos entre ventanas.</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>public class FXMLAltaController implements Initializable {
+
+    Empleado empleado;
+
+    @FXML
+    TextField dni, nombre, telefono, sueldo;
+    @FXML
+    TextArea direcc;
+    @FXML
+    Slider edad;
+    @FXML
+    Label edadValor;
+    @FXML
+    ComboBox dpto;
+    @FXML
+    RadioButton indefinido, eventual;
+    @FXML
+    Button btnAceptar;
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+        dpto.getItems().add("Personal");
+        dpto.getItems().add("Informática");
+        dpto.getItems().add("Comercial");
+        dpto.getSelectionModel().selectFirst();
+        edad.setOnMouseClicked(event -&gt; {
+            edadValor.setText(String.valueOf(edad.getValue()));
+        });
+
+    }
+
+    public void botonAceptar() {
+        empleado.setDni(dni.getText());
+        empleado.setNombre(nombre.getText() + " " + apellidos.getText());
+        empleado.setDireccion(direcc.getText());
+        empleado.setDpto(dpto.getValue().toString());
+        empleado.setTelefono(telefono.getText());
+        empleado.setEdad((int) edad.getValue());
+        if (indefinido.isSelected()) {
+            empleado.setEstado(true);
+        } else if (eventual.isSelected()) {
+            empleado.setEstado(false);
+        }
+        empleado.setSueldo_bruto(Float.parseFloat(sueldo.getText()));
+        Stage v = (Stage) btnAceptar.getScene().getWindow();
+        v.close();
+    }
+
+    public void setDatos(Empleado e) {
+        empleado = e;
+    }
+}
+</code></pre>
+</div>
+</div>
+<ul>
+<li><span style="color: #000000;">Tenemos que declarar un objeto de tipo Empleado para que en el método setDatos(Empleado e), podamos recoger la referencia de ese objeto y asignarla al objeto de esta ventana:</span></li>
+</ul>
+<div class="highlighted-code language-java">
+<div>
+<pre><code> public void setDatos(Empleado e) {
+        empleado = e;
+    }</code></pre>
+</div>
+</div>
+<ul>
+<li><span style="color: #000000;">Al comienzo del controlador tendremos la declaración de los controles de la vista.<br /></span></li>
+<li><span style="color: #000000;">El método initialize(URL url, ResourceBundle rb) que utilizaremos para rellenar las opciones del ComboBox, dejar seleccionado el primero y añadir que cuando el Slider se mueva cambie el valor del label que muestra el valor seleccionado.<br /></span></li>
+</ul>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+        dpto.getItems().add("Personal");
+        dpto.getItems().add("Informática");
+        dpto.getItems().add("Comercial");
+        dpto.getSelectionModel().selectFirst();
+        edad.setOnMouseClicked(event -&gt; {
+            edadValor.setText(String.valueOf(edad.getValue()));
+        });
+    }</code></pre>
+</div>
+</div>
+<ul>
+<li><span style="color: #000000;">Por último, en este controlador (ya he dicho que por simplificar no validaré los datos) al pulsar el botón de aceptar recogemos los valores de los controles y los modificamos en los atributos del objeto empleado y cerramos la ventana.</span></li>
+</ul>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>public void botonAceptar() {
+        empleado.setDni(dni.getText());
+        empleado.setNombre(nombre.getText());
+        empleado.setDireccion(direcc.getText());
+        empleado.setDpto(dpto.getValue().toString());
+        empleado.setTelefono(telefono.getText());
+        empleado.setEdad((int) edad.getValue());
+        if (indefinido.isSelected()) {
+            empleado.setEstado(true);
+        } else if (eventual.isSelected()) {
+            empleado.setEstado(false);
+        }
+        empleado.setSueldo_bruto(Float.parseFloat(sueldo.getText()));
+        Stage v = (Stage) btnAceptar.getScene().getWindow();
+        v.close();
+    }</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id19">
+<div class="iDevice emphasis0">
+<div id="ta19_85" class="block iDevice_content">
+<p><span style="color: #000000;">La tercera vista <strong>FXMLMuestra.fxml</strong> nos servirá para recibir un objeto de tipo Empleado (el rellenado en el vista de alta) y mostrar sus atributos, cada uno de ellos en su control correspondiente.</span></p>
+<p><span style="color: #000000;">La llamada desde la vista principal será la misma que para el alta.</span></p>
+<p><span style="color: #000000;">La vista que muestra los datos sería algo así (tienes que diseñarla):</span></p>
+<p><img src="ejemploVMuestra.png" alt="" width="610" height="519" /></p>
+<p>Y su controlador:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>public class FXMLMuestraController implements Initializable {
+
+    Empleado empleado;
+
+    @FXML
+    TextField dni, nombre, apellidos, telefono, sueldo;
+    @FXML
+    TextArea direcc;
+    @FXML
+    Slider edad;
+    @FXML
+    Label edadValor;
+    @FXML
+    ComboBox dpto;
+    @FXML
+    RadioButton indefinido, eventual;
+    @FXML
+    Button btnCerrar;
+
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+        dpto.getItems().add("Personal");
+        dpto.getItems().add("Informática");
+        dpto.getItems().add("Comercial");
+        dpto.getSelectionModel().selectFirst();
+        edad.setOnMouseClicked(event -&gt; {
+            edadValor.setText(String.valueOf(edad.getValue()));
+        });
+
+    }
+
+    public void botonAceptar() {
+        
+        Stage v = (Stage) btnCerrar.getScene().getWindow();
+        v.close();
+    }
+
+    public void setDatos(Empleado e) {
+        empleado = e;
+        dni.setText(e.getDni());
+        nombre.setText(e.getNombre());
+        direcc.setText(e.getDireccion());
+        telefono.setText(e.getTelefono());
+        edad.setValue(e.getEdad());
+        edadValor.setText(String.valueOf(edad.getValue()));
+        if (e.isEstado())
+              indefinido.setSelected(true);
+            else
+               eventual.setSelected(true);
+        dpto.setValue(e.getDpto());
+        sueldo.setText(String.valueOf(e.getSueldo_bruto()));
+        
+    }
+
+}</code></pre>
+</div>
+</div>
+<p><span style="color: #000000;">El método setDatos(Empleado e) recibe el objeto y coloca los valores en los controles, haciendo las conversiones que en cada caso sea necesaria.</span></p>
+<p><span style="color: #000000;">El botón "Cerrar" cierra la ventana.</span></p>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="javafx_slider.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="mens.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

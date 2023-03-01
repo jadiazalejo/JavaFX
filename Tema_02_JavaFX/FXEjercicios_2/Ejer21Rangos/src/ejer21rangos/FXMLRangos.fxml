@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ejer21rangos.FXMLRangosController">
+   <children>
+      <Slider fx:id="sliderV" layoutX="325.0" layoutY="25.0" max="255.0" onMouseDragged="#cambiaColor" orientation="VERTICAL" prefHeight="253.0" prefWidth="16.0" showTickLabels="true" showTickMarks="true" value="15.0" />
+      <Label fx:id="idLabelColor" layoutX="180.0" layoutY="309.0" text="COLORES">
+         <font>
+            <Font name="System Bold Italic" size="50.0" />
+         </font>
+      </Label>
+      <Label layoutX="119.0" layoutY="255.0" prefHeight="27.0" prefWidth="51.0" text="Rojo" textFill="#f70505">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Slider fx:id="sliderR" layoutX="197.0" layoutY="25.0" max="255.0" onDragDropped="#cambiaColor" onMouseDragOver="#cambiaColor" onMouseDragged="#cambiaColor" orientation="VERTICAL" prefHeight="253.0" prefWidth="16.0" showTickLabels="true" showTickMarks="true" value="50.0" />
+      <Label layoutX="241.0" layoutY="255.0" prefHeight="27.0" prefWidth="83.0" text="Verde" textFill="#0c7518">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="379.0" layoutY="255.0" prefHeight="27.0" prefWidth="83.0" text="Azul" textFill="#0b75bc">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Slider fx:id="sliderA" layoutX="447.0" layoutY="25.0" max="255.0" onDragDropped="#cambiaColor" onMouseDragOver="#cambiaColor" onMouseDragged="#cambiaColor" orientation="VERTICAL" prefHeight="253.0" prefWidth="16.0" showTickLabels="true" showTickMarks="true" value="100.0" />
+   </children>
+</AnchorPane>

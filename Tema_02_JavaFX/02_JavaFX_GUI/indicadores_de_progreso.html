@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Indicadores de progreso </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-2"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">JavaFX (2ª parte)</a></li>
+   <li><a href="alertas_y_dilogos.html" class="daddy">Alertas y diálogos</a>
+   <ul class="other-section">
+      <li><a href="textinputdialog_y_choicedialog.html" class="no-ch">TextInputDialog y ChoiceDialog</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="indicadores_de_progreso.html" class="active no-ch">Indicadores de progreso</a></li>
+   <li><a href="listas_y_cajas.html" class="daddy">Listas y cajas</a>
+   <ul class="other-section">
+      <li><a href="javafx_listview.html" class="no-ch">JavaFX ListView</a></li>
+      <li><a href="javafx_choicebox.html" class="no-ch">JavaFX ChoiceBox</a></li>
+      <li><a href="javafx_combobox.html" class="no-ch">JavaFX ComboBox</a></li>
+      <li><a href="javafx_slider.html" class="no-ch">JavaFX Slider</a></li>
+   </ul>
+   </li>
+   <li><a href="ejemplo_completo.html" class="no-ch">Ejemplo completo</a></li>
+   <li><a href="mens.html" class="daddy">Menús</a>
+   <ul class="other-section">
+      <li><a href="javafx_menubar.html" class="no-ch">JavaFX MenuBar</a></li>
+      <li><a href="javafx_toolbar.html" class="no-ch">JavaFX ToolBar</a></li>
+   </ul>
+   </li>
+   <li><a href="fechas_javafx_datepicker.html" class="no-ch">Fechas JavaFX DatePicker</a></li>
+   <li><a href="ejercicios.html" class="no-ch">Ejercicios</a></li>
+   <li><a href="otros_layout.html" class="no-ch">Otros Layout</a></li>
+   <li><a href="otros_controles_imageview_colorpicker_y_filechooser.html" class="no-ch">Otros controles: ImageView, ColorPicker y FileChooser</a></li>
+   <li><a href="javafx_effects.html" class="no-ch">JavaFX Effects</a></li>
+   <li><a href="javafx_media__javafx_video_and_audio_support.html" class="no-ch">JavaFX Media - JavaFX Video and Audio Support</a></li>
+   <li><a href="bibliografia.html" class="no-ch">Bibliografia</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="textinputdialog_y_choicedialog.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="listas_y_cajas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Indicadores de progreso</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id8">
+<div class="iDevice emphasis0">
+<div id="ta8_85" class="block iDevice_content">
+<h3>JavaFX ProgressBar</h3>
+<p>El ProgressBar de JavaFX es un control capaz de mostrar el progreso de alguna tarea o el porcentaje de una cantidad. El progreso se establece como un <strong>valor doble entre 0 y 1</strong>, donde 0 significa que no hay progreso y 1 significa progreso total (tarea completada). El control ProgressBar de JavaFX está representado por la clase <em><strong>javafx.scene.control.ProgressBar</strong></em>. Aquí hay una captura de pantalla de cómo se ve una barra de progreso de JavaFX:</p>
+<p><img src="javafx-progressbar-1.png" alt="" width="340" height="167" /></p>
+<p>Pero en este curso no haremos multitarea, por lo que mostrar progresos de tareas se escapa del contenido de este año, lo que podemos hacer es mostrar de forma gráfica porcentajes de cantidades, por ejemplo, en la aplicación de mini calculadora, si limitados los valores a rangos de 0 a 10 (o 100) podrías representar esos valores con barras de progreso.</p>
+<p>Con Scene Builder pueder cambiar la orientación, e incluso dar un valor inicial al control.</p>
+<p><img src="javafx-progressbar-2.png" alt="" width="601" height="481" /></p>
+<h3>Crear una barra de progreso</h3>
+<p>Para usar una <strong>ProgressBar</strong> de JavaFX, primero se debe crear una instancia de la clase ProgressBar. Así es como se crea una instancia de una barra de progreso de JavaFX:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>ProgressBar progressBar = new ProgressBar();</code></pre>
+</div>
+</div>
+<p>Puede crear una instancia de ProgressBar con un nivel de progreso determinado pasando el valor de progreso como parámetro a su constructor, así:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>ProgressBar progressBar = new ProgressBar(0);</code></pre>
+</div>
+</div>
+<h3>Configuración del nivel de progreso</h3>
+<p>Estableces el nivel de progreso de una barra de progreso a través del método <strong>setProgress()</strong>. Por ejemplo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>ProgressBar progressBar = new ProgressBar(0);
+
+progressBar.setProgress(0.5);</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id7">
+<div class="iDevice emphasis0">
+<div id="ta7_85" class="block iDevice_content">
+<h3>Indicador de progreso de JavaFX</h3>
+<p>El indicador de progreso es similar a la barra de progreso hasta cierto punto. En lugar de mostrar el progreso analógico al usuario, muestra el progreso digital para que el usuario pueda saber la cantidad de trabajo realizado en porcentaje.</p>
+<p>Está representado por la clase <em><strong>javafx.scene.control.ProgressIndicator.</strong></em> Es necesario crear una instancia de esta clase para crear el indicador de progreso.</p>
+<p>Es un control circular que se utiliza para indicar el progreso, ya sea infinito (también conocido como indeterminado) o finito. A menudo se usa con la API de tareas para representar el progreso de las tareas en segundo plano.</p>
+<p>También puede ser utilizado para mostrar una proporción o cantidad.</p>
+<p>Este primer ejemplo crea un ProgressIndicator con un valor indeterminado:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code> import javafx.scene.control.ProgressIndicator;
+ ProgressIndicator p1 = new ProgressIndicator();</code></pre>
+</div>
+</div>
+<p>El siguiente ejemplo crea un ProgressIndicator que está completo en un 25 %:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code> import javafx.scene.control.ProgressIndicator;
+ ProgressIndicator p2 = new ProgressIndicator();
+ p2.setProgress(0.25F);</code></pre>
+</div>
+</div>
+<p>La siguinete imagen muestra el indicador de progreso la aplicación de la calculadora, mostrando el valor de la suma:</p>
+<p><img src="javafx-progressIndicator.png" alt="" width="600" height="415" /></p>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="textinputdialog_y_choicedialog.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="listas_y_cajas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

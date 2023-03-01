@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ejer23Menus.FXMLMenusController">
+   <children>
+      <MenuBar layoutX="3.0" layoutY="52.0" prefHeight="27.0" prefWidth="594.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Operaciones">
+            <items>
+              <MenuItem fx:id="idAnyadir" mnemonicParsing="false" onAction="#anyadir" text="Añadir">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/carrito-de-compra-anadir.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
+                  <MenuItem fx:id="idListar" mnemonicParsing="false" onAction="#listar" text="Listar">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/comprobacion-de-lista.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem fx:id="idItem" mnemonicParsing="false" onAction="#item" text="Item">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/item.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ayuda">
+            <items>
+              <MenuItem fx:id="idClose" mnemonicParsing="false" onAction="#cerrarVentana" text="Close">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/salir-alt.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="14.0" prefHeight="29.0" prefWidth="600.0" text="EJEMPLO DE UTILIZACIÓN DE MENÚS">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

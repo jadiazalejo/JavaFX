@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Ejercicios </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-26"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">JavaFX (2ª parte)</a></li>
+   <li><a href="alertas_y_dilogos.html" class="daddy">Alertas y diálogos</a>
+   <ul class="other-section">
+      <li><a href="textinputdialog_y_choicedialog.html" class="no-ch">TextInputDialog y ChoiceDialog</a></li>
+   </ul>
+   </li>
+   <li><a href="indicadores_de_progreso.html" class="no-ch">Indicadores de progreso</a></li>
+   <li><a href="listas_y_cajas.html" class="daddy">Listas y cajas</a>
+   <ul class="other-section">
+      <li><a href="javafx_listview.html" class="no-ch">JavaFX ListView</a></li>
+      <li><a href="javafx_choicebox.html" class="no-ch">JavaFX ChoiceBox</a></li>
+      <li><a href="javafx_combobox.html" class="no-ch">JavaFX ComboBox</a></li>
+      <li><a href="javafx_slider.html" class="no-ch">JavaFX Slider</a></li>
+   </ul>
+   </li>
+   <li><a href="ejemplo_completo.html" class="no-ch">Ejemplo completo</a></li>
+   <li><a href="mens.html" class="daddy">Menús</a>
+   <ul class="other-section">
+      <li><a href="javafx_menubar.html" class="no-ch">JavaFX MenuBar</a></li>
+      <li><a href="javafx_toolbar.html" class="no-ch">JavaFX ToolBar</a></li>
+   </ul>
+   </li>
+   <li><a href="fechas_javafx_datepicker.html" class="no-ch">Fechas JavaFX DatePicker</a></li>
+   <li id="active"><a href="ejercicios.html" class="active no-ch">Ejercicios</a></li>
+   <li><a href="otros_layout.html" class="no-ch">Otros Layout</a></li>
+   <li><a href="otros_controles_imageview_colorpicker_y_filechooser.html" class="no-ch">Otros controles: ImageView, ColorPicker y FileChooser</a></li>
+   <li><a href="javafx_effects.html" class="no-ch">JavaFX Effects</a></li>
+   <li><a href="javafx_media__javafx_video_and_audio_support.html" class="no-ch">JavaFX Media - JavaFX Video and Audio Support</a></li>
+   <li><a href="bibliografia.html" class="no-ch">Bibliografia</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="fechas_javafx_datepicker.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="otros_layout.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Ejercicios</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id41">
+<div class="iDevice emphasis0">
+<div id="ta41_85" class="block iDevice_content">
+<h3>Ejercicio. Rangos.</h3>
+<p><span style="color: #000000;">Crea un proyecto, llamalo DefColor.java. Incorpora tres componentes Slider uno para cada color RGB (Rojo, Verde y Azul) con valores comprendidos entre 0 y 255. Añade también un texto (por ejemplo la palabra COLORES) y modifica su propiedad de color dependiendo de los valores de los Slider.</span></p>
+<p><span style="color: #000000;">El control Slider tiene muchos eventos, estos son algunos de los más utilizados:</span></p>
+<p><span style="color: #000000;">Cuando pulsamos con el ratón sobre el puntero de un control Slider con el fin de modificar su valor, los eventos que se generan son los siguientes:</span></p>
+<ul>
+<li><span style="color: #000000;">OnMousePressed cuando pulsamos el ratón</span></li>
+<li><span style="color: #000000;">OnMouseDragged en caso de que deslicemos su puntero</span></li>
+<li><span style="color: #000000;">OnMouseReleased cuando dejamos de pulsar el ratón</span></li>
+<li><span style="color: #000000;">OnMouseClicked justo después del anterior evento</span></li>
+</ul>
+<p><span style="color: #000000;">Si quieres ejecutar un código justo en el momento de soltar el ratón necesitas captar el evento OnMouseReleased. Es aquí donde tienes que colocar cualquier código que actualice o modifique otros Slider para evitar un reajuste contínuo de éstos (y posiblemente un parpadeo molesto) antes de llegar al valor deseado.</span></p>
+<p><span style="color: #000000;">Crear un color RGB:</span></p>
+<ul>
+<li><a href="https://docs.oracle.com/javase/8/javafx/api/javafx/scene/paint/Color.html" target="_blank" rel="noopener">https://docs.oracle.com/javase/8/javafx/api/javafx/scene/paint/Color.html</a></li>
+</ul>
+<p><img src="rangos.png" alt="" width="600" height="441" /></p>
+<h3>Ejercicio. Listas y cajas.</h3>
+<p>Implementa un proyecto que corresponda a la imagen siguiente:</p>
+<p><img src="ComoBoxyListas.png" width="602" height="440" /></p>
+<p>Mostrar un mensaje con el item seleccionado ComboBox1 cada vez que cambie..<br />Mostrar un mensaje con el item seleccionado ComboBox2 cada vez que cambie..<br />Permitir seleccionar más de una opción de ListView y muestra items seleccionados en una Alert.<br />Si se escribe un nuevo Item y pulsamos el botón de Añadir, se añadirá en ComboBox2.</p>
+<p><img src="comboBoxLista.png" alt="" width="606" height="445" /><br />Si se escribe un item y pulsamos el botón de Borrar y existe, se borrará de ComboBox2.</p>
+<h3>Ejercicio. Menús.</h3>
+<p>Realizar un proyecto que muestre un menú con 4 entradas: Añadir, Listar, Item y Salir, tal y como se muestra en la siguiente imagen:</p>
+<p><img src="menusEjer.png" alt="" width="600" height="436" /></p>
+<p>Añadir eventos para las opciones de Añadir, Listar, Item y Salir, que nos alerte de que lo opción ha sido seleccionada.</p>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="fechas_javafx_datepicker.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="otros_layout.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

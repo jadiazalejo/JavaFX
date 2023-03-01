@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Otros Layout </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-17"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">JavaFX (2ª parte)</a></li>
+   <li><a href="alertas_y_dilogos.html" class="daddy">Alertas y diálogos</a>
+   <ul class="other-section">
+      <li><a href="textinputdialog_y_choicedialog.html" class="no-ch">TextInputDialog y ChoiceDialog</a></li>
+   </ul>
+   </li>
+   <li><a href="indicadores_de_progreso.html" class="no-ch">Indicadores de progreso</a></li>
+   <li><a href="listas_y_cajas.html" class="daddy">Listas y cajas</a>
+   <ul class="other-section">
+      <li><a href="javafx_listview.html" class="no-ch">JavaFX ListView</a></li>
+      <li><a href="javafx_choicebox.html" class="no-ch">JavaFX ChoiceBox</a></li>
+      <li><a href="javafx_combobox.html" class="no-ch">JavaFX ComboBox</a></li>
+      <li><a href="javafx_slider.html" class="no-ch">JavaFX Slider</a></li>
+   </ul>
+   </li>
+   <li><a href="ejemplo_completo.html" class="no-ch">Ejemplo completo</a></li>
+   <li><a href="mens.html" class="daddy">Menús</a>
+   <ul class="other-section">
+      <li><a href="javafx_menubar.html" class="no-ch">JavaFX MenuBar</a></li>
+      <li><a href="javafx_toolbar.html" class="no-ch">JavaFX ToolBar</a></li>
+   </ul>
+   </li>
+   <li><a href="fechas_javafx_datepicker.html" class="no-ch">Fechas JavaFX DatePicker</a></li>
+   <li><a href="ejercicios.html" class="no-ch">Ejercicios</a></li>
+   <li id="active"><a href="otros_layout.html" class="active no-ch">Otros Layout</a></li>
+   <li><a href="otros_controles_imageview_colorpicker_y_filechooser.html" class="no-ch">Otros controles: ImageView, ColorPicker y FileChooser</a></li>
+   <li><a href="javafx_effects.html" class="no-ch">JavaFX Effects</a></li>
+   <li><a href="javafx_media__javafx_video_and_audio_support.html" class="no-ch">JavaFX Media - JavaFX Video and Audio Support</a></li>
+   <li><a href="bibliografia.html" class="no-ch">Bibliografia</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="ejercicios.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="otros_controles_imageview_colorpicker_y_filechooser.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Otros Layout</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id40">
+<div class="iDevice emphasis0">
+<div id="ta40_85" class="block iDevice_content">
+<h3>AnchorPane Layout</h3>
+<p><span style="color: #000000;">La clase <strong>AnchorPane</strong> es parte de JavaFX. AnchorPane permite que los bordes de los Nodes secundarios (subcomponentes) <strong>se anclen a un desplazamiento de los bordes del panel de anclaje</strong>. Si el panel de anclaje tiene un conjunto de borde y/o relleno, los desplazamientos se medirán desde el borde interior de esos recuadros. </span></p>
+<p><span style="color: #000000;">AnchorPane hereda la clase Pane .</span></p>
+<p><span style="color: #000000;">La siguiente imagen ilustra un subcomponente que se encuentra en un AnchorPane y está anclado en los lados izquierdo y derecho del AnchorPane. Cuando el AnchorPane cambia la longitud, la longitud de los subcomponentes también cambiará en consecuencia.</span></p>
+<p><img src="javafx-anchorPane-1.png" alt="" width="688" height="401" /></p>
+<p>Los subcomponentes se pueden anclar en 4 lados de AnchorPane:</p>
+<p><img src="javafx-anchorPane-2.png" alt="" width="610" height="338" /></p>
+<p>Métodos comúnmente utilizados:</p>
+<ul>
+<li><span style="color: #000000;">getBottomAnchor(Node c) Devuelve el ancla inferior del hijo.</span></li>
+<li><span style="color: #000000;">getLeftAnchor(Node c) Devuelve el ancla izquierda del hijo.</span></li>
+<li><span style="color: #000000;">getRightAnchor(Node c) Devuelve el ancla derecha del hijo.</span></li>
+<li><span style="color: #000000;">getTopAnchor(Node c) Devuelve el ancla superior del hijo.</span></li>
+<li><span style="color: #000000;">setBottomAnchor(Node c, Doble v) Establece el anclaje inferior del hijo.</span></li>
+<li><span style="color: #000000;">setLeftAnchor(Node c, Doble v) Establece el ancla izquierda del hijo. </span></li>
+<li><span style="color: #000000;">setRightAnchor(Node c, Doble v) Establece el ancla derecha del hijo.</span></li>
+<li><span style="color: #000000;">setTopAnchor(Node c, Doble v) Establece el ancla superior del hijo.</span><br /><br /></li>
+</ul>
+<p>Y el código:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>public class AnchorPaneDemo extends Application {
+
+   @Override
+   public void start(Stage primaryStage) throws Exception {
+       AnchorPane root = new AnchorPane();
+       Button button1 = new Button("(B1) Top + Left + Right");
+
+       Button button2 = new Button("(B2) Top + Left + Right");
+       Button button3 = new Button("(B3) Top + Left + Right");
+
+       Button button4 = new Button("(B4) Top + Left + Right + Bottom");
+
+       // (B1) Anchor to the Top + Left + Right
+       AnchorPane.setTopAnchor(button1, 40.0);
+       AnchorPane.setLeftAnchor(button1, 50.0);
+       AnchorPane.setRightAnchor(button1, 70.0);
+
+       // (B2) Anchor to the Top + Left + Right
+       AnchorPane.setTopAnchor(button2, 90.0);
+       AnchorPane.setLeftAnchor(button2, 10.0);
+       AnchorPane.setRightAnchor(button2, 320.0);
+
+       // (B3) Anchor to the Top + Left + Right
+       AnchorPane.setTopAnchor(button3, 100.0);
+       AnchorPane.setLeftAnchor(button3, 250.0);
+       AnchorPane.setRightAnchor(button3, 20.0);
+
+       // (B4) Anchor to the four sides of AnchorPane
+       AnchorPane.setTopAnchor(button4, 150.0);
+       AnchorPane.setLeftAnchor(button4, 40.0);
+       AnchorPane.setRightAnchor(button4, 50.0);
+       AnchorPane.setBottomAnchor(button4, 45.0);
+
+       // Add buttons to AnchorPane
+       root.getChildren().addAll(button1, button3, button2, button4);
+
+       Scene scene = new Scene(root, 550, 250);
+
+       primaryStage.setTitle("AnchorPane Layout Demo (o7planning.org)");
+       primaryStage.setScene(scene);
+       primaryStage.show();
+   }
+
+   public static void main(String[] args) {
+       launch(args);
+   }
+
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id25">
+<div class="iDevice emphasis0">
+<div id="ta25_85" class="block iDevice_content">
+<h3>JavaFX TitledPane</h3>
+<p>El control <strong>TitledPane</strong> de JavaFX es un control contenedor que muestra su contenido dentro de un panel (cuadro) que en la parte superior contiene un título, de ahí el nombre TitledPane. El control TitledPane se implementa mediante la clase <strong>javafx.scene.control.TitledPane.</strong> </p>
+<p><img src="javafx-titledpane-1.png" alt="" width="320" height="160" /></p>
+<p>El usuario puede colapsar y expandir un TitledPane de JavaFX usando el pequeño triángulo al lado del título en la barra de título del TitledPane. </p>
+<p><img src="javafx-titledpane-2.png" alt="" width="340" height="151" /></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id26">
+<div class="iDevice emphasis0">
+<div id="ta26_85" class="block iDevice_content">
+<h3>JavaFX SplitPane</h3>
+<p>JavaFX <strong>SplitPane</strong> es un control contenedor que puede contener muchos otros componentes en su interior. En otras palabras, SplitPane se divide entre los controles que contiene. Entre los controles en SplitPane hay un divisor. El usuario puede mover el divisor para establecer cuánto espacio se asigna a cada control.</p>
+<p><img src="javafx-splitpane-1.png" alt="" width="365" height="228" /></p>
+<p>Se pueden agregar más de dos controles a un JavaFX SplitPane. Si lo hace, habrá un divisor entre cada dos controles. </p>
+<p><img src="javafx-splitpane-2.png" alt="" width="430" height="278" /></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id27">
+<div class="iDevice emphasis0">
+<div id="ta27_85" class="block iDevice_content">
+<h3>JavaFX TabPane</h3>
+<p>El JavaFX TabPane es un control contenedor que puede contener varias pestañas (secciones) internamente, que se pueden mostrar haciendo clic en la pestaña con el título en la parte superior del TabPane. Solo se muestra una pestaña a la vez. Es como carpetas de papel donde una de las carpetas está abierta. El control JavaFX TabPane se implementa mediante la clase javafx.scene.control.TabPane. </p>
+<p><img src="javafx-tabpane-1.png" alt="" width="340" height="198" /></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id28">
+<div class="iDevice emphasis0">
+<div id="ta28_85" class="block iDevice_content">
+<h3>JavaFX ScrollPane</h3>
+<p>El control <strong>ScrollPane</strong> de JavaFX es un contenedor que tiene dos barras de desplazamiento alrededor del componente que contiene si el componente es más grande que el área visible del ScrollPane. Las barras de desplazamiento permiten al usuario desplazarse por el componente que se muestra dentro del ScrollPane, de modo que se puedan ver diferentes partes del componente. Los controles JavaFX ScrollPane están representados por la clase JavaFX javafx.scene.control.ScrollPane. </p>
+<p><img src="javafx-scrollpane-1.png" alt="" width="650" height="524" /></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id29">
+<div class="iDevice emphasis0">
+<div id="ta29_85" class="block iDevice_content">
+<h3 style="text-align: left;">JavaFX FlowPane</h3>
+<p>Un JavaFX <strong>FlowPane</strong> es un componente de diseño que presenta sus componentes secundarios de forma vertical u horizontal, y que puede envolver los componentes en la siguiente fila o columna si no hay suficiente espacio en una fila. El componente de diseño JavaFX FlowPane está representado por la clase javafx.scene.layout.FlowPane.</p>
+<p><img src="javafx-flowpane-1.png" alt="" width="398" height="138" /></p>
+<p><img src="javafx-flowpane-2.png" alt="" width="314" height="138" /></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id30">
+<div class="iDevice emphasis0">
+<div id="ta30_85" class="block iDevice_content">
+<h3 style="text-align: left;">JavaFX TilePane</h3>
+<p>Un JavaFX TilePane es un componente de diseño que presenta sus componentes secundarios en una cuadrícula de celdas de igual tamaño. El componente de diseño JavaFX TilePane está representado por la clase javafx.scene.layout.TilePane</p>
+<p><img src="javafx-tilepane-2.png" alt="" width="256" height="138" /></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id31">
+<div class="iDevice emphasis0">
+<div id="ta31_85" class="block iDevice_content">
+<h3>JavaFX <strong>GridPane</strong></h3>
+<p>Un JavaFX <strong>GridPane</strong> es un componente de diseño que presenta sus componentes secundarios en una cuadrícula. El tamaño de las celdas en la cuadrícula depende de los componentes que se muestran en GridPane, pero existen algunas reglas. Todas las celdas en la misma fila tendrán la misma altura y todas las celdas en la misma columna tendrán el mismo ancho. Diferentes filas pueden tener diferentes alturas y diferentes columnas pueden tener diferentes anchos.</p>
+<p>El JavaFX GridPane es diferente del TilePane en que un GridPane permite diferentes tamaños de celdas, mientras que un TilePane hace que todos los mosaicos tengan el mismo tamaño.</p>
+<p>El número de filas y columnas en un GridPane depende de los componentes que se le agreguen. Cuando agrega un componente a un GridPane, indica en qué celda (fila, columna) se debe insertar el componente y cuántas filas y columnas debe abarcar.</p>
+<p>El componente de diseño JavaFX GridPane está representado por la clase javafx.scene.layout.GridPane.</p>
+<p><img src="javafx-gridpane-2.png" alt="" width="256" height="138" /><img src="javafx-gridpane-3.png" alt="" width="256" height="138" /></p>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="ejercicios.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="otros_controles_imageview_colorpicker_y_filechooser.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

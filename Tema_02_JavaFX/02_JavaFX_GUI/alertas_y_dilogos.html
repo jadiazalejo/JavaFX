@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Alertas y diálogos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-1"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">JavaFX (2ª parte)</a></li>
+   <li id="active"><a href="alertas_y_dilogos.html" class="active daddy">Alertas y diálogos</a>
+   <ul>
+      <li><a href="textinputdialog_y_choicedialog.html" class="no-ch">TextInputDialog y ChoiceDialog</a></li>
+   </ul>
+   </li>
+   <li><a href="indicadores_de_progreso.html" class="no-ch">Indicadores de progreso</a></li>
+   <li><a href="listas_y_cajas.html" class="daddy">Listas y cajas</a>
+   <ul class="other-section">
+      <li><a href="javafx_listview.html" class="no-ch">JavaFX ListView</a></li>
+      <li><a href="javafx_choicebox.html" class="no-ch">JavaFX ChoiceBox</a></li>
+      <li><a href="javafx_combobox.html" class="no-ch">JavaFX ComboBox</a></li>
+      <li><a href="javafx_slider.html" class="no-ch">JavaFX Slider</a></li>
+   </ul>
+   </li>
+   <li><a href="ejemplo_completo.html" class="no-ch">Ejemplo completo</a></li>
+   <li><a href="mens.html" class="daddy">Menús</a>
+   <ul class="other-section">
+      <li><a href="javafx_menubar.html" class="no-ch">JavaFX MenuBar</a></li>
+      <li><a href="javafx_toolbar.html" class="no-ch">JavaFX ToolBar</a></li>
+   </ul>
+   </li>
+   <li><a href="fechas_javafx_datepicker.html" class="no-ch">Fechas JavaFX DatePicker</a></li>
+   <li><a href="ejercicios.html" class="no-ch">Ejercicios</a></li>
+   <li><a href="otros_layout.html" class="no-ch">Otros Layout</a></li>
+   <li><a href="otros_controles_imageview_colorpicker_y_filechooser.html" class="no-ch">Otros controles: ImageView, ColorPicker y FileChooser</a></li>
+   <li><a href="javafx_effects.html" class="no-ch">JavaFX Effects</a></li>
+   <li><a href="javafx_media__javafx_video_and_audio_support.html" class="no-ch">JavaFX Media - JavaFX Video and Audio Support</a></li>
+   <li><a href="bibliografia.html" class="no-ch">Bibliografia</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="index.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="textinputdialog_y_choicedialog.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Alertas y diálogos</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id1">
+<div class="iDevice emphasis0">
+<div id="ta1_85" class="block iDevice_content">
+<p>Tanto en JavaFX como en Swing, necesitamos mostrar alertas al usuario, ya sea para informar o alertar del estado de la aplicación.</p>
+<p>En JavaFX, es algo diferente de hacer, se tiene que usar una <strong>clase llamada Alert</strong>.</p>
+<p>Alert es una subclase de la clase Dialog. Las alertas son algunos cuadros de diálogo predefinidos que se utilizan para mostrar cierta información al usuario. Las alertas son tipos  específicos:</p>
+<ol>
+<li>Alerta de <strong>CONFIRMACIÓN</strong>: El tipo de alerta de CONFIRMACIÓN configura el cuadro de diálogo de Alerta para que aparezca de una manera que sugiera que el contenido del cuadro de diálogo está buscando la confirmación del usuario.</li>
+<li>Alerta de <strong>ADVERTENCIA</strong>: El tipo de alerta de ADVERTENCIA configura el cuadro de diálogo Alerta para que aparezca de una manera que sugiera que el contenido del cuadro de diálogo advierte al usuario sobre algún hecho o acción.</li>
+<li><strong>NINGUNA</strong> alerta: el tipo de alerta NINGUNA tiene el efecto de no establecer ninguna propiedad predeterminada en la alerta.</li>
+<li>Alerta de <strong>INFORMACIÓN</strong>: El tipo de alerta de INFORMACIÓN configura el cuadro de diálogo de Alerta para que aparezca de una manera que sugiera que el contenido del cuadro de diálogo está informando al usuario de un fragmento de información.</li>
+<li>Alerta de <strong>ERROR</strong>: el tipo de alerta de ERROR configura el cuadro de diálogo Alerta para que aparezca de una manera que sugiera que algo salió mal.</li>
+</ol>
+<p>Una alerta contiene 3 partes: </p>
+<ol>
+<li>El encabezado</li>
+<li>El texto del contenido</li>
+<li>Los botones de confirmación</li>
+</ol>
+<p>Los <em><strong>constructores</strong></em> de la clase son: </p>
+<p style="padding-left: 30px;"><strong>Alert (Alert.AlertType a)</strong> : crea una nueva alerta con un tipo de alerta específico.<br /><strong>Alert (Alert.AlertType a, String c, ButtonType… b)</strong> : Crea una nueva alerta con un tipo de alerta, contenido y tipo de botón específicos.</p>
+<p><strong>Métodos</strong> de uso común: </p>
+<ul>
+<li><strong>getAlertType() </strong>devuelve el tipo de alerta específico</li>
+<li><strong>setAlertType (Alert.AlertType a)</strong> establecer un tipo de alerta específico para la alerta</li>
+<li><strong>getButtonTypes() </strong>Devuelve una ObservableList de todas las instancias de ButtonType que están configuradas actualmente dentro de esta instancia de Alert.</li>
+<li><strong>setContentText (String s)</strong> establece el texto de contexto para la alerta</li>
+<li><strong>getContentText()</strong> devuelve el texto del contenido de la alerta.</li>
+</ul>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id2">
+<div class="iDevice emphasis0">
+<div id="ta2_85" class="block iDevice_content">
+<h3>Por ejemplo una alerta de CONFIRMATION.</h3>
+<p>Esta alerta incluye una <em><strong>imagen</strong></em> de 'confirmación', un <em><strong>título</strong></em> y un <em><strong>encabezado</strong></em>, y dos botones <em><strong>Aceptar</strong></em> y <em><strong>Cancelar</strong></em> en los que el usuario puede hacer clic para cerrar el cuadro de diálogo.</p>
+<p>Tendremos que importar las clases correspondientes:</p>
+<p>import javafx.scene.control.Alert;<br />import javafx.scene.control.Alert.AlertType;</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>        // creamos la alerta y la respuesta
+        Alert a = new Alert(AlertType.NONE);       
+        Optional&lt;ButtonType&gt; result;
+
+
+        // set alert type
+        a.setAlertType(AlertType.CONFIRMATION);
+        // set header
+        a.setHeaderText(null);
+        // set content text
+        a.setContentText("Ejemplo ALERTA confirmación");
+
+        // mostramos la alerta y recogemos la respuesta
+        result = a.showAndWait();
+        if (result.get() == ButtonType.OK)
+            System.out.println("Has pulsado Aceptar");
+          else
+            System.out.println("Has pulsado Cancelar");</code></pre>
+</div>
+</div>
+<p>Resultado:<br /><img src="alert_01.png" width="427" height="137" /></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id3">
+<div class="iDevice emphasis0">
+<div id="ta3_85" class="block iDevice_content">
+<div class="iDevice emphasis0" ondblclick="submitLink('edit', 2, 0);">
+<div id="ta2_85" class="block iDevice_content">
+<h3>Por ejemplo una alerta de <span style="color: #ff0000;">ERROR</span>.</h3>
+<p>Esta alerta incluye una <strong>imagen</strong> de 'error', un <strong>título</strong> y un <strong>encabezado</strong>, y solo un botón <strong>Aceptar</strong> para que el usuario haga clic en él para cerrar el cuadro de diálogo.</p>
+<p>Tendremos que importar la clase correspondiente:</p>
+<p>import javafx.scene.control.Alert;</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>        // creamos la alerta
+        Alert a = new Alert(AlertType.NONE);       
+
+        // set alert type
+        a.setAlertType(AlertType.ERROR);
+        // set header
+        a.setHeaderText(null);
+        // set content text
+        a.setContentText("El valor no es válido");
+
+        // mostramos la alerta
+        a.show()</code><code class="  language-java"><span class="token function"></span></code></pre>
+</div>
+</div>
+<p>Resultado:<br /><img src="alert_error.png" width="426" height="137" /></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id4">
+<div class="iDevice emphasis0">
+<div id="ta4_85" class="block iDevice_content">
+<div class="iDevice emphasis0" ondblclick="submitLink('edit', 2, 0);">
+<div id="ta2_85" class="block iDevice_content">
+<h3>Por ejemplo una alerta de INFORMACIÓN.</h3>
+<p>Esta alerta incluye una <strong>imagen</strong> de 'información', un <strong>título</strong> y <strong>encabezado</strong>, y solo un botón <strong>Aceptar</strong> para que el usuario haga clic en él para cerrar el cuadro de diálogo.</p>
+<p>Tendremos que importar la clase correspondiente:</p>
+<p>import javafx.scene.control.Alert;</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>        // creamos la alerta
+        Alert a = new Alert(AlertType.NONE);       
+
+        // set alert type
+        a.setAlertType(AlertType.INFORMATION);
+        // set header
+        a.setHeaderText(null);
+        // set content text
+        a.setContentText("El objeto ha sido creado");
+
+        // mostramos la alerta
+        a.show()</code></pre>
+</div>
+</div>
+<p>Resultado:<br /><img src="alert_information.png" width="427" height="135" /></p>
+<p>Resultado si ponemos una cabecera para dar más información:</p>
+<p><img src="alert_information_cab.png" alt="" width="368" height="182" /></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id5">
+<div class="iDevice emphasis0">
+<div id="ta5_85" class="block iDevice_content">
+<div class="iDevice emphasis0" ondblclick="submitLink('edit', 2, 0);">
+<div id="ta2_85" class="block iDevice_content">
+<h3>Por ejemplo una alerta de ADVERTENCIA.</h3>
+<p>Esta alerta incluye una <strong>imagen</strong> de 'información', un <strong>título</strong> y <strong>encabezado</strong>, y solo un botón <strong>Aceptar</strong> para que el usuario haga clic en él para cerrar el cuadro de diálogo.</p>
+<p>Tendremos que importar la clase correspondiente:</p>
+<p>import javafx.scene.control.Alert;</p>
+<div class="highlighted-code language-java">
+<div>
+<pre class="  language-java"><code class="  language-java">        <span class="token comment" spellcheck="true">// creamos la alerta</span>
+        Alert a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Alert</span><span class="token punctuation">(</span>AlertType<span class="token punctuation">.</span>NONE<span class="token punctuation">)</span><span class="token punctuation">;</span>       
+
+        <span class="token comment" spellcheck="true">// set alert type</span>
+        a<span class="token punctuation">.</span><span class="token function">setAlertType</span><span class="token punctuation">(</span>AlertType<span class="token punctuation">.</span>WARNING<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// set header</span>
+        a<span class="token punctuation">.</span><span class="token function">setHeaderText</span><span class="token punctuation">(</span>null<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// set content text</span>
+        a<span class="token punctuation">.</span><span class="token function">setContentText</span><span class="token punctuation">(</span><span class="token string">"No se puede hacer esa operación"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">// mostramos la alerta</span>
+        a<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+</div>
+</div>
+<p>Resultado:<br /><img src="alert_advertencia.png" width="425" height="134" /></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id6">
+<div class="iDevice emphasis0">
+<div id="ta6_85" class="block iDevice_content">
+<div class="iDevice emphasis0" ondblclick="submitLink('edit', 2, 0);">
+<div id="ta2_85" class="block iDevice_content">
+<h3>Por ejemplo una alerta NONE (ninguna).</h3>
+<p>El tipo de alerta NINGUNA tiene el efecto de no establecer ninguna propiedad predeterminada en la Alerta. No tendrá ni título, ni imagen, ni botón de Aceptar por defecto.</p>
+<p>Importante: si no añadimos un botón para cerrar la ventana no será posible hacerlo. Poe ello cuando instanciemos el objeto, lo haremos con los siguinetes argumentos:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Alert a = new Alert(AlertType.NONE, "default Dialog",ButtonType.CLOSE);</code></pre>
+</div>
+</div>
+<p>Tendremos que importar la clase correspondiente:</p>
+<p>import javafx.scene.control.Alert;</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>        // creamos la alerta y la respuesta
+        Alert a = new Alert(AlertType.NONE, "default Dialog",ButtonType.CLOSE);
+
+        // set header
+        a.setHeaderText("Posibe división por cero");
+        // set content text
+        a.setContentText("El objeto ha sido creado");
+        // show the dialog
+        a.show();</code></pre>
+</div>
+</div>
+<p>Resultado:<br /><img src="alert_ninguna.png" width="371" height="153" /></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="index.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="textinputdialog_y_choicedialog.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

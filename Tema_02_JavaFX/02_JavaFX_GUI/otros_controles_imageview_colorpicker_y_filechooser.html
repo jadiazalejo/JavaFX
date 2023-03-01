@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Otros controles: ImageView, ColorPicker y FileChooser </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-8"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">JavaFX (2ª parte)</a></li>
+   <li><a href="alertas_y_dilogos.html" class="daddy">Alertas y diálogos</a>
+   <ul class="other-section">
+      <li><a href="textinputdialog_y_choicedialog.html" class="no-ch">TextInputDialog y ChoiceDialog</a></li>
+   </ul>
+   </li>
+   <li><a href="indicadores_de_progreso.html" class="no-ch">Indicadores de progreso</a></li>
+   <li><a href="listas_y_cajas.html" class="daddy">Listas y cajas</a>
+   <ul class="other-section">
+      <li><a href="javafx_listview.html" class="no-ch">JavaFX ListView</a></li>
+      <li><a href="javafx_choicebox.html" class="no-ch">JavaFX ChoiceBox</a></li>
+      <li><a href="javafx_combobox.html" class="no-ch">JavaFX ComboBox</a></li>
+      <li><a href="javafx_slider.html" class="no-ch">JavaFX Slider</a></li>
+   </ul>
+   </li>
+   <li><a href="ejemplo_completo.html" class="no-ch">Ejemplo completo</a></li>
+   <li><a href="mens.html" class="daddy">Menús</a>
+   <ul class="other-section">
+      <li><a href="javafx_menubar.html" class="no-ch">JavaFX MenuBar</a></li>
+      <li><a href="javafx_toolbar.html" class="no-ch">JavaFX ToolBar</a></li>
+   </ul>
+   </li>
+   <li><a href="fechas_javafx_datepicker.html" class="no-ch">Fechas JavaFX DatePicker</a></li>
+   <li><a href="ejercicios.html" class="no-ch">Ejercicios</a></li>
+   <li><a href="otros_layout.html" class="no-ch">Otros Layout</a></li>
+   <li id="active"><a href="otros_controles_imageview_colorpicker_y_filechooser.html" class="active no-ch">Otros controles: ImageView, ColorPicker y FileChooser</a></li>
+   <li><a href="javafx_effects.html" class="no-ch">JavaFX Effects</a></li>
+   <li><a href="javafx_media__javafx_video_and_audio_support.html" class="no-ch">JavaFX Media - JavaFX Video and Audio Support</a></li>
+   <li><a href="bibliografia.html" class="no-ch">Bibliografia</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="otros_layout.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="javafx_effects.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Otros controles: ImageView, ColorPicker y FileChooser</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id32">
+<div class="iDevice emphasis0">
+<div id="ta32_85" class="block iDevice_content">
+<h3 style="text-align: left;">JavaFX ImageView</h3>
+<p>El control <strong>ImageView</strong> de JavaFX puede mostrar una imagen dentro de una GUI de JavaFX. El control ImageView se debe añadir al gráfico de escena para que sea visible. El control JavaFX ImageView está representado por la clase <strong>javafx.scene.image.ImageView</strong>.</p>
+<h4>Creación de una vista de imagen</h4>
+<p>Una instancia del control <strong>ImageView</strong> se crea creando una instancia de la clase ImageView. El constructor de la clase ImageView necesita una instancia de <strong>javafx.scene.image.Image</strong> como parámetro. El objeto Image representa la imagen que mostrará el control ImageView.</p>
+<p>Por ejemplo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>FileInputStream input = new FileInputStream("resources/images/iconmonstr-home-6-48.png");
+Image image = new Image(input);
+ImageView imageView = new ImageView(image);</code></pre>
+</div>
+</div>
+<p>Primero se crea un <strong>FileInputStream</strong> que apunta al archivo de imagen de la imagen a mostrar.</p>
+<p>En segundo lugar, se crea una instancia de <strong>Image</strong>, pasando FileInputStream como parámetro al constructor de Image. De esta manera, la clase Imagen sabe desde dónde cargar el archivo de imagen.</p>
+<p>En tercer lugar, se crea una instancia de <strong>ImageView</strong>, pasando la instancia de Image como parámetro al constructor de ImageView.</p>
+<p>Ejemplo completo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>public class ImageViewExperiments extends Application  {
+
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        primaryStage.setTitle("ImageView Experiment 1");
+
+        FileInputStream input = new FileInputStream("resources/images/iconmonstr-home-6-48.png");
+        Image image = new Image(input);
+        ImageView imageView = new ImageView(image);
+
+        HBox hbox = new HBox(imageView);
+
+        Scene scene = new Scene(hbox, 200, 100);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+
+    }
+
+    public static void main(String[] args) {
+        Application.launch(args);
+    }
+
+}</code></pre>
+</div>
+</div>
+<p>Resultado:</p>
+<p><img src="javafx-imageview-1.png" alt="" width="216" height="138" /></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id33">
+<div class="iDevice emphasis0">
+<div id="ta33_85" class="block iDevice_content">
+<h3>JavaFX ColorPicker</h3>
+<p>El control JavaFX C<strong>olorPicker</strong> permite al usuario elegir un color en un cuadro de diálogo emergente. El color elegido puede ser leído más tarde desde el ColorPicker por su aplicación JavaFX. El control JavaFX ColorPicker está representado por la clase javafx.scene.control.ColorPicker. </p>
+<p><img src="javafx-colorpicker-1.png" alt="" width="345" height="390" /></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id34">
+<div class="iDevice emphasis0">
+<div id="ta34_85" class="block iDevice_content">
+<p></p>
+<p>Una clase JavaFX <strong>FileChooser</strong> (javafx.stage.FileChooser) es un cuadro de diálogo que permite al usuario seleccionar uno o más archivos a través de un explorador de archivos desde el ordenador local del usuario. El FileChooser de JavaFX se implementa en la clase <strong>javafx.stage.FileChooser</strong>. </p>
+<p><img src="javafx-filechooser-1.png" alt="" width="500" height="378" /></p>
+<p>La visualización del diálogo FileChooser de JavaFX se realiza llamando a su método <strong>showOpenDialog().</strong> </p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>File selectedFile = fileChooser.showOpenDialog(stage);</code></pre>
+</div>
+</div>
+<p>El archivo devuelto por el método showOpenDialog() es el archivo que el usuario seleccionó en FileChooser.</p>
+<p>El parámetro de escenario es el escenario de JavaFX que debe "poseer" el cuadro de diálogo FileChooser. </p>
+<p>Mostrar un FileChooser normalmente se hace como resultado de un clic en un botón o elemento de menú. </p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>@Override
+    public void start(Stage primaryStage) {
+        primaryStage.setTitle("JavaFX App");
+
+        FileChooser fileChooser = new FileChooser();
+
+        Button button = new Button("Select File");
+        button.setOnAction(e -&gt; {
+            File selectedFile = fileChooser.showOpenDialog(primaryStage);
+        });
+
+        VBox vBox = new VBox(button);
+        Scene scene = new Scene(vBox, 960, 600);
+
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }</code></pre>
+</div>
+</div>
+<p>Podemos configurar el directorio inicial que se muestra en JavaFX FileChooser a través de su método <strong>setInitialDirectory().</strong></p>
+<p>Podemos configurar el nombre de archivo inicial para que se muestre en FileChooser. Sin embargo, algunas plataformas (por ejemplo, Windows) pueden ignorar esta configuración. </p>
+<p>Es posible añadir filtros de nombre de archivo a un JavaFX FileChooser. Los filtros de nombre de archivo se utilizan para filtrar qué archivos se muestran en FileChooser cuando el usuario navega por el sistema de archivos. </p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>FileChooser fileChooser = new FileChooser();
+
+FileChooser.getExtensionFilters().addAll(
+nuevo FileChooser.ExtensionFilter("Archivos de texto", "*.txt")
+,nuevo FileChooser.ExtensionFilter("Archivos HTML", "*.htm")
+);</code></pre>
+</div>
+</div>
+<p>Este ejemplo agrega dos filtros de nombre de archivo al FileChooser. El usuario puede elegir entre estos filtros de nombre de archivo dentro del cuadro de diálogo FileChooser.</p>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="otros_layout.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="javafx_effects.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ejer24DatePicker.FXMLMenusController">
+   <children>
+      <MenuBar layoutX="3.0" layoutY="52.0" prefHeight="27.0" prefWidth="594.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Operaciones">
+            <items>
+              <MenuItem fx:id="idAnyadir" mnemonicParsing="false" onAction="#anyadir" text="Añadir">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/carrito-de-compra-anadir.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
+                  <MenuItem fx:id="idListar" mnemonicParsing="false" onAction="#listar" text="Listar">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/comprobacion-de-lista.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem fx:id="idItem" mnemonicParsing="false" onAction="#item" text="Item">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/item.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ayuda">
+            <items>
+              <MenuItem fx:id="idClose" mnemonicParsing="false" onAction="#cerrarVentana" text="Close">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/salir-alt.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="14.0" prefHeight="29.0" prefWidth="600.0" text="EJEMPLO DE UTILIZACIÓN DE MENÚS">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="59.0" layoutY="145.0" text="Introduce la fecha de nacimiento :" />
+      <DatePicker fx:id="idDatePicker" layoutX="291.0" layoutY="141.0" />
+      <Button fx:id="idBototnExtrae" layoutX="59.0" layoutY="176.0" mnemonicParsing="false" onAction="#extraerFecha" text="Extraer fecha" />
+      <Label fx:id="idLabelMes" layoutX="266.0" layoutY="180.0" text="Mes :" />
+      <Label fx:id="idLabelDia" layoutX="194.0" layoutY="180.0" text="Dia :" />
+      <Label fx:id="idLabelAnyo" layoutX="342.0" layoutY="180.0" text="Año:" />
+      <Button fx:id="idBototnExtrae2" layoutX="59.0" layoutY="225.0" mnemonicParsing="false" onAction="#extraerFecha_Date" text="Extraer fecha y convertir a tipo Date :" />
+      <Label fx:id="idLabelDate" layoutX="390.0" layoutY="229.0" text="Resultado" />
+      <DatePicker fx:id="idDatePicker2" layoutX="376.0" layoutY="276.0" />
+      <Button fx:id="idBototnExtrae21" layoutX="60.0" layoutY="276.0" mnemonicParsing="false" onAction="#convertirFecha_Date" text="Recoger Date y convertie a tipo LocalDate :" />
+   </children>
+</AnchorPane>

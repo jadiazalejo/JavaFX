@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>JavaFX ListView </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-6"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">JavaFX (2ª parte)</a></li>
+   <li><a href="alertas_y_dilogos.html" class="daddy">Alertas y diálogos</a>
+   <ul class="other-section">
+      <li><a href="textinputdialog_y_choicedialog.html" class="no-ch">TextInputDialog y ChoiceDialog</a></li>
+   </ul>
+   </li>
+   <li><a href="indicadores_de_progreso.html" class="no-ch">Indicadores de progreso</a></li>
+   <li class="current-page-parent"><a href="listas_y_cajas.html" class="current-page-parent daddy">Listas y cajas</a>
+   <ul>
+      <li id="active"><a href="javafx_listview.html" class="active no-ch">JavaFX ListView</a></li>
+      <li><a href="javafx_choicebox.html" class="no-ch">JavaFX ChoiceBox</a></li>
+      <li><a href="javafx_combobox.html" class="no-ch">JavaFX ComboBox</a></li>
+      <li><a href="javafx_slider.html" class="no-ch">JavaFX Slider</a></li>
+   </ul>
+   </li>
+   <li><a href="ejemplo_completo.html" class="no-ch">Ejemplo completo</a></li>
+   <li><a href="mens.html" class="daddy">Menús</a>
+   <ul class="other-section">
+      <li><a href="javafx_menubar.html" class="no-ch">JavaFX MenuBar</a></li>
+      <li><a href="javafx_toolbar.html" class="no-ch">JavaFX ToolBar</a></li>
+   </ul>
+   </li>
+   <li><a href="fechas_javafx_datepicker.html" class="no-ch">Fechas JavaFX DatePicker</a></li>
+   <li><a href="ejercicios.html" class="no-ch">Ejercicios</a></li>
+   <li><a href="otros_layout.html" class="no-ch">Otros Layout</a></li>
+   <li><a href="otros_controles_imageview_colorpicker_y_filechooser.html" class="no-ch">Otros controles: ImageView, ColorPicker y FileChooser</a></li>
+   <li><a href="javafx_effects.html" class="no-ch">JavaFX Effects</a></li>
+   <li><a href="javafx_media__javafx_video_and_audio_support.html" class="no-ch">JavaFX Media - JavaFX Video and Audio Support</a></li>
+   <li><a href="bibliografia.html" class="no-ch">Bibliografia</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="listas_y_cajas.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="javafx_choicebox.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">JavaFX ListView</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id13">
+<div class="iDevice emphasis0">
+<div id="ta13_85" class="block iDevice_content">
+<h3 style="text-align: left;">JavaFX ListView</h3>
+<p>El control <strong>ListView</strong> de JavaFX permite a los usuarios <strong>elegir una o más opciones de una lista</strong> predefinida de opciones.</p>
+<p>El control ListView de JavaFX está representado por la clase <em><strong>javafx.scene.control.ListView</strong></em>.</p>
+<h3>Creación de una vista de lista</h3>
+<p>Se crea un ListView simplemente instanciando un objeto de la clase ListView. Por ejemplo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>ListView listView = new ListView();</code></pre>
+</div>
+</div>
+<h3>Agregar elementos a un ListView</h3>
+<p>Podemos añadir elementos (opciones) a ListView debemos recuperar su colección de elementos (con <strong>getItems()</strong>) y añadirle elementos (<strong>con add(String</strong>). Por ejemplo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>listView.getItems().add("Elemento 1");
+listView.getItems().add("Elemento 2");
+listView.getItems().add("Elemento 3");</code></pre>
+</div>
+</div>
+<p>Con SceneBuilder, arrastraremos el control hasta nuestra escena, no tenemos ningún campo con que rellenar nuestras opciones.</p>
+<p>En el método <strong>initialize</strong> del controlador añadiremos las opciones al control y marcaremos la opción más probable como seleccionada, por ejemplo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>@Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+        dpto.getItems().add("Personal");
+        dpto.getItems().add("Informática");
+        dpto.getItems().add("Comercial");
+        dpto.getSelectionModel().selectFirst();
+    }</code></pre>
+</div>
+</div>
+<h3>Agregar un ListView al gráfico de escena</h3>
+<p>Para hacer visible un ListView, debemos añadirlo al gráfico de escena. Esto significa que se debe añadir ListView a un objeto de escena o a algún componente de diseño que luego se adjunta al objeto de escena.</p>
+<p>Por ejemplo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>        ListView listView = new ListView();
+
+        listView.getItems().add("Item 1");
+        listView.getItems().add("Item 2");
+        listView.getItems().add("Item 3");
+
+        HBox hbox = new HBox(listView);
+
+        Scene scene = new Scene(hbox, 300, 120);
+        primaryStage.setScene(scene);
+        primaryStage.show();</code></pre>
+</div>
+</div>
+<p>El resultado:</p>
+<p><img src="ListView01.png" alt="" width="286" height="253" /></p>
+<p><span style="color: #000000;">ListView muestra varias opciones de forma predeterminada. Podemos establecer una altura y un ancho para un ListView, pero no podemos establecer explícitamente cuántos elementos deben estar visibles. La altura determina eso en función de la altura de cada elemento que se muestra.</span></p>
+<p><span style="color: #000000;">Si hay más elementos en ListView de los que pueden caber en su área visible, ListView añadirá <strong>barras de desplazamiento</strong> para que el usuario pueda desplazarse hacia arriba y hacia abajo sobre los elementos.</span></p>
+<h3>Lectura del valor seleccionado</h3>
+<p><span style="color: #000000;">Podemos leer los índices seleccionados de un ListView a través de su <strong>SelectionModel (getSelectionModel())</strong>. Aquí hay un ejemplo que muestra cómo leer los índices seleccionados de un ListView de JavaFX (<strong>método getSelectedIndex</strong>):</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>ObservableList selectedIndices =
+    listView.getSelectionModel().getSelectedIndex();</code></pre>
+</div>
+</div>
+<p><strong>Recibiremos una colección de JavaFX de tipo  <a href="https://docs.oracle.com/javase/8/javafx/api/toc.htm" target="_blank" rel="noopener">ObservableList</a>.</strong></p>
+<p><strong>ObservableList contendrá objetos Integer que representan los índices de los elementos seleccionados en ListView.</strong></p>
+<p><strong>Para permitir que se seleccionen varios elementos en ListView, se debe establecer el modo de selección correspondiente en el modelo de selección de ListView. Para ello:</strong></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>listView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);</code></pre>
+</div>
+</div>
+<p><span style="color: #000000;">Una vez que haya configurado SelectionMode.MULTIPLE en el modelo de selección ListView, el usuario puede seleccionar varios elementos en ListView manteniendo presionada la tecla MAYÚS o CTRL al seleccionar elementos adicionales después del primer elemento seleccionado.</span></p>
+<p><span style="color: #000000;">Por ejemplo:</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>listView01.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+
+...
+ObservableList selectedIndices = listView.getSelectionModel().getSelectedIndices();
+for(Object o : selectedIndices){
+                System.out.println("o = " + o + " (" + o.getClass() + ")");
+}</code></pre>
+</div>
+</div>
+<p>El resultado:</p>
+<p><img src="ListView02.png" alt="" width="279" height="250" /></p>
+<p><strong>o = 0 (class java.lang.Integer)</strong><br /><strong>o = 2 (class java.lang.Integer)</strong></p>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="listas_y_cajas.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="javafx_choicebox.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

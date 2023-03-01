@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Fechas JavaFX DatePicker </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-18"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">JavaFX (2ª parte)</a></li>
+   <li><a href="alertas_y_dilogos.html" class="daddy">Alertas y diálogos</a>
+   <ul class="other-section">
+      <li><a href="textinputdialog_y_choicedialog.html" class="no-ch">TextInputDialog y ChoiceDialog</a></li>
+   </ul>
+   </li>
+   <li><a href="indicadores_de_progreso.html" class="no-ch">Indicadores de progreso</a></li>
+   <li><a href="listas_y_cajas.html" class="daddy">Listas y cajas</a>
+   <ul class="other-section">
+      <li><a href="javafx_listview.html" class="no-ch">JavaFX ListView</a></li>
+      <li><a href="javafx_choicebox.html" class="no-ch">JavaFX ChoiceBox</a></li>
+      <li><a href="javafx_combobox.html" class="no-ch">JavaFX ComboBox</a></li>
+      <li><a href="javafx_slider.html" class="no-ch">JavaFX Slider</a></li>
+   </ul>
+   </li>
+   <li><a href="ejemplo_completo.html" class="no-ch">Ejemplo completo</a></li>
+   <li><a href="mens.html" class="daddy">Menús</a>
+   <ul class="other-section">
+      <li><a href="javafx_menubar.html" class="no-ch">JavaFX MenuBar</a></li>
+      <li><a href="javafx_toolbar.html" class="no-ch">JavaFX ToolBar</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="fechas_javafx_datepicker.html" class="active no-ch">Fechas JavaFX DatePicker</a></li>
+   <li><a href="ejercicios.html" class="no-ch">Ejercicios</a></li>
+   <li><a href="otros_layout.html" class="no-ch">Otros Layout</a></li>
+   <li><a href="otros_controles_imageview_colorpicker_y_filechooser.html" class="no-ch">Otros controles: ImageView, ColorPicker y FileChooser</a></li>
+   <li><a href="javafx_effects.html" class="no-ch">JavaFX Effects</a></li>
+   <li><a href="javafx_media__javafx_video_and_audio_support.html" class="no-ch">JavaFX Media - JavaFX Video and Audio Support</a></li>
+   <li><a href="bibliografia.html" class="no-ch">Bibliografia</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="javafx_toolbar.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="ejercicios.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Fechas JavaFX DatePicker</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id24">
+<div class="iDevice emphasis0">
+<div id="ta24_85" class="block iDevice_content">
+<p style="text-align: justify;"><span style="color: #000000;">Un control JavaFX <strong>DatePicker</strong> permite al usuario añadir una fecha o elegir una fecha desde un cuadro de diálogo emergente similar a un asistente. El cuadro de diálogo emergente muestra <strong>solo fechas válidas</strong>, por lo que esta es una forma más fácil para que los usuarios elijan una fecha y se aseguren de que tanto la fecha como el formato de fecha añadidos en el campo de texto del selector de fecha <strong>sean válidos</strong>. </span></p>
+<p><span style="color: #000000;">El DatePicker de JavaFX está representado por la clase <strong>javafx.scene.control.DatePicker.</strong></span></p>
+<p><span style="color: #000000;">DatePicker es una subclase de la clase ComboBox y, por lo tanto, comparte algunas similitudes con esta clase.</span></p>
+<h3>Crear un selector de fecha (DatePicker)</h3>
+<p><span style="color: #000000;">Se crea un control DatePicker a través del constructor de la clase DatePicker. Por supuesto, también podemos crearlo y añadirlo utilizando Scene Builder.</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>DatePicker datePicker = new DatePicker();</code></pre>
+</div>
+</div>
+<h3>Añadir de un DatePicker al gráfico de escena</h3>
+<p><span style="color: #000000;">Para hacer visible un DatePicker, se debe añadir al gráfico de escena JavaFX. Esto significa agregarlo a un objeto de escena o a un componente de diseño que se añade a un objeto de escena.</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.DatePicker;
+import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
+
+public class DatePickerExperiments extends Application  {
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        primaryStage.setTitle("Button Experiment 1");
+
+        DatePicker datePicker = new DatePicker();
+
+        HBox hbox = new HBox(datePicker);
+
+        Scene scene = new Scene(hbox, 200, 100);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+
+    }
+
+    public static void main(String[] args) {
+        Application.launch(args);
+    }
+}
+</code></pre>
+</div>
+</div>
+<p><strong>Resultado:</strong><br /><br /></p>
+<p><img src="javafx_datepicker_1.png" alt="" width="393" height="296" /></p>
+<h3>Lectura de la fecha seleccionada</h3>
+<p><span style="color: #000000;">La lectura de la fecha seleccionada en DatePicker se puede hacer usando su método <strong>getValue()</strong>.</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>LocalDate value = datePicker.getValue();</code></pre>
+</div>
+</div>
+<p><span style="color: #000000;"><strong>Importante</strong>: getValue() devuelve un objeto <strong>LocalDate</strong> que representa la fecha seleccionada en DatePicker.</span></p>
+<p><span style="color: #000000;">Por ejemplo:</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
+import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
+
+import java.time.LocalDate;
+
+
+public class DatePickerExperiments extends Application  {
+
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        primaryStage.setTitle("DatePicker Experiment 1");
+
+        DatePicker datePicker = new DatePicker();
+
+        Button button = new Button("Read Date");
+
+        button.setOnAction(action -&gt; {
+            LocalDate value = datePicker.getValue();
+        });
+
+        HBox hbox = new HBox(datePicker);
+
+        Scene scene = new Scene(hbox, 300, 240);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+
+    }
+
+    public static void main(String[] args) {
+        Application.launch(args);
+    }
+}</code></pre>
+</div>
+</div>
+<p><span style="color: #000000;">También tenemos los métodos asociados a LocalDate:</span></p>
+<p><img src="javafx_datepicker_2.png" width="523" height="275" /></p>
+<p><span style="color: #000000;">Con los que podemos extraer el día, el mes y el año (getDayOfMonth(), getMonthValue() y getYear()).</span></p>
+<p><span style="color: #000000;">Por ejemplo con la siguiente pantalla (un DatePicker, un botón y una etiquetas:</span></p>
+<p><span style="color: #000000;"><img src="date_01.png" alt="" width="480" height="132" /><br /></span></p>
+<p><span style="color: #000000;">El botón (en el controlador) podría extraer los datos y mostrarlos en las etiquetas:</span><span style="color: #000000;"></span></p>
+<div class="highlighted-code language-java line-numbers">
+<div>
+<pre><code>
+    @FXML
+    public void extraerFecha(){
+         LocalDate value = idDatePicker.getValue();
+         idLabelDia.setText("Día: "+value.getDayOfMonth());
+         idLabelMes.setText("Mes : "+value.getMonthValue());
+         idLabelAnyo.setText("Año :"+value.getYear());
+    }
+    </code></pre>
+</div>
+</div>
+<p><span style="color: #000000;"><img src="date_02.png" alt="" width="534" height="108" /><br /></span></p>
+<p><span style="color: #000000;">IMPORTANTE: Pero <strong>lo que más interesará</strong> es como convertir un objeto de tipo <strong>LocalDate</strong> a un objeto de tipo <strong>Date (para poder llevarlo luego a una BBDD)</strong>, por ejemplo fechaNac es un control de tipo DatePicker, con su método getValue() obtenemos un LocalDate y <strong>fecha</strong> en nuestros objetos son de tipo <strong>Date</strong> donde pretendemos almacenar la fecha:</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Date fecha;
+// Getting system timezone
+ZoneId systemTimeZone = ZoneId.systemDefault();
+// converting LocalDateTime to ZonedDateTime with the system timezone
+ZonedDateTime zonedDateTime = fechaNac.getValue().atStartOfDay(systemTimeZone);
+fecha = Date.from(zonedDateTime.toInstant());</code></pre>
+</div>
+</div>
+<p><span style="color: #000000;">Y por supuesto, el caso contrario, pasar <strong>de un Date a un LocalDate</strong> para mostrar la fecha en una ventana:</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>fechaNac.setValue(e.getFechaNacimiento().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());</code></pre>
+</div>
+</div>
+<p><span style="color: #000000;">Donde <strong>e</strong> es un objeto que tiene como propiedad un campo tipo <strong>Date</strong>, el método <strong>getFechaNacimiento()</strong> nos devuelve el Date y se convierte a <strong>LocalDate</strong> y se inserta en el control DatePicker.</span></p>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="javafx_toolbar.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="ejercicios.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>TextInputDialog y ChoiceDialog </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-22"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">JavaFX (2ª parte)</a></li>
+   <li class="current-page-parent"><a href="alertas_y_dilogos.html" class="current-page-parent daddy">Alertas y diálogos</a>
+   <ul>
+      <li id="active"><a href="textinputdialog_y_choicedialog.html" class="active no-ch">TextInputDialog y ChoiceDialog</a></li>
+   </ul>
+   </li>
+   <li><a href="indicadores_de_progreso.html" class="no-ch">Indicadores de progreso</a></li>
+   <li><a href="listas_y_cajas.html" class="daddy">Listas y cajas</a>
+   <ul class="other-section">
+      <li><a href="javafx_listview.html" class="no-ch">JavaFX ListView</a></li>
+      <li><a href="javafx_choicebox.html" class="no-ch">JavaFX ChoiceBox</a></li>
+      <li><a href="javafx_combobox.html" class="no-ch">JavaFX ComboBox</a></li>
+      <li><a href="javafx_slider.html" class="no-ch">JavaFX Slider</a></li>
+   </ul>
+   </li>
+   <li><a href="ejemplo_completo.html" class="no-ch">Ejemplo completo</a></li>
+   <li><a href="mens.html" class="daddy">Menús</a>
+   <ul class="other-section">
+      <li><a href="javafx_menubar.html" class="no-ch">JavaFX MenuBar</a></li>
+      <li><a href="javafx_toolbar.html" class="no-ch">JavaFX ToolBar</a></li>
+   </ul>
+   </li>
+   <li><a href="fechas_javafx_datepicker.html" class="no-ch">Fechas JavaFX DatePicker</a></li>
+   <li><a href="ejercicios.html" class="no-ch">Ejercicios</a></li>
+   <li><a href="otros_layout.html" class="no-ch">Otros Layout</a></li>
+   <li><a href="otros_controles_imageview_colorpicker_y_filechooser.html" class="no-ch">Otros controles: ImageView, ColorPicker y FileChooser</a></li>
+   <li><a href="javafx_effects.html" class="no-ch">JavaFX Effects</a></li>
+   <li><a href="javafx_media__javafx_video_and_audio_support.html" class="no-ch">JavaFX Media - JavaFX Video and Audio Support</a></li>
+   <li><a href="bibliografia.html" class="no-ch">Bibliografia</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="alertas_y_dilogos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="indicadores_de_progreso.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">TextInputDialog y ChoiceDialog</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id11">
+<div class="iDevice emphasis0">
+<div id="ta11_85" class="block iDevice_content">
+<h3>JavaFX TextInputDialog</h3>
+<p>TextInputDialog es un cuadro de diálogo que permite al usuario introducir un texto, el cuadro de diálogo contiene un texto de <strong>encabezado</strong>, un <strong>TextField</strong> y <strong>botones</strong> de confirmación.</p>
+<p>Los constructores de la clase TextInputDialog son:</p>
+<p style="padding-left: 30px;"><strong>TextInputDialog() </strong>: crea un cuadro de diálogo de entrada de texto sin texto inicial.<br /><strong>TextInputDialog(String txt) </strong>: crea un cuadro de diálogo de entrada de texto con el texto inicial txt .</p>
+<p>Métodos comúnmente utilizados:</p>
+<ul>
+<li><span style="color: #000000;"><strong>String getDefaultValue()</strong> devuelve el valor predeterminado del TextInputDialog<br /></span></li>
+<li><span style="color: #000000;"><strong>setHeaderText(String s) </strong></span><span style="color: #000000;">establece el texto del encabezado del TextInputDialog<br /></span></li>
+<li><span style="color: #000000;"><strong><span style="color: #000000;">TextField getEditor() </span></strong>Devuelve el campo de texto utilizado en este cuadro de diálogo.<span style="color: #000000;"></span></span></li>
+</ul>
+<p><span style="color: #000000;">Por ejemplo:</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>        // create a text input dialog 
+        TextInputDialog td = new TextInputDialog("Escribe texto"); 
+  
+        // setHeaderText 
+        td.setHeaderText("Teclea tu nombre ");
+
+        td.show(); 
+</code></pre>
+</div>
+</div>
+<p>Resultado:</p>
+<p><img src="TextInputDialog_01.png" alt="" width="230" height="195" /></p>
+<p>Pero lo realmente interesante de esta ventana de diálogo es recoger el texto que el usuario teclee, para ello utilizaremos el método <strong>getEditor()</strong> que nos proporciona un objeto TextField, y de este último objeto con su método getText() podremos acceder al contenido introducido:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>        // create a text input dialog 
+        TextInputDialog td = new TextInputDialog("Escribe texto "); 
+        // setHeaderText 
+        td.setHeaderText("Teclea tu nombre ");
+        td.showAndWait(); 
+        respuesta = td.getEditor().getText();</code></pre>
+</div>
+</div>
+<p>Pero con recoger ese literal no es suficiente, debemos saber si el usuario ha aceptado o cancelado la entrada. Para ello debemos utilizar el método <strong>showAndWait()</strong> y recoger el <strong>Optional&lt;String&gt;</strong> que nos devuelve en esta ocasión el método showAndWait().</p>
+<p>El método <strong>isPresent()</strong> del objeto <strong>Optional&lt;String&gt;</strong> nos devolverá True si el usuario a aceptado la entrada y False en caso contrario.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>        String respuesta = null;
+        Optional&lt;String&gt; result;
+
+        // create a text input dialog 
+        TextInputDialog td = new TextInputDialog("Escribe texto "); 
+        // setHeaderText 
+        td.setHeaderText("Teclea tu nombre ");
+        result = td.showAndWait();
+        if (result.isPresent()){
+            respuesta = td.getEditor().getText();
+            System.out.println(respuesta);
+        }
+        else{
+            System.out.println("Has pulsado Cancelar");
+        }</code></pre>
+</div>
+</div>
+<p><img src="inputTextDialog.png" alt="" width="603" height="444" /></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id12">
+<div class="iDevice emphasis0">
+<div id="ta12_85" class="block iDevice_content">
+<h3>JavaFX ChoiceDialog</h3>
+<p><strong>ChoiceDialog</strong> es un cuadro de diálogo que ofrece al usuario un conjunto de opciones de las que el usuario puede seleccionar como máximo una opción. La clase ChoiceDialog es una clase que hereda de la clase base Dialog.</p>
+<p>Los constructores de la clase son:</p>
+<p style="padding-left: 30px;"><strong>ChoiceDialog()</strong>: crea un ChoiceDialog sin elementos para selecionar.<br /><strong>ChoiceDialog(T defaultChoice, Collection&lt;T&gt; choices)</strong> : crea un cuadro de diálogo de elección con un conjunto de elementos de la colección proporcionada y un elemento seleccionado.<br /><strong>ChoiceDialog(T defaultChoice, T... choices)</strong>: crea un cuadro de diálogo de opciones con un elemento seleccionado predeterminado y una matriz de opciones disponibles para el usuario.</p>
+<p>Métodos comúnmente utilizados:ç</p>
+<ul>
+<li><span style="color: #000000;"><strong>getItems()</strong> devuelve todos los elementos disponibles del cuadro de elección</span></li>
+<li><span style="color: #000000;"><strong>getSelectedItem()</strong> devuelve el elemento seleccionado del cuadro de diálogo</span></li>
+<li><span style="color: #000000;"><strong>setSelectedItem(T elemento)</strong> establece el elemento seleccionado del cuadro de diálogo</span></li>
+<li><span style="color: #000000;"><strong>setContentText(String s)</strong> establece el texto del contenido del diálogo</span></li>
+<li><span style="color: #000000;"><strong>setHeaderText(String s)</strong> establece el texto del encabezado del diálogo</span></li>
+</ul>
+<p>Ejemplo de la utilización de la clase ChoiceDialog:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>        // items for the dialog
+        String days[] = { "Lunes", "Martes", "Mirércoles", 
+                          "Jueves", "Viernes" };
+ 
+        // create a choice dialog
+        ChoiceDialog d = new ChoiceDialog(days[1], days);
+ 
+        // show the dialog
+        d.show();</code></pre>
+</div>
+</div>
+<p>Resultado:</p>
+<p><img src="ChoiceDialog_01.png" alt="" width="206" height="195" /></p>
+<p>Pero vamos a personalizar un poco nuestra ventana, cambiando la cabecera, el texto y recogiendo la respuesta del usuario con el método <strong>getSelectedItem().</strong></p>
+<p><strong>Nota</strong>: siempre tendremos un item seleccionado!</p>
+<p><img src="ChoiceDialog_02.png" alt="" width="299" height="197" /></p>
+<p>Pero nos interesa saber la selección del usuario:</p>
+<p><img src="choiseVentana.png" alt="" width="606" height="444" /></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code> @FXML
+    private void selectChoiceVentana() {
+        
+        // items for the dialog
+        String days[] = { "Lunes", "Martes", "Mirércoles", 
+                          "Jueves", "Viernes" };
+        // create a choice dialog
+        ChoiceDialog d = new ChoiceDialog(days[1], days);
+        // la cabecera
+        d.setHeaderText("Día de la semana");
+        // set content text
+        d.setContentText("Por favor seleccione el día");
+        // show the dialog
+        d.showAndWait();
+        // get the selected item
+        idSelect.setText(d.getSelectedItem() + " seleccionado");
+    }</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="alertas_y_dilogos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="indicadores_de_progreso.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

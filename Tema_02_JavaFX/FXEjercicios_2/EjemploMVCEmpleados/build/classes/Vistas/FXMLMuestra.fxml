@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="489.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vistas.FXMLMuestraController">
+    <stylesheets>
+        <URL value="@fxmlalta.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="126.0" layoutY="33.0" text="Datos del EMPLEADO">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Separator layoutX="25.0" layoutY="85.0" prefHeight="5.0" prefWidth="561.0" />
+      <Label layoutX="50.0" layoutY="110.0" text="DNI" />
+      <Label layoutX="50.0" layoutY="146.0" text="Nombre" />
+      <Label layoutX="289.0" layoutY="146.0" text="Apellidos" />
+      <Label layoutX="50.0" layoutY="184.0" text="Dirección" />
+      <Label layoutX="53.0" layoutY="273.0" text="Teléfono" />
+      <TextField fx:id="dni" layoutX="81.0" layoutY="106.0" />
+      <TextField fx:id="nombre" layoutX="107.0" layoutY="142.0" />
+      <TextField fx:id="apellidos" layoutX="358.0" layoutY="142.0" prefHeight="24.0" prefWidth="231.0" />
+      <TextArea fx:id="direcc" layoutX="124.0" layoutY="185.0" prefHeight="66.0" prefWidth="330.0" />
+      <TextField fx:id="telefono" layoutX="124.0" layoutY="269.0" />
+      <Separator layoutX="12.0" layoutY="308.0" prefHeight="5.0" prefWidth="582.0" />
+      <Slider fx:id="edad" layoutX="123.0" layoutY="325.0" majorTickUnit="10.0" minorTickCount="1" prefHeight="38.0" prefWidth="371.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="20.0" />
+      <Label layoutX="56.0" layoutY="325.0" text="Edad" />
+      <ComboBox fx:id="dpto" layoutX="167.0" layoutY="379.0" prefWidth="150.0" />
+      <Label layoutX="55.0" layoutY="383.0" text="Departamento" />
+      <RadioButton fx:id="indefinido" layoutX="466.0" layoutY="382.0" mnemonicParsing="false" selected="true" text="Indefinido">
+         <toggleGroup>
+            <ToggleGroup fx:id="contrato" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="eventual" layoutX="466.0" layoutY="411.0" mnemonicParsing="false" text="Eventual" toggleGroup="$contrato" />
+      <Label layoutX="387.0" layoutY="383.0" text="Contrato" />
+      <Label layoutX="55.0" layoutY="441.0" text="Sueldo bruto " />
+      <TextField fx:id="sueldo" layoutX="167.0" layoutY="437.0" prefHeight="24.0" prefWidth="150.0" />
+      <Label fx:id="edadValor" layoutX="511.0" layoutY="325.0" text="20" />
+      <Button fx:id="btnCerrar" layoutX="382.0" layoutY="449.0" mnemonicParsing="false" onAction="#botonAceptar" text="Cerrar" />
+   </children>
+</AnchorPane>
