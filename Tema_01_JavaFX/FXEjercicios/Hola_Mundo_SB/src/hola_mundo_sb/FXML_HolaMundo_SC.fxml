@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hola_mundo_sb.FXML_HolaMundo_SCController">
+    <stylesheets>
+        <URL value="@fxml_holamundo_sc.css" />
+    </stylesheets>
+   <children>
+      <Button fx:id="btnClick" layoutX="248.0" layoutY="165.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="24.0" prefWidth="137.0" text="Haz click " />
+      <Label fx:id="lbTexto" layoutX="299.0" layoutY="217.0" text="Label" />
+   </children>
+</AnchorPane>

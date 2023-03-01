@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="idAnchorPane" prefHeight="202.0" prefWidth="521.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ejer06manejoentradausuario.FXML_ManejoEventosController">
+   <children>
+      <Label fx:id="idLabel" alignment="CENTER" layoutX="52.0" layoutY="86.0" onMouseClicked="#keyPressed" text="Ejemplo de manejo de eventos">
+         <font>
+            <Font size="26.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Button layoutX="161.0" layoutY="134.0" mnemonicParsing="false" onKeyPressed="#keyPressed" onMouseClicked="#ratonClicked" onMouseReleased="#ratonReleased" text="Prueba de eventos" />
+   </children>
+</AnchorPane>

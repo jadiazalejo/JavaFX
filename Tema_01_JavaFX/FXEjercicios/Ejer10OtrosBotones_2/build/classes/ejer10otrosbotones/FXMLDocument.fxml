@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" minHeight="-Infinity" prefHeight="351.0" prefWidth="408.0" style="-fx-border-color: blue;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ejer10otrosbotones.FXMLDocumentController">
+   <children>
+      <Label layoutX="14.0" layoutY="21.0" prefHeight="21.0" prefWidth="432.0" text="Botones CheckBox">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="idLabelPass" layoutX="141.0" layoutY="288.0" />
+      <Label fx:id="idLabC1" layoutX="260.0" layoutY="62.0" text="Estado del botón 1" />
+      <Label fx:id="idLabC2" layoutX="260.0" layoutY="85.0" text="Estado del botón 2" />
+      <Label fx:id="idLabC3" layoutX="260.0" layoutY="109.0" text="Estado del botón 3" />
+      <VBox layoutX="17.0" layoutY="54.0" prefHeight="125.0" prefWidth="208.0" spacing="20.0" style="-fx-border-color: black; -fx-border-style: solid inside; -fx-border-width: 1;">
+         <children>
+            <CheckBox fx:id="idCheck1" allowIndeterminate="true" mnemonicParsing="false" onAction="#actualiza1" selected="true" text="CheckBox nº1" />
+            <CheckBox fx:id="idCheck2" allowIndeterminate="true" mnemonicParsing="false" onAction="#actualiza2" text="CheckBox nº2" />
+            <CheckBox fx:id="idCheck3" allowIndeterminate="true" mnemonicParsing="false" onAction="#actualiza3" text="CheckBox nº3" />
+         </children>
+         <padding>
+            <Insets left="20.0" top="5.0" />
+         </padding>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+      <HBox layoutX="14.0" layoutY="188.0" prefHeight="57.0" prefWidth="398.0" spacing="20.0" style="-fx-border-width: 1; -fx-border-style: solid;">
+         <children>
+            <RadioButton fx:id="idRadio1" mnemonicParsing="false" onAction="#actualizaRadios" selected="true" text="Izquierda">
+               <toggleGroup>
+                  <ToggleGroup fx:id="grupoRadios" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="idRadio2" mnemonicParsing="false" onAction="#actualizaRadios" text="Derecha" toggleGroup="$grupoRadios" />
+            <RadioButton fx:id="idRadio3" mnemonicParsing="false" onAction="#actualizaRadios" text="Arriba" toggleGroup="$grupoRadios" />
+            <RadioButton fx:id="idRadio4" mnemonicParsing="false" onAction="#actualizaRadios" text="Abajo" toggleGroup="$grupoRadios" />
+         </children>
+         <padding>
+            <Insets left="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <Label fx:id="idLabelRadio" alignment="CENTER" layoutX="24.0" layoutY="276.0" prefHeight="24.0" prefWidth="398.0" text="Radio seleccionado : Izquierda">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

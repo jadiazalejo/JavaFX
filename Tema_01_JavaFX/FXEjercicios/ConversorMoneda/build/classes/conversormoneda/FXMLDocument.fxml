@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="conversormoneda.FXMLDocumentController">
+   <children>
+      <Label layoutX="162.0" layoutY="54.0" text="Introduce la cantidad en euros">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="euros" layoutX="131.0" layoutY="88.0">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btnCalcular" layoutX="180.0" layoutY="167.0" mnemonicParsing="false" onAction="#manejoBoton" prefHeight="33.0" prefWidth="240.0" text="Calcular">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <Label fx:id="lbLibras" alignment="CENTER" layoutX="145.0" layoutY="237.0" prefHeight="25.0" prefWidth="312.0" text="0 Libras" textFill="#044fc9">
+         <font>
+            <Font name="System Bold Italic" size="35.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ejer02ventanalabel_sb.FXML_VentlabelController">
+   <children>
+      <Label fx:id="lbTexto" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="185.0" prefHeight="30.0" prefWidth="435.0" text="Mi primera Etiqueta(Label)" textAlignment="CENTER">
+         <font>
+            <Font size="25.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <ImageView fitHeight="57.0" fitWidth="106.0" layoutX="65.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/java.png" />
+         </image></ImageView>
+   </children>
+</AnchorPane>
