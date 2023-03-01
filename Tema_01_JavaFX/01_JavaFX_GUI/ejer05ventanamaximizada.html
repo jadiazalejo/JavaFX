@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Ejer05VentanaMaximizada </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-25"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">JavaFX</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="instalacin_y_configuracin_del_ide.html" class="no-ch">Instalación y configuración del IDE</a></li>
+   <li><a href="enlazando_scene_builder_y_netbeans.html" class="no-ch">Enlazando Scene Builder y NetBeans</a></li>
+   <li><a href="creando_nuestra_primera_aplicacin.html" class="no-ch">Creando nuestra primera aplicación</a></li>
+   <li><a href="aplicacin_fx_con_scene_builder.html" class="no-ch">Aplicación FX con Scene Builder</a></li>
+   <li class="current-page-parent"><a href="ejemplos_de_javafx.html" class="current-page-parent daddy">Ejemplos de JavaFX</a>
+   <ul>
+      <li><a href="ejer01pruebametodos.html" class="no-ch">Ejer01PruebaMetodos</a></li>
+      <li><a href="ejer02ventanalabel.html" class="no-ch">Ejer02VentanaLabel</a></li>
+      <li><a href="ejer03ventanas.html" class="no-ch">Ejer03Ventanas</a></li>
+      <li><a href="ejer04ventanacompleta.html" class="no-ch">Ejer04VentanaCompleta</a></li>
+      <li id="active"><a href="ejer05ventanamaximizada.html" class="active no-ch">Ejer05VentanaMaximizada</a></li>
+      <li><a href="ejer06manejoentradausuario.html" class="no-ch">Ejer06ManejoEntradaUsuario</a></li>
+      <li><a href="panel_hbox_y_vbox.html" class="no-ch">Panel HBox y VBox</a></li>
+      <li><a href="ejer07botones.html" class="no-ch">Ejer07Botones</a></li>
+      <li><a href="ejer08textfield.html" class="no-ch">Ejer08TextField</a></li>
+      <li><a href="ejer09ejemploscursor.html" class="no-ch">Ejer09EjemplosCursor</a></li>
+      <li><a href="ejer10accesopropiedades.html" class="no-ch">Ejer10AccesoPropiedades</a></li>
+   </ul>
+   </li>
+   <li><a href="proyectos_javafxscenebuilder.html" class="daddy">Proyectos JavaFX-SceneBuilder</a>
+   <ul class="other-section">
+      <li><a href="textarea_y_passwordfield.html" class="no-ch">TextArea y PasswordField</a></li>
+      <li><a href="togglebutton_checkbox_y_radiobutton.html" class="no-ch">ToggleButton, CheckBox y RadioButton</a></li>
+   </ul>
+   </li>
+   <li><a href="hojas_de_estilo_css_con_javafx.html" class="no-ch">Hojas de estilo CSS con JavaFX</a></li>
+   <li><a href="ejercicios_a_resolver.html" class="no-ch">Ejercicios a resolver</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="ejer04ventanacompleta.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="ejer06manejoentradausuario.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Ejer05VentanaMaximizada</h1></header>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id46">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Ejer05VentanaMaximizada</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta46_113_2" class="block iDevice_content">
+<div class="exe-text"><div class="highlighted-code language-java">
+<div>
+<pre><code>import javafx.application.Application;
+import static javafx.application.Application.launch;
+import javafx.geometry.Pos;
+import javafx.scene.Cursor;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.text.Font;
+import javafx.stage.Stage;
+
+/**
+ *
+ * @author jadiazalejo
+ */
+public class Ejer05VentanaMaximizada extends Application {
+    
+    @Override
+  public void start(Stage primaryStage) {
+    
+    // creamos control etiqueta
+    Label label = new Label("¡Hola Mundo, JavaFX!");
+    label.setFont(new Font("Arial", 50));
+    label.setAlignment(Pos.CENTER);
+    
+    // creamos escena, añadimos control y cammiamos cursor del ratón
+    Scene scene = new Scene(label);
+    scene.setCursor(Cursor.OPEN_HAND);
+
+    // colocamos escena en el escenario primario y maximizamos ventana
+    primaryStage.setScene(scene);
+    primaryStage.setMaximized(true);
+    primaryStage.setTitle("Saludos");
+    
+    primaryStage.show();
+  }
+
+  public static void main(String[] args) {
+    launch(args);
+  }
+}
+</code></pre>
+</div>
+</div>
+<p></p></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="ejer04ventanacompleta.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="ejer06manejoentradausuario.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

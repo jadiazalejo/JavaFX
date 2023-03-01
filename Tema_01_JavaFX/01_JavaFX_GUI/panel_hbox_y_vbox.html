@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Panel HBox y VBox </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-15"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">JavaFX</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="instalacin_y_configuracin_del_ide.html" class="no-ch">Instalación y configuración del IDE</a></li>
+   <li><a href="enlazando_scene_builder_y_netbeans.html" class="no-ch">Enlazando Scene Builder y NetBeans</a></li>
+   <li><a href="creando_nuestra_primera_aplicacin.html" class="no-ch">Creando nuestra primera aplicación</a></li>
+   <li><a href="aplicacin_fx_con_scene_builder.html" class="no-ch">Aplicación FX con Scene Builder</a></li>
+   <li class="current-page-parent"><a href="ejemplos_de_javafx.html" class="current-page-parent daddy">Ejemplos de JavaFX</a>
+   <ul>
+      <li><a href="ejer01pruebametodos.html" class="no-ch">Ejer01PruebaMetodos</a></li>
+      <li><a href="ejer02ventanalabel.html" class="no-ch">Ejer02VentanaLabel</a></li>
+      <li><a href="ejer03ventanas.html" class="no-ch">Ejer03Ventanas</a></li>
+      <li><a href="ejer04ventanacompleta.html" class="no-ch">Ejer04VentanaCompleta</a></li>
+      <li><a href="ejer05ventanamaximizada.html" class="no-ch">Ejer05VentanaMaximizada</a></li>
+      <li><a href="ejer06manejoentradausuario.html" class="no-ch">Ejer06ManejoEntradaUsuario</a></li>
+      <li id="active"><a href="panel_hbox_y_vbox.html" class="active no-ch">Panel HBox y VBox</a></li>
+      <li><a href="ejer07botones.html" class="no-ch">Ejer07Botones</a></li>
+      <li><a href="ejer08textfield.html" class="no-ch">Ejer08TextField</a></li>
+      <li><a href="ejer09ejemploscursor.html" class="no-ch">Ejer09EjemplosCursor</a></li>
+      <li><a href="ejer10accesopropiedades.html" class="no-ch">Ejer10AccesoPropiedades</a></li>
+   </ul>
+   </li>
+   <li><a href="proyectos_javafxscenebuilder.html" class="daddy">Proyectos JavaFX-SceneBuilder</a>
+   <ul class="other-section">
+      <li><a href="textarea_y_passwordfield.html" class="no-ch">TextArea y PasswordField</a></li>
+      <li><a href="togglebutton_checkbox_y_radiobutton.html" class="no-ch">ToggleButton, CheckBox y RadioButton</a></li>
+   </ul>
+   </li>
+   <li><a href="hojas_de_estilo_css_con_javafx.html" class="no-ch">Hojas de estilo CSS con JavaFX</a></li>
+   <li><a href="ejercicios_a_resolver.html" class="no-ch">Ejercicios a resolver</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="ejer06manejoentradausuario.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="ejer07botones.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Panel HBox y VBox</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id29">
+<div class="iDevice emphasis0">
+<div id="ta29_85" class="block iDevice_content">
+<h3>JavaFX HBox</h3>
+<p>El <strong>panel de diseño de HBox</strong> organiza los nodos (controles) en una sola fila. Está representado por la clase <em><strong>javafx.scene.layout.HBox.</strong></em> Solo necesitamos instanciar la clase HBox para crear el diseño HBox.</p>
+<h4>Propiedades</h4>
+<p>Las propiedades de la clase junto con sus métodos de establecimiento son los siguientes:</p>
+<ul>
+<li><span style="color: #000000;"><strong>alignment</strong>. Esto representa la alineación de los nodos. El método es <strong>setAlignment(Pos.CENTER/pos.TOP_RIGHT/..)</strong></span></li>
+<li><span style="color: #000000;"><strong>fillHeight.</strong> Esta es una propiedad booleana. Si establece esta propiedad en verdadero, la altura de los nodos será igual a la altura del HBox. El método es <strong>setFillHeight</strong>(true/false)</span></li>
+<li><span style="color: #000000;"><strong>spacing. </strong>Esto representa el espacio entre los nodos en el HBox. El metodo es <strong>setSpacing</strong>(double valor)</span><br /><span style="color: #000000;"></span></li>
+</ul>
+<p><span style="color: #000000;">Constructores</span></p>
+<p>La clase HBox contiene dos constructores que se dan a continuación.</p>
+<ul>
+<li><span style="color: #000000;">new HBox ([nodos,]): crea un diseño HBox con 0 espacios</span></li>
+<li><span style="color: #000000;">new Hbox (spacing doble): crea un diseño HBox con un valor de espaciado</span></li>
+</ul>
+<p><span style="color: #000000;">Por ejemplo:</span></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import javafx.application.Application;  
+import javafx.scene.Scene;  
+import javafx.scene.control.Button;  
+import javafx.scene.layout.HBox;  
+import javafx.stage.Stage;  
+public class Label_Test extends Application {  
+  
+    @Override  
+    public void start(Stage primaryStage) throws Exception {  
+        Button btn1 = new Button("Button 1");  
+        Button btn2 = new Button("Button 2");  
+        HBox root = new HBox(btn1,btn2);  
+        Scene scene = new Scene(root,200,200);  
+        root.setSpacing(40);  
+        primaryStage.setScene(scene);  
+        primaryStage.show();  
+}  
+public static void main(String[] args) {  
+        launch(args);  
+}  
+      
+}  </code></pre>
+</div>
+</div>
+<p><span style="color: #000000;">Resultado:</span></p>
+<p><span style="color: #000000;"><img src="Ejem01_05.png" alt="" width="200" height="237" /></span></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id33">
+<div class="iDevice emphasis0">
+<div id="ta33_85" class="block iDevice_content">
+<p>El componente JavaFX <strong>VBox</strong> es un componente de diseño que coloca todos sus nodos secundarios (componentes) <strong>en una columna vertica</strong>l, uno encima del otro. El componente JavaFX VBox está representado por la clase <strong><em>javafx.scene.layout.VBox</em></strong>.</p>
+<h3>Crear un VBox</h3>
+<p>Para usar el componente JavaFX VBox, primero se debe crear una instancia de la clase VBox. Creas una instancia de VBox usando su constructor de esta manera:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>VBox vbox = new VBox();</code></pre>
+</div>
+</div>
+<p>VBox también tiene un constructor que toma <strong>una lista de componentes</strong> de longitud variable que deben estar creados con anterioridad.</p>
+<p>Por ejemplo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Button button1 = new Button("Botón Número 1");
+Button button2 = botón nuevo("Número de botón 2");
+
+VBox vbox = nuevo VBox (button1, button2);</code></pre>
+</div>
+</div>
+<p>Este ejemplo de VBox distribuirá las dos instancias de Button una encima de la otra en una columna vertical.</p>
+<h3>Añadir un VBox a la escena</h3>
+<p>Para que una instancia de VBox sea visible, debe agregarse al gráfico de escena. Esto significa añadirlo a un objeto de escena o como elemento secundario de otro componente de diseño que se adjunta a un objeto de escena.</p>
+<p>Por ejemplo, aquí se añade un JavaFX VBox con las dos instancias de Button al gráfico de escena:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public class VBoxExperiments extends Application{
+
+  @Override
+  public void start(Stage primaryStage) throws Exception { 
+
+    primaryStage.setTitle("VBox Experiment 1");
+
+    Button button1 = new Button("Button Number 1");
+    Button button2 = new Button("Button Number 2");
+
+    VBox vbox = new VBox(button1, button2);
+
+    Scene scene = new Scene(vbox, 200, 100);
+    primaryStage.setScene(scene);
+    primaryStage.show();
+  }
+
+  public static void main(String[] args) {
+    Application.launch(args);
+  }
+}</code></pre>
+</div>
+</div>
+<p>El resultado de ejecutar el ejemplo anterior de JavaFX VBox es una aplicación que se ve así:</p>
+<p><img src="javafx-vbox-1.png" alt="" width="216" height="138" /></p>
+<h3>Espaciado de nodos secundarios</h3>
+<p>En el ejemplo anterior, el VBox colocó los nodos (controles de botón) justo debajo del otro. Podemos hacer que VBox inserte algo de espacio entre sus controles anidados proporcionando el espacio en el constructor de VBox. Por ejemplo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>VBox vbox = new VBox(20, boton1, boton2);</code></pre>
+</div>
+</div>
+<p>Este ejemplo establece el espacio entre los controles en el componente de diseño VBox en 20.</p>
+<p>También podemos establecer el espacio entre los controles anidados usando el método setSpacing(), así:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>vbox.setSpacing(50);</code></pre>
+</div>
+</div>
+<p>Este ejemplo establecerá el espacio entre los controles anidados en 50.</p>
+<h3>Alineación de nodos secundarios</h3>
+<p>Dado que JavaFX VBox es un componente contenedor, lo que significa que contiene otros componentes JavaFX, puede especificar cómo VBox debe alinear los componentes que contiene. Lo hace a través del método <strong>setAlignment()</strong> de VBox. Por ejemplo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>vbox.setAlignment(Pos.BASELINE_CENTER);</code></pre>
+</div>
+</div>
+<p>Este ejemplo hará que VBox coloque sus nodos secundarios a lo largo de la línea base (verticalmente) de la línea vertical, y desde el centro de la línea hacia afuera (horizontalmente).</p>
+<p>El control JavaFX VBox admite las siguientes opciones de alineación:</p>
+<table style="height: 286px;" border="1">
+<tbody>
+<tr style="height: 22px;">
+<th style="height: 22px; width: 186px;" align="left">Parámetro</th>
+<th style="height: 22px; width: 134px;" align="left">Verticalmente</th>
+<th style="height: 22px; width: 131.3px;" align="left">Horizontalmente</th>
+</tr>
+<tr style="height: 22px;">
+<td style="height: 22px; width: 186px;">Pos.BASELINE_LEFT</td>
+<td style="height: 22px; width: 134px;">Baseline</td>
+<td style="height: 22px; width: 131.3px;">Left</td>
+</tr>
+<tr style="height: 22px;">
+<td style="height: 22px; width: 186px;">Pos.BASELINE_CENTER</td>
+<td style="height: 22px; width: 134px;">Baseline</td>
+<td style="height: 22px; width: 131.3px;">Center</td>
+</tr>
+<tr style="height: 22px;">
+<td style="height: 22px; width: 186px;">Pos.BASELINE_RIGHT</td>
+<td style="height: 22px; width: 134px;">Baseline</td>
+<td style="height: 22px; width: 131.3px;">Right</td>
+</tr>
+<tr style="height: 22px;">
+<td style="height: 22px; width: 186px;">Pos.BOTTOM_LEFT</td>
+<td style="height: 22px; width: 134px;">Bottom</td>
+<td style="height: 22px; width: 131.3px;">Left</td>
+</tr>
+<tr style="height: 22px;">
+<td style="height: 22px; width: 186px;">Pos.BOTTOM_CENTER</td>
+<td style="height: 22px; width: 134px;">Bottom</td>
+<td style="height: 22px; width: 131.3px;">Center</td>
+</tr>
+<tr style="height: 22px;">
+<td style="height: 22px; width: 186px;">Pos.BOTTOM_RIGHT</td>
+<td style="height: 22px; width: 134px;">Bottom</td>
+<td style="height: 22px; width: 131.3px;">Right</td>
+</tr>
+<tr style="height: 22px;">
+<td style="height: 22px; width: 186px;">Pos.CENTER_LEFT</td>
+<td style="height: 22px; width: 134px;">Center</td>
+<td style="height: 22px; width: 131.3px;">Left</td>
+</tr>
+<tr style="height: 22px;">
+<td style="height: 22px; width: 186px;">Pos.CENTER</td>
+<td style="height: 22px; width: 134px;">Center</td>
+<td style="height: 22px; width: 131.3px;">Center</td>
+</tr>
+<tr style="height: 22px;">
+<td style="height: 22px; width: 186px;">Pos.CENTER_RIGHT</td>
+<td style="height: 22px; width: 134px;">Center</td>
+<td style="height: 22px; width: 131.3px;">Right</td>
+</tr>
+<tr style="height: 22px;">
+<td style="height: 22px; width: 186px;">Pos.TOP_LEFT</td>
+<td style="height: 22px; width: 134px;">Top</td>
+<td style="height: 22px; width: 131.3px;">Left</td>
+</tr>
+<tr style="height: 22px;">
+<td style="height: 22px; width: 186px;">Pos.TOP_CENTER</td>
+<td style="height: 22px; width: 134px;">Top</td>
+<td style="height: 22px; width: 131.3px;">Center</td>
+</tr>
+<tr style="height: 22px;">
+<td style="height: 22px; width: 186px;">Pos.TOP_RIGHT</td>
+<td style="height: 22px; width: 134px;">Top</td>
+<td style="height: 22px; width: 131.3px;">Right</td>
+</tr>
+</tbody>
+</table>
+<h3><br />Centrar horizontalmente</h3>
+<p>Podemos utilizar las funciones de alineación de nodos secundarios para centrar horizontalmente los nodos secundarios de un VBox. Por ejemplo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>vbox.setAlignment(Pos.BASELINE_CENTER);</code></pre>
+</div>
+</div>
+<h3>Margen de nodo secundario</h3>
+<p>Podemos establecer el margen para los nodos secundarios de un JavaFX VBox usando el método estático <strong>setMargin().</strong> Por ejemplo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Button boton = nuevo Button ("Botón 1");
+VBox vbox = nuevo VBox (boton);
+VBox.setMargin(boton, new Insets(10, 10, 10, 10));</code></pre>
+</div>
+</div>
+<p>Este ejemplo establece el margen alrededor del Botón dentro del VBox a 10 en cada lado.</p>
+<h3>Nodo secundario vgrow</h3>
+<p>Podemos especificar si un nodo secundario de un VBox debe crecer verticalmente para llenar cualquier espacio disponible dentro del VBox. Lo hace a través del método estático <strong>VBox setVgrow()</strong>. Debe especificar para qué nodo secundario se establece la regla. Lo hace pasando el nodo secundario como parámetro a setVgrow(). También debe pasar la política de expansión vertical como parámetro a setVgrow(). Aquí hay un ejemplo de cómo decirle a un botón secundario que se expanda verticalmente si hay espacio disponible dentro del VBox:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Button button = new Button("Button 1");
+VBox vbox = new VBox(button);
+VBox.setVgrow(button, Priority.ALWAYS);</code></pre>
+</div>
+</div>
+<p>La clase Priority contiene las siguientes constantes que puede usar para establecer la política de expansión:</p>
+<ul>
+<li><span style="color: #000000;">Policy.ALWAYS</span></li>
+<li><span style="color: #000000;">Policy.SOMETIMES</span></li>
+<li><span style="color: #000000;">Policy.NEVER</span></li>
+</ul>
+<p>Tenga en cuenta que VBox solo tendrá espacio vertical adicional disponible si los nodos secundarios no tienen la misma altura preferida, o si establece explícitamente una altura preferida en VBox que sea mayor que la altura preferida de sus nodos secundarios.</p>
+<h3>fillWidth</h3>
+<p>La propiedad JavaFX VBox fillWidth se puede usar para decirle al control VBox si debe expandir el ancho de sus hijos para llenar todo el ancho de VBox, o mantener a sus hijos en sus anchos preferidos.</p>
+<p>La propiedad fillWidth solo afecta a los componentes secundarios cuyos anchos realmente pueden cambiar. Por ejemplo, un Botón no cambia su ancho por defecto. Su ancho máximo se establece en su ancho preferido. Sin embargo, puede anular eso configurando el ancho máximo del Botón, o cualquier otro componente que desee anidar dentro del VBox, en un valor diferente a su valor preferido.</p>
+<p>Aquí hay un ejemplo que muestra cómo funciona la propiedad fillWidth:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Button button = new Button("Button 1");
+button.setMaxWidth(99999D); //or Double.MAX_VALUE;
+
+VBox vbox = new VBox(button);
+
+vbox.setFillWidth(true);</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="ejer06manejoentradausuario.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="ejer07botones.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

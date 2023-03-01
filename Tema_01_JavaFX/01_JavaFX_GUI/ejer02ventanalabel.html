@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Ejer02VentanaLabel </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-11"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">JavaFX</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="instalacin_y_configuracin_del_ide.html" class="no-ch">Instalación y configuración del IDE</a></li>
+   <li><a href="enlazando_scene_builder_y_netbeans.html" class="no-ch">Enlazando Scene Builder y NetBeans</a></li>
+   <li><a href="creando_nuestra_primera_aplicacin.html" class="no-ch">Creando nuestra primera aplicación</a></li>
+   <li><a href="aplicacin_fx_con_scene_builder.html" class="no-ch">Aplicación FX con Scene Builder</a></li>
+   <li class="current-page-parent"><a href="ejemplos_de_javafx.html" class="current-page-parent daddy">Ejemplos de JavaFX</a>
+   <ul>
+      <li><a href="ejer01pruebametodos.html" class="no-ch">Ejer01PruebaMetodos</a></li>
+      <li id="active"><a href="ejer02ventanalabel.html" class="active no-ch">Ejer02VentanaLabel</a></li>
+      <li><a href="ejer03ventanas.html" class="no-ch">Ejer03Ventanas</a></li>
+      <li><a href="ejer04ventanacompleta.html" class="no-ch">Ejer04VentanaCompleta</a></li>
+      <li><a href="ejer05ventanamaximizada.html" class="no-ch">Ejer05VentanaMaximizada</a></li>
+      <li><a href="ejer06manejoentradausuario.html" class="no-ch">Ejer06ManejoEntradaUsuario</a></li>
+      <li><a href="panel_hbox_y_vbox.html" class="no-ch">Panel HBox y VBox</a></li>
+      <li><a href="ejer07botones.html" class="no-ch">Ejer07Botones</a></li>
+      <li><a href="ejer08textfield.html" class="no-ch">Ejer08TextField</a></li>
+      <li><a href="ejer09ejemploscursor.html" class="no-ch">Ejer09EjemplosCursor</a></li>
+      <li><a href="ejer10accesopropiedades.html" class="no-ch">Ejer10AccesoPropiedades</a></li>
+   </ul>
+   </li>
+   <li><a href="proyectos_javafxscenebuilder.html" class="daddy">Proyectos JavaFX-SceneBuilder</a>
+   <ul class="other-section">
+      <li><a href="textarea_y_passwordfield.html" class="no-ch">TextArea y PasswordField</a></li>
+      <li><a href="togglebutton_checkbox_y_radiobutton.html" class="no-ch">ToggleButton, CheckBox y RadioButton</a></li>
+   </ul>
+   </li>
+   <li><a href="hojas_de_estilo_css_con_javafx.html" class="no-ch">Hojas de estilo CSS con JavaFX</a></li>
+   <li><a href="ejercicios_a_resolver.html" class="no-ch">Ejercicios a resolver</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="ejer01pruebametodos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="ejer03ventanas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Ejer02VentanaLabel</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id15">
+<div class="iDevice emphasis0">
+<div id="ta15_85" class="block iDevice_content">
+<p>En este ejemplo veremos como mostrar una ventana con contenido en su interior, concretamente un control llamado <strong>Label</strong>.</p>
+<p>Para visualizar contenido en la ventana de la aplicación hay que añadir un componente (control) a un objeto Scene, y este al objeto Stage recibido en el método start().</p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id16">
+<div class="iDevice emphasis0">
+<div id="ta16_85" class="block iDevice_content">
+<div class="highlighted-code language-java line-numbers hightlight-23and24">
+<div>
+<pre><code>import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.stage.Stage;
+
+/**
+ * Ejemplo de GUI usando JavaFX.
+ * 
+ * Mostramos una ventana con título y contenido en su interior.
+ * 
+ */
+
+public class Ejer02HolaMundo extends Application {
+
+    @Override
+    public void start(Stage primaryStage) {
+        primaryStage.setTitle("Mi primera aplicación JavaFX");
+
+        // para visualizar contenido en la ventana de la aplicación
+        // hay que añadir un componente a un objeto Scene, y este al
+        // objeto Stage
+        
+        Label label = new Label("¡Hola Mundo, JavaFX!");
+        Scene scene = new Scene(label, 400, 200);
+        primaryStage.setScene(scene);
+
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+}</code></pre>
+</div>
+</div>
+<p><img src="ejer02.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="411" height="234" /></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id17">
+<div class="iDevice emphasis0">
+<div id="ta17_85" class="block iDevice_content">
+<h3>Etiqueta JavaFX</h3>
+<p>La clase <em><strong>javafx.scene.control.Label</strong></em> representa el control de etiquetas. Como sugiere el nombre, la etiqueta es el componente que se utiliza para colocar cualquier información de texto en la pantalla. Se utiliza principalmente para describir el propósito de los otros componentes para el usuario. No puede establecer un enfoque en la etiqueta con la tecla Tabulador.</p>
+<p>Package: javafx.scene.control</p>
+<p>Constructores:</p>
+<ul>
+<li><span style="color: #000000;">Label(): creates an empty Label   </span></li>
+<li><span style="color: #000000;">Label(String text): creates Label with the supplied text  </span></li>
+<li><span style="color: #000000;">Label(String text, Node graphics): creates Label with the supplied text and graphics  </span></li>
+</ul>
+<h3>Mostrar imagen en una etiqueta</h3>
+<p>JavaFX nos permite mostrar algunos gráficos al lado del texto de la etiqueta. Hay un constructor en la clase Label en el que podemos pasar cualquier imagen junto con el texto de la etiqueta. El ejemplo que se muestra a continuación muestra la imagen en una etiqueta.</p>
+<p><span style="color: #000000;">Lo primero será crear un objeto de tipo Image para poder situarlo en la etiqueta, creamos la etiqueta y con el método setGraphic() ponemos la imagen:</span></p>
+<div class="highlighted-code language-java line-numbers hightlight-1and3">
+<div>
+<pre><code>        Image image = new Image(getClass().getResourceAsStream("java.png")); 
+        Label label = new Label("¡Hola Mundo, JavaFX!");
+        label.setGraphic(new ImageView(image));</code></pre>
+</div>
+</div>
+<p><span style="color: #000000;"><img src="ejer021.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="461" height="313" /></span></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id19">
+<div class="iDevice emphasis0">
+<div id="ta19_85" class="block iDevice_content">
+<p>Algunos métodos de la clase Label:</p>
+<p><strong>setTextAlignment</strong>(TextAlingment value); Este método recibe una constante de tipo TextAlignment donde la constante representa la alineación horizontal del texto. Las constantes son:</p>
+<ul>
+<li><span style="color: #000000;">TextAlignment.CENTER //Texto centrado</span></li>
+<li><span style="color: #000000;">TextAlignment.JUSTIFY //Texto justificado</span></li>
+<li><span style="color: #000000;">TextAlignment.LEFT //Texto a la izquierda</span></li>
+<li><span style="color: #000000;">TextAlignment.RIGTH //Texto a la derecha</span></li>
+</ul>
+<p><strong>setContentDisplay</strong>(ContentDisplay value); Con este método se especifica la posición de el gráfico respecto al texto, recibe una constante de tipo ContentDisplay que determina la posición de un elemento contenido en el label, en este caso una imagen. Las constantes son:</p>
+<ul>
+<li><span style="color: #000000;">ContentDisplay.BOTTOM //El grafico en la parte de abajo del label</span></li>
+<li><span style="color: #000000;">ContentDisplay.CENTER //En el centro del label</span></li>
+<li><span style="color: #000000;">ContentDisplay.GRAPHIC_ONLY //Solo mostrara el contenido (el gráfico)</span></li>
+<li><span style="color: #000000;">ContentDisplay.LEFT //A la izquierda del label</span></li>
+<li><span style="color: #000000;">ContentDisplay.RIGHT  //A la derecha del label</span></li>
+<li><span style="color: #000000;">ContentDisplay.TEXT_ONLY //Solo muestra el texto</span></li>
+<li><span style="color: #000000;">ContentDisplay.TOP //El gráfico en la parte superior del label</span></li>
+</ul>
+<p><strong>setGraphicTextGap</strong>(Double value); Establece la separación entre el gráfico y el texto. Recibe un objeto de tipo Double.</p>
+<p><strong>setGraphic</strong>(Node value); Establece el icono para el label. Recibe un objeto de tipo Node. (visto en el ejmplo).</p>
+<p><strong>setTooltip</strong>(Tooltip); Establece el texto de información sobre el label. Recibe un objeto de tipo Tooltip. Tan simple como hacer un:</p>
+<p style="padding-left: 30px;">label.setTooltip(new Tooltip("Información para label"));</p>
+<p><img src="ejer022.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="401" height="218" /></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id49">
+<div class="iDevice emphasis0">
+<div id="ta49_85" class="block iDevice_content">
+<p>Si realizamos este ejemplo con el modelo MVC, en la etiqueta (Label) y con Scene Builder no podremos especificar  una imagen para el control Label.</p>
+<p>La solución es utilizar controles distintos, uno para las label y otro para las imágenes (ImageView):</p>
+<p><img src="LabelSB.png" alt="" width="702" height="265" /></p>
+<p></p>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="ejer01pruebametodos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="ejer03ventanas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

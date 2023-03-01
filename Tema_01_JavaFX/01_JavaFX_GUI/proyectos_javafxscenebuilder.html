@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Proyectos JavaFX-SceneBuilder </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-17"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">JavaFX</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="instalacin_y_configuracin_del_ide.html" class="no-ch">Instalación y configuración del IDE</a></li>
+   <li><a href="enlazando_scene_builder_y_netbeans.html" class="no-ch">Enlazando Scene Builder y NetBeans</a></li>
+   <li><a href="creando_nuestra_primera_aplicacin.html" class="no-ch">Creando nuestra primera aplicación</a></li>
+   <li><a href="aplicacin_fx_con_scene_builder.html" class="no-ch">Aplicación FX con Scene Builder</a></li>
+   <li><a href="ejemplos_de_javafx.html" class="daddy">Ejemplos de JavaFX</a>
+   <ul class="other-section">
+      <li><a href="ejer01pruebametodos.html" class="no-ch">Ejer01PruebaMetodos</a></li>
+      <li><a href="ejer02ventanalabel.html" class="no-ch">Ejer02VentanaLabel</a></li>
+      <li><a href="ejer03ventanas.html" class="no-ch">Ejer03Ventanas</a></li>
+      <li><a href="ejer04ventanacompleta.html" class="no-ch">Ejer04VentanaCompleta</a></li>
+      <li><a href="ejer05ventanamaximizada.html" class="no-ch">Ejer05VentanaMaximizada</a></li>
+      <li><a href="ejer06manejoentradausuario.html" class="no-ch">Ejer06ManejoEntradaUsuario</a></li>
+      <li><a href="panel_hbox_y_vbox.html" class="no-ch">Panel HBox y VBox</a></li>
+      <li><a href="ejer07botones.html" class="no-ch">Ejer07Botones</a></li>
+      <li><a href="ejer08textfield.html" class="no-ch">Ejer08TextField</a></li>
+      <li><a href="ejer09ejemploscursor.html" class="no-ch">Ejer09EjemplosCursor</a></li>
+      <li><a href="ejer10accesopropiedades.html" class="no-ch">Ejer10AccesoPropiedades</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="proyectos_javafxscenebuilder.html" class="active daddy">Proyectos JavaFX-SceneBuilder</a>
+   <ul>
+      <li><a href="textarea_y_passwordfield.html" class="no-ch">TextArea y PasswordField</a></li>
+      <li><a href="togglebutton_checkbox_y_radiobutton.html" class="no-ch">ToggleButton, CheckBox y RadioButton</a></li>
+   </ul>
+   </li>
+   <li><a href="hojas_de_estilo_css_con_javafx.html" class="no-ch">Hojas de estilo CSS con JavaFX</a></li>
+   <li><a href="ejercicios_a_resolver.html" class="no-ch">Ejercicios a resolver</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="ejer10accesopropiedades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="textarea_y_passwordfield.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Proyectos JavaFX-SceneBuilder</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id31">
+<div class="iDevice emphasis0">
+<div id="ta31_85" class="block iDevice_content">
+<p>Ya hemos visto algunos ejemplos con la utilización de controles como Button, Label y TextField escritos desde código y utilizando, en alguna ocasión el entorno gráfico para que sea más rápido y sencillo la creación de las ventanas.</p>
+<p><strong>A partir de ahora utilizaremos SceneBuilder para los ficheros FXML.</strong></p>
+<p style="text-align: justify;">Además de esta forma empezamos a utilizar el modelo de programación de MVC (Modelo Vista Controlador) de forma definitiva, y los diseñadores pueden comenzar a diseñar de forma paralela o anticipada, pero sobre todo independiente de los datos y su control.</p>
+<p>Más adelante veremos como utilizar ficheros CSS para darle estilo a nuestro escenario y a sus componentes.</p>
+<p>Comenzamos creando el proyecto como <strong>Java with Ant -&gt; Java Application.</strong></p>
+<p><strong>IMPORTANTE: Un proyecto JavaFX -&gt; JavaFX FXML Application solo funciona con JDK 1.8</strong></p>
+<p>Le cambiamos el nombre al proyecto, por ejemplo <strong>ConversorMoneda<em>.</em></strong></p>
+<p>Añadimos la librería de JavaFX a nuestro Proyecto:</p>
+<p><img src="03.png" alt="" width="339" height="266" /></p>
+<p>IMPORTANTE: recuerda cambiar las propiedades del proyecto para que se encuentre la librería y se pueda ejecutar.</p>
+<p>Tenemos que crear la estructura del Modelo Vista Controlador (MVC):</p>
+<ul>
+<li>ConversorMoneda.java (nuestro programa principal)</li>
+<li>FXMLDocument.fxml (nuestra Vista)</li>
+<li>FXMLDocumentController.java (nuestro Controlador)</li>
+</ul>
+<p>En nuestro programa principal añadimos el escenario, la escena y lo mostramos:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+ 
+    public static void main(String[] args) {
+        
+        launch(args);
+    }</code></pre>
+</div>
+</div>
+<p>Para añadir la Vista y el Controlador, nos colocamos en el package y añadimos un nuevo fichero FXML (ya se ha visto en otro apartado de este tema), indicando que queremos el controlador. El CSS lo dejaremos por el momento.</p>
+<p>Más adelante podremos colocar cada tipo de fichero en un directorio o en un package.</p>
+<p>Y con el botón derecho del ratón sobre el fichero FXMLDocument.fxml seleccionamos la opción <strong>Open</strong></p>
+<p><img src="04.png" alt="" width="334" height="365" /></p>
+<p>Si el entorno está bien configurado y hemos añadido la ruta de SceneBuilder se abrirá la aplicación para que podamos diseñar nuestra vista:</p>
+<p><img src="05.png" alt="" width="600" height="414" /></p>
+<p>Añadimos una etiqueta (Label), la colocamos y modificamos sus propiedades iniciales (texto, fuente, tamaño, color, alineamiento,...), en el ejemplo hemos puesto el texto "Introduce la cantidad en euros" a 18px</p>
+<p><img src="06.png" alt="" width="599" height="318" /></p>
+<p>Añadir un TextField, justo debajo de la etiqueta anterior, puedes poner como texto un cero, pero lo que no debes olvidar es escribir si id en la sección code, este nombre será utilizado para controlar este nodo (control) desde el fichero Controlador (en el ejemplo hemos puesto <strong>euros</strong> en fx:id de Code del TextField)</p>
+<p><img src="07.png" alt="" width="600" height="259" /></p>
+<p>Hacemos lo mismo con un Button, cambiamos el texto a "Calcular" y otras propiedades, y de nuevo, es necesario <strong>marcar su fx:id, en este caso le hemos llamado btnCalcular</strong></p>
+<p><img src="08.png" alt="" width="600" height="312" /></p>
+<p>Añadimos otra etiqueta (Label) para mostrar el resultado de la conversión de moneda, a esta etiqueta le pondremos como <strong>fx:id lbLibras</strong>, y como texto "<strong>0 Libras</strong>"</p>
+<p><img src="09.png" alt="" width="601" height="512" /></p>
+<p style="text-align: justify;">Debemos comprobar en la parte izquierda, abajo, en la sección Controller, el controlador de esta vista es el fichero FXMLDocumentController.</p>
+<p>Si ejecutamos nuestro proyecto mostrará nuestra vista, pero aún no tendrá ninguna funcionalidad</p>
+<p><img src="10.png" alt="" width="413" height="337" /></p>
+<p>Editamos el fichero FXMLDocumentController.fxml,</p>
+<p><strong>IMPORTANTE</strong>: y lo primero que debemos hacer es declarar los objetos de la vista que vamos a utilizar, para ello escribimos "<strong>@FXML</strong>" en la linea anterior de la declaración (en este cado lbLibras y euros, un Label y un Button respectivamente) sus nombres deben ser <strong>los id especificados en la Vista.</strong></p>
+<p>Modificamos el método que maneja el evento de hacer click sobre el botón, en este caso le hemos llamado handeBtnConverAction, recogemos el valor del TextField y lo convertimos a float (es un String), multiplicamos por el cambia a libras, y colocamos el resultado (convirtiendo el float a String) en la etiqueta de la vista.</p>
+<p>Cuidado con los imports, los que nos interesas son los de import javafx....</p>
+<p>El controlador quedaría así:</p>
+<p><img src="11.png" width="541" height="474" /></p>
+<p style="text-align: justify;">Solo nos queda enlazar el método a la acción del botón, para ello volvemos a SceneBuilder con la vista y en la pestaña Code del botón, en el campo On Action, seleccionamos el método a ejecutar cuando se pulse sobre el botón. Como puede verse podemos asociar los métodos a los eventos que nos interese.</p>
+<p style="text-align: justify;">IMPORTANTE: para poder hacer esto el método debe tener la anotación @FXML</p>
+<p><img src="12.png" alt="" width="600" height="462" /></p>
+<p>Solo queda probar que nuestra aplicación funciona correctamente:</p>
+<p><img src="13.png" alt="" width="412" height="338" /></p>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="ejer10accesopropiedades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="textarea_y_passwordfield.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

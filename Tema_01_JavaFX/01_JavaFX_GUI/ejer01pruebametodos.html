@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Ejer01PruebaMetodos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-10"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">JavaFX</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="instalacin_y_configuracin_del_ide.html" class="no-ch">Instalación y configuración del IDE</a></li>
+   <li><a href="enlazando_scene_builder_y_netbeans.html" class="no-ch">Enlazando Scene Builder y NetBeans</a></li>
+   <li><a href="creando_nuestra_primera_aplicacin.html" class="no-ch">Creando nuestra primera aplicación</a></li>
+   <li><a href="aplicacin_fx_con_scene_builder.html" class="no-ch">Aplicación FX con Scene Builder</a></li>
+   <li class="current-page-parent"><a href="ejemplos_de_javafx.html" class="current-page-parent daddy">Ejemplos de JavaFX</a>
+   <ul>
+      <li id="active"><a href="ejer01pruebametodos.html" class="active no-ch">Ejer01PruebaMetodos</a></li>
+      <li><a href="ejer02ventanalabel.html" class="no-ch">Ejer02VentanaLabel</a></li>
+      <li><a href="ejer03ventanas.html" class="no-ch">Ejer03Ventanas</a></li>
+      <li><a href="ejer04ventanacompleta.html" class="no-ch">Ejer04VentanaCompleta</a></li>
+      <li><a href="ejer05ventanamaximizada.html" class="no-ch">Ejer05VentanaMaximizada</a></li>
+      <li><a href="ejer06manejoentradausuario.html" class="no-ch">Ejer06ManejoEntradaUsuario</a></li>
+      <li><a href="panel_hbox_y_vbox.html" class="no-ch">Panel HBox y VBox</a></li>
+      <li><a href="ejer07botones.html" class="no-ch">Ejer07Botones</a></li>
+      <li><a href="ejer08textfield.html" class="no-ch">Ejer08TextField</a></li>
+      <li><a href="ejer09ejemploscursor.html" class="no-ch">Ejer09EjemplosCursor</a></li>
+      <li><a href="ejer10accesopropiedades.html" class="no-ch">Ejer10AccesoPropiedades</a></li>
+   </ul>
+   </li>
+   <li><a href="proyectos_javafxscenebuilder.html" class="daddy">Proyectos JavaFX-SceneBuilder</a>
+   <ul class="other-section">
+      <li><a href="textarea_y_passwordfield.html" class="no-ch">TextArea y PasswordField</a></li>
+      <li><a href="togglebutton_checkbox_y_radiobutton.html" class="no-ch">ToggleButton, CheckBox y RadioButton</a></li>
+   </ul>
+   </li>
+   <li><a href="hojas_de_estilo_css_con_javafx.html" class="no-ch">Hojas de estilo CSS con JavaFX</a></li>
+   <li><a href="ejercicios_a_resolver.html" class="no-ch">Ejercicios a resolver</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="ejemplos_de_javafx.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="ejer02ventanalabel.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Ejer01PruebaMetodos</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id14">
+<div class="iDevice emphasis0">
+<div id="ta14_85" class="block iDevice_content">
+<p>En este primer ejemplo vamos a conocer los principales métodos de la clase principal, para ello mostraremos una ventana con título y mostraremos mensajes en cada uno de los métodos.</p>
+<ul>
+<li>Añade la librería JavaFX.</li>
+<li>Modifica el check de Compile on save de las propiedades.</li>
+<li>Añade la ruta del campo VM de properties - &gt; RUN</li>
+<li>Cuidado con las clases seleccionadas en los import, deben ser de la clase javafx.</li>
+</ul>
+<ol>
+<li><span style="color: #000000;">Antes de que la ventana se cree se ejecutará el <strong>método init().</strong></span></li>
+<li><span style="color: #000000;">El segundo método en ejecutarse será el <strong>método start(Stage primaryStage)</strong> que recibirá el escenario principal, le pondrá un título y lo mostrará.</span></li>
+<li><span style="color: #000000;">Por último, y cuando la ventana la cerremos se ejecutará el <strong>método stop()</strong></span></li>
+</ol>
+<p><span style="color: #000000;"><strong><img src="ejer01.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="800" height="426" /></strong></span></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id13">
+<div class="iDevice emphasis0">
+<div id="ta13_85" class="block iDevice_content">
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package ejer01pruebametodos;
+
+import java.util.Scanner;
+import javafx.application.Application;
+import javafx.stage.Stage;
+
+/**
+ * Ejemplo de GUI usando JavaFX.
+ * 
+ * Mostramos una ventana con título.
+ * Y probamos los métodos del main
+ */
+public class Ejer01PruebaMetodos extends Application {
+
+    @Override
+    public void start(Stage primaryStage) {
+        System.out.println("Soy el método start(), conmigo empieza la interfaz gráfica.\n");
+
+        // el objeto stage (ventana) que se recibe es creado por Application
+        primaryStage.setTitle("Mi primera aplicación JavaFX");
+        primaryStage.show();
+    }
+
+    /**
+     * Este método es llamado el primero, antes de que se cree la ventana
+     * principal.
+     */
+    @Override
+    public void init() {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Soy el método init() y si aparezco (no soy obligatorio)");
+        System.out.println("soy llamado el primero y antes de que la interfaz gráfica se inicie.");
+        System.out.println("Normalmente soy útil cuando es necesario inicializar rutinas");
+        System.out.println("antes del lanzamiento de la GUI.\n");
+        System.out.println("Pulsa Intro para continuar...");
+        s.nextLine();
+    }
+
+    /**
+     * Este método se llama el último, después de que se hayan cerrado las
+     * ventanas.
+     */
+    @Override
+    public void stop() {
+        System.out.println("Soy el método stop(), no soy obligatorio y conmigo terminamos.");
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="ejemplos_de_javafx.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="ejer02ventanalabel.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

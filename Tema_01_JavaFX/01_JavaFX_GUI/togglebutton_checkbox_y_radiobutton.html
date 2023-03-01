@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>ToggleButton, CheckBox y RadioButton </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-19"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">JavaFX</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="instalacin_y_configuracin_del_ide.html" class="no-ch">Instalación y configuración del IDE</a></li>
+   <li><a href="enlazando_scene_builder_y_netbeans.html" class="no-ch">Enlazando Scene Builder y NetBeans</a></li>
+   <li><a href="creando_nuestra_primera_aplicacin.html" class="no-ch">Creando nuestra primera aplicación</a></li>
+   <li><a href="aplicacin_fx_con_scene_builder.html" class="no-ch">Aplicación FX con Scene Builder</a></li>
+   <li><a href="ejemplos_de_javafx.html" class="daddy">Ejemplos de JavaFX</a>
+   <ul class="other-section">
+      <li><a href="ejer01pruebametodos.html" class="no-ch">Ejer01PruebaMetodos</a></li>
+      <li><a href="ejer02ventanalabel.html" class="no-ch">Ejer02VentanaLabel</a></li>
+      <li><a href="ejer03ventanas.html" class="no-ch">Ejer03Ventanas</a></li>
+      <li><a href="ejer04ventanacompleta.html" class="no-ch">Ejer04VentanaCompleta</a></li>
+      <li><a href="ejer05ventanamaximizada.html" class="no-ch">Ejer05VentanaMaximizada</a></li>
+      <li><a href="ejer06manejoentradausuario.html" class="no-ch">Ejer06ManejoEntradaUsuario</a></li>
+      <li><a href="panel_hbox_y_vbox.html" class="no-ch">Panel HBox y VBox</a></li>
+      <li><a href="ejer07botones.html" class="no-ch">Ejer07Botones</a></li>
+      <li><a href="ejer08textfield.html" class="no-ch">Ejer08TextField</a></li>
+      <li><a href="ejer09ejemploscursor.html" class="no-ch">Ejer09EjemplosCursor</a></li>
+      <li><a href="ejer10accesopropiedades.html" class="no-ch">Ejer10AccesoPropiedades</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="proyectos_javafxscenebuilder.html" class="current-page-parent daddy">Proyectos JavaFX-SceneBuilder</a>
+   <ul>
+      <li><a href="textarea_y_passwordfield.html" class="no-ch">TextArea y PasswordField</a></li>
+      <li id="active"><a href="togglebutton_checkbox_y_radiobutton.html" class="active no-ch">ToggleButton, CheckBox y RadioButton</a></li>
+   </ul>
+   </li>
+   <li><a href="hojas_de_estilo_css_con_javafx.html" class="no-ch">Hojas de estilo CSS con JavaFX</a></li>
+   <li><a href="ejercicios_a_resolver.html" class="no-ch">Ejercicios a resolver</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="textarea_y_passwordfield.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="hojas_de_estilo_css_con_javafx.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">ToggleButton, CheckBox y RadioButton</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id36">
+<div class="iDevice emphasis0">
+<div id="ta36_85" class="block iDevice_content">
+<h2>JavaFX ToggleButton</h2>
+<p>Un JavaFX <strong>ToggleButton</strong> es un botón que se puede seleccionar o no seleccionar. Es un botón que permanece presionado cuando le hecemos click, y cuando lo presionas la próxima vez, vuelve a estar sin presionar. Activado - no activado. El JavaFX ToggleButton está representado por la clase <em><strong>javafx.scene.control.ToggleButton.</strong></em></p>
+<h3>Creación de un botón ToggleButton</h3>
+<p>Se crea un <strong>ToggleButton</strong> de JavaFX creando una instancia de la clase ToggleButton. Por ejemplo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>ToggleButton toggleButton1 = new ToggleButton("Izquierda");</code></pre>
+</div>
+</div>
+<h3>Añadir un ToggleButton al gráfico de escena</h3>
+<p>Para hacer visible un ToggleButton, debes añadirlo al gráfico de escena JavaFX. Esto significa anadirlo a una escena o como elemento secundario de un diseño adjunto a un objeto de escena.</p>
+<p>Aquí hay un ejemplo que adjunta un JavaFX ToggleButton al gráfico de escena:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
+
+public class ToggleButtonExperiments extends Application  {
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        primaryStage.setTitle("HBox Experiment 1");
+
+
+        ToggleButton toggleButton1 = new ToggleButton("Left");
+
+        HBox hbox = new HBox(toggleButton1);
+
+        Scene scene = new Scene(hbox, 200, 100);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+
+    }
+
+    public static void main(String[] args) {
+        Application.launch(args);
+    }
+}</code></pre>
+</div>
+</div>
+<p>La aplicación resultante de ejecutar el código de ejemplo anterior se puede ver en las siguientes dos capturas de pantalla. La primera captura de pantalla muestra un ToggleButton que no está presionado, y la segunda captura de pantalla muestra el mismo ToggleButton presionado (seleccionado, activado, etc.):<br /><br /><img src="javafx-togglebutton-1.png" alt="" width="216" height="138" /><img src="javafx-togglebutton-2.png" alt="" width="216" height="138" /></p>
+<p>En Scene Builder arrastraremos el control (ToggleButton) a nuestra escena.</p>
+<p>IMPORTANTE: añadir un id al control en la sección code del ToggleButton, por ejemplo idIzq.</p>
+<p>Como ejemplo hemos colocado tres ToggleButton dentro de un HBox y de paso le hemos puesto un borde al mismo, solo hay que escribir su estilo:</p>
+<p><img src="estiloHBox.png" alt="" width="269" height="164" /></p>
+<p>A los tres <strong>ToggleButton </strong>le hemos puesto los id: idIzq, idCen e idDer.</p>
+<p><img src="Toggle_01.png" alt="" width="470" height="180" /></p>
+<h3>Texto del botón de ToggleButton</h3>
+<p>Puedes configurar o cambiar el texto de un JavaFX ToggleButton a través de su método <strong>setText()</strong>. Por ejemplo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>ToggleButton toggleButton = new ToggleButton("Toggle This!");
+
+toggleButton.setText("New Text");</code></pre>
+</div>
+</div>
+<h3>ToggleButton Font</h3>
+<p>Puedes configurar la fuente que se usará para representar el texto del botón de un JavaFX ToggleButton a través de su método <strong>setFont()</strong>. Por ejemplo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>ToggleButton toggleButton = new ToggleButton("Toggle This!");
+
+Font arialFontBold36  = Font.font("Arial", FontWeight.BOLD, 36);
+
+toggleButton.setFont(arialFontBold36);</code></pre>
+</div>
+</div>
+<h3>Lectura del estado seleccionado</h3>
+<p>La clase ToggleButton tiene un método llamado <strong>isSelected()</strong> que nos permite determinar si el ToggleButton está seleccionado (presionado) o no. El método isSelected() <strong>devuelve un booleano</strong> con el valor verdadero si se selecciona ToggleButton y falso si no.</p>
+<p>Por ejemplo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>isSelected = toggleButton1.isSelected();</code></pre>
+</div>
+</div>
+<p>Vamos a hacer que se muestre un un Label el estado de cada botón, para ellos añadimos tres Label y les asignamos sus correspondientes id:</p>
+<p><img src="Toggle_02.png" alt="" width="466" height="276" /></p>
+<p>Y el controlador:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>@FXML  
+private void verEstadoGrupo(ActionEvent event) {
+        if (idIzq.isSelected())
+            idLabIzq.setText("Izquierda pulsado");
+           else
+            idLabIzq.setText("Izquierda NO pulsado");
+        if (idCen.isSelected())
+            idLabCen.setText("Centro pulsado");
+           else
+            idLabCen.setText("Centro NO pulsado");
+        if (idDer.isSelected())
+            idLabDer.setText("Derecha pulsado");
+           else
+            idLabDer.setText("Derecha NO pulsado");
+    }</code></pre>
+</div>
+</div>
+<h3>ToggleGroup</h3>
+<p>Podemos agrupar instancias de JavaFX ToggleButton en un <strong>ToggleGroup</strong>. Un ToggleGroup permite alternar (presionar) como máximo un ToggleButton en cualquier momento. Las instancias de ToggleButton en un ToggleGroup funcionan de manera similar a los botones de opción.</p>
+<p>Por ejemplo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
+
+public class ToggleButtonExperiments extends Application  {
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        primaryStage.setTitle("HBox Experiment 1");
+
+        ToggleButton toggleButton1 = new ToggleButton("Left");
+        ToggleButton toggleButton2 = new ToggleButton("Right");
+        ToggleButton toggleButton3 = new ToggleButton("Up");
+        ToggleButton toggleButton4 = new ToggleButton("Down");
+
+        ToggleGroup toggleGroup = new ToggleGroup();
+
+        toggleButton1.setToggleGroup(toggleGroup);
+        toggleButton2.setToggleGroup(toggleGroup);
+        toggleButton3.setToggleGroup(toggleGroup);
+        toggleButton4.setToggleGroup(toggleGroup);
+
+        HBox hbox = new HBox(toggleButton1, toggleButton2, toggleButton3, toggleButton4);
+
+        Scene scene = new Scene(hbox, 200, 100);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        Application.launch(args);
+    }
+}</code></pre>
+</div>
+</div>
+<p>Resultado:</p>
+<p><img src="javafx-togglebutton-3.png" alt="" width="216" height="138" /></p>
+<p>En Scene Builder, seleccionamos los botones que queremos que formen el grupo y en la sección propierties, en el campo <strong>Toggle Group</strong>, añadimos un nombre de grupo.</p>
+<p><img src="grupo_01.png" width="268" height="105" /></p>
+<p>También podemos marcar como Selected al botón que por defecto aparecerá seleccionado.</p>
+<p><img src="ToogleGrup_02.png" width="450" height="390" /></p>
+<h3>Lectura del estado de un ToggleGroup</h3>
+<p>Podemos leer <strong>qué ToggleButton</strong> de un <strong>ToggleGroup</strong> está seleccionado (presionado) usando el método <strong>getSelectedToggle(),</strong> así:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>ToggleButton seleccionadoToggleButton =(ToggleButton) toggleGroup.getSelectedToggle();</code></pre>
+</div>
+</div>
+<p>Si no se selecciona ningún ToggleButton, el método getSelectedToggle() devuelve null.</p>
+<p>En su controlador y añadiendo una etiqueta para mostrar el botón seleccionado:</p>
+<p><img src="grupoBotones.png" alt="" width="470" height="442" /></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code> @FXML   
+    private void verEstadoGrupo(ActionEvent event) {
+        
+        ToggleButton seleccionadoToggleButton =(ToggleButton) grupoToggle.getSelectedToggle();
+        if (seleccionadoToggleButton!=null)
+           idLabGrupo.setText("Botón seleccionado :"+seleccionadoToggleButton.getText());
+        
+    }</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id37">
+<div class="iDevice emphasis0">
+<div id="ta37_85" class="block iDevice_content">
+<h2 style="text-align: left;">JavaFX CheckBox</h2>
+<p>Un <strong>CheckBox</strong> de JavaFX es un botón que puede estar en tres estados diferentes: <strong>Seleccionado, no seleccionado y desconocido</strong> (indeterminado). El control CheckBox de JavaFX está representado por la clase <strong>javafx.scene.control.CheckBox</strong>.</p>
+<h3>Creación de un CheckBox</h3>
+<p>Se crea un control <strong>CheckBox</strong> de JavaFX a través del constructor CheckBox. Por ejemplo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>CheckBox checkBox1 = new CheckBox("Green");</code></pre>
+</div>
+</div>
+<p>El String pasado al constructor CheckBox se muestra junto al control CheckBox.</p>
+<h3>Añadir un CheckBox al gráfico de escena</h3>
+<p>Para hacer visible un control CheckBox de JavaFX, debes añadirlo al gráfico de escena de tu aplicación JavaFX. Eso significa añadir el control CheckBox a un objeto de escena o a algún componente de diseño que se añada a un objeto de escena.</p>
+<p>Por ejemplo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
+import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
+
+public class CheckBoxExperiments extends Application  {
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        primaryStage.setTitle("CheckBox Experiment 1");
+
+        CheckBox checkBox1 = new CheckBox("Green");
+
+        HBox hbox = new HBox(checkBox1);
+
+        Scene scene = new Scene(hbox, 200, 100);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        Application.launch(args);
+    }
+}</code></pre>
+</div>
+</div>
+<p>Resultado:</p>
+<p><img src="javafx-checkbox-1.png" alt="" width="216" height="138" /></p>
+<p>En Scene Builder solo hay que añadir el control CheckBox a la escena y modificar la propiedad text.</p>
+<h3>Lectura del estado</h3>
+<p>Podemos leer el estado de un CheckBox a través de su método <strong>isSelected()</strong>. Por ejemplo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>isSelected = checkBox1.isSelected();</code></pre>
+</div>
+</div>
+<h3>Permitir estado indeterminado</h3>
+<p>Un CheckBox de JavaFX puede estar en un <strong>estado indeterminado</strong>, lo que significa que no está ni seleccionado ni no seleccionado. El usuario simplemente aún no ha interactuado con CheckBox.</p>
+<p>Tres posibles estados:</p>
+<ul>
+<li>seleccionado.</li>
+<li>no seleccionado.</li>
+<li>indeterminado (ni seleccionado ni no seleccionado</li>
+</ul>
+<p>De forma predeterminada, no se permite que CheckBox esté en estado indeterminado. Podemos establecer si se permite que un CheckBox esté en un estado indeterminado mediante el método <strong>setAllowIndeterminate() </strong>o <strong>marcando la propiedad correspondiente en SceneBuilder. </strong>Por ejemplo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>checkBox1.setAllowIndeterminate(verdadero);</code></pre>
+</div>
+</div>
+<h3>Lectura de estado indeterminado</h3>
+<p>Podemos leer si un CheckBox está en estado indeterminado a través de su método <strong>isIndeterminate()</strong>. Por ejemplo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>isIndeterminate = checkBox1.isIndeterminate();</code></pre>
+</div>
+</div>
+<p>Hay que tener en cuenta que si un CheckBox no está en el estado indeterminado, está seleccionado o no seleccionado, lo que se puede ver a través de su método isSelected() que se mostró anteriormente.</p>
+<p>Por ejemplo, si tenemos la siguiente vista, en la que tenemos 3 checkbox y tres etiquetas que muestran sus estados cuando pulsamos en alguno de los tres checkbox.</p>
+<p><img src="CheckBox_03.png" alt="" width="542" height="267" /></p>
+<p>Y su controlador:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>public class FXMLDocumentController implements Initializable {
+
+    @FXML
+    private Label idLabelPass, idLabC1, idLabC2, idLabC3;
+    @FXML
+    private CheckBox idCheck1, idCheck2, idCheck3;
+            
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+        actualiza1();
+        actualiza2();
+        actualiza3();
+    }    
+
+    @FXML
+    private void actualiza1(){
+        if (idCheck1.isSelected())
+            idLabC1.setText("Estado CHECK Nº1 SELECCIONADO");
+        else if (idCheck1.isIndeterminate())
+            idLabC1.setText("Estado CHECK Nº1 INDETERMINADO");
+        else
+            idLabC1.setText("Estado CHECK Nº1 NO SELECCIONADO");
+    }
+    @FXML
+    private void actualiza2(){
+        if (idCheck2.isSelected())
+            idLabC2.setText("Estado CHECK Nº2 SELECCIONADO");
+        else if (idCheck2.isIndeterminate())
+            idLabC2.setText("Estado CHECK Nº2 INDETERMINADO");
+        else
+            idLabC2.setText("Estado CHECK Nº2 NO SELECCIONADO");
+    }
+    @FXML
+    private void actualiza3(){
+        if (idCheck3.isSelected())
+            idLabC3.setText("Estado CHECK Nº3 SELECCIONADO");
+        else if (idCheck3.isIndeterminate())
+            idLabC3.setText("Estado CHECK Nº3 INDETERMINADO");
+        else
+            idLabC3.setText("Estado CHECK Nº3 NO SELECCIONADO");
+    }
+}
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id38">
+<div class="iDevice emphasis0">
+<div id="ta38_85" class="block iDevice_content">
+<h2 style="text-align: left;">JavaFX RadioButton</h2>
+<p>Un JavaFX <strong>RadioButton</strong> es un botón que <strong>se puede seleccionar o no seleccionar.</strong> El RadioButton es muy similar al JavaFX ToggleButton, pero con la diferencia de que un RadioButton no se puede "deseleccionar" una vez seleccionado. Si los RadioButtons son parte de un grupo (ToggleGroup), una vez que se haya seleccionado un RadioButton por primera vez, debe haber un RadioButton seleccionado en el ToggleGroup.</p>
+<p>El JavaFX RadioButton está representado por la clase <strong>javafx.scene.control.RadioButton</strong>. La clase RadioButton es una subclase de la clase <strong>ToggleButton</strong>.</p>
+<h3>Creación de un RadioButton</h3>
+<p>Se crea un RadioButton JavaFX usando su constructor. Por ejemplo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>RadioButton radioButton1 = new RadioButton("Left");</code></pre>
+</div>
+</div>
+<p>El String pasado como parámetro al constructor RadioButton se muestra junto al RadioButton.</p>
+<p>En Scene Builder solo tendremos que arrastrar el control a nuestra escena y modificar la propiedad text.</p>
+<h3>Añadir de un RadioButton al gráfico de escena</h3>
+<p>Para hacer visible un RadioButton, se debe añadir al gráfico de escena de su aplicación JavaFX. Esto significa añadir el RadioButton a una escena, o como elemento secundario de un diseño que se adjunta a un objeto de escena.</p>
+<p>Por ejemplo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.RadioButton;
+import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
+
+public class RadioButtonExperiments extends Application  {
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        primaryStage.setTitle("HBox Experiment 1");
+
+        RadioButton radioButton1 = new RadioButton("Left");
+
+        HBox hbox = new HBox(radioButton1);
+
+        Scene scene = new Scene(hbox, 200, 100);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        Application.launch(args);
+    }
+}</code></pre>
+</div>
+</div>
+<p>Resultado:</p>
+<p><img src="javafx-radiobutton-1.png" alt="" width="216" height="138" /></p>
+<h3>Lectura del estado</h3>
+<p>La clase RadioButton tiene un método llamado <strong>isSelected</strong> que le permite determinar si el RadioButton está seleccionado o no. El método isSelected() devuelve un booleano con el valor verdadero si se selecciona el RadioButton y falso si no. Por ejemplo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>booleano isSelected = radioButton1.isSelected();</code></pre>
+</div>
+</div>
+<h3>ToggleGroup</h3>
+<p>Podemos añadir instancias de JavaFX RadioButton en un ToggleGroup. Un ToggleGroup permite seleccionar como máximo un RadioButton en cualquier momento.</p>
+<p>Por ejemplo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
+
+public class RadioButtonExperiments extends Application  {
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        primaryStage.setTitle("HBox Experiment 1");
+
+        RadioButton radioButton1 = new RadioButton("Left");
+        RadioButton radioButton2 = new RadioButton("Right");
+        RadioButton radioButton3 = new RadioButton("Up");
+        RadioButton radioButton4 = new RadioButton("Down");
+
+        ToggleGroup radioGroup = new ToggleGroup();
+
+        radioButton1.setToggleGroup(radioGroup);
+        radioButton2.setToggleGroup(radioGroup);
+        radioButton3.setToggleGroup(radioGroup);
+        radioButton4.setToggleGroup(radioGroup);
+
+        HBox hbox = new HBox(radioButton1, radioButton2, radioButton3, radioButton4);
+
+        Scene scene = new Scene(hbox, 200, 100);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        Application.launch(args);
+    }
+}
+</code></pre>
+</div>
+</div>
+<p>Resultado:</p>
+<p><img src="javafx-radiobutton-2.png" alt="" width="216" height="138" /></p>
+<p>En Scene Builder escroibiremos el nombre del gupo en el campo Toogle Group de la sección propierties:</p>
+<p><img src="ToggleGrup_01.png" alt="" width="271" height="120" /></p>
+<p>Y para evitar que no tengamos ningún Radio seleccionado pondremos como seleccionado uno de ellos, por defecto.</p>
+<h3>Lectura del estado seleccionado de un ToggleGroup</h3>
+<p>Podemos leer qué RadioButton de un ToggleGroup está seleccionado usando el método <strong>getSelectedToggle()</strong>, así:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>RadioButton seleccionadoRadioButton = (RadioButton) alternarGrupo.getSelectedToggle();</code></pre>
+</div>
+</div>
+<p>Si no se selecciona ningún RadioButton, el método getSelectedToggle() devuelve null.</p>
+<p>En nuestro caso vamos a mostrar la opción seleccionada capturando el evento de pulsar sobre los 4 RadioButton:</p>
+<p><img src="RadioButon_01.png" alt="" width="537" height="408" /></p>
+<p>Y su controlador:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>public class FXMLDocumentController implements Initializable {
+
+    @FXML
+    private Label idLabelRadio, idLabC1, idLabC2, idLabC3;
+    @FXML
+    private CheckBox idCheck1, idCheck2, idCheck3;
+    @FXML
+    private ToggleGroup grupoRadios;
+    @FXML
+    private Label idLabelPass;
+    @FXML
+    private RadioButton idRadio1, idRadio2, idRadio3, idRadio4;
+
+            
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+        actualiza1();
+        actualiza2();
+        actualiza3();
+    }    
+
+    @FXML
+    private void actualiza1(){
+        if (idCheck1.isSelected())
+            idLabC1.setText("Estado CHECK Nº1 SELECCIONADO");
+        else if (idCheck1.isIndeterminate())
+            idLabC1.setText("Estado CHECK Nº1 INDETERMINADO");
+        else
+            idLabC1.setText("Estado CHECK Nº1 NO SELECCIONADO");
+        
+    }
+    @FXML
+    private void actualiza2(){
+        if (idCheck2.isSelected())
+            idLabC2.setText("Estado CHECK Nº2 SELECCIONADO");
+        else if (idCheck2.isIndeterminate())
+            idLabC2.setText("Estado CHECK Nº2 INDETERMINADO");
+        else
+            idLabC2.setText("Estado CHECK Nº2 NO SELECCIONADO");
+        
+    }
+    @FXML
+    private void actualiza3(){
+        if (idCheck3.isSelected())
+            idLabC3.setText("Estado CHECK Nº3 SELECCIONADO");
+        else if (idCheck3.isIndeterminate())
+            idLabC3.setText("Estado CHECK Nº3 INDETERMINADO");
+        else
+            idLabC3.setText("Estado CHECK Nº3 NO SELECCIONADO");
+        
+    }
+    @FXML
+    private void actualizaRadios(){
+        if (idRadio1.isSelected())
+            idLabelRadio.setText("Radio seleccionado : Izquierda");
+        else if (idRadio2.isSelected())
+            idLabelRadio.setText("Radio seleccionado : Derecha");
+        else if (idRadio3.isSelected())
+            idLabelRadio.setText("Radio seleccionado : Arriba");
+        else if (idRadio4.isSelected())
+            idLabelRadio.setText("Radio seleccionado : Abajo");
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="textarea_y_passwordfield.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="hojas_de_estilo_css_con_javafx.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

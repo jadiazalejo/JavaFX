@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Ejer07Botones </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-14"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">JavaFX</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="instalacin_y_configuracin_del_ide.html" class="no-ch">Instalación y configuración del IDE</a></li>
+   <li><a href="enlazando_scene_builder_y_netbeans.html" class="no-ch">Enlazando Scene Builder y NetBeans</a></li>
+   <li><a href="creando_nuestra_primera_aplicacin.html" class="no-ch">Creando nuestra primera aplicación</a></li>
+   <li><a href="aplicacin_fx_con_scene_builder.html" class="no-ch">Aplicación FX con Scene Builder</a></li>
+   <li class="current-page-parent"><a href="ejemplos_de_javafx.html" class="current-page-parent daddy">Ejemplos de JavaFX</a>
+   <ul>
+      <li><a href="ejer01pruebametodos.html" class="no-ch">Ejer01PruebaMetodos</a></li>
+      <li><a href="ejer02ventanalabel.html" class="no-ch">Ejer02VentanaLabel</a></li>
+      <li><a href="ejer03ventanas.html" class="no-ch">Ejer03Ventanas</a></li>
+      <li><a href="ejer04ventanacompleta.html" class="no-ch">Ejer04VentanaCompleta</a></li>
+      <li><a href="ejer05ventanamaximizada.html" class="no-ch">Ejer05VentanaMaximizada</a></li>
+      <li><a href="ejer06manejoentradausuario.html" class="no-ch">Ejer06ManejoEntradaUsuario</a></li>
+      <li><a href="panel_hbox_y_vbox.html" class="no-ch">Panel HBox y VBox</a></li>
+      <li id="active"><a href="ejer07botones.html" class="active no-ch">Ejer07Botones</a></li>
+      <li><a href="ejer08textfield.html" class="no-ch">Ejer08TextField</a></li>
+      <li><a href="ejer09ejemploscursor.html" class="no-ch">Ejer09EjemplosCursor</a></li>
+      <li><a href="ejer10accesopropiedades.html" class="no-ch">Ejer10AccesoPropiedades</a></li>
+   </ul>
+   </li>
+   <li><a href="proyectos_javafxscenebuilder.html" class="daddy">Proyectos JavaFX-SceneBuilder</a>
+   <ul class="other-section">
+      <li><a href="textarea_y_passwordfield.html" class="no-ch">TextArea y PasswordField</a></li>
+      <li><a href="togglebutton_checkbox_y_radiobutton.html" class="no-ch">ToggleButton, CheckBox y RadioButton</a></li>
+   </ul>
+   </li>
+   <li><a href="hojas_de_estilo_css_con_javafx.html" class="no-ch">Hojas de estilo CSS con JavaFX</a></li>
+   <li><a href="ejercicios_a_resolver.html" class="no-ch">Ejercicios a resolver</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="panel_hbox_y_vbox.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="ejer08textfield.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Ejer07Botones</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id25">
+<div class="iDevice emphasis0">
+<div id="ta25_85" class="block iDevice_content">
+<p>Un control de botón JavaFX permite que una aplicación JavaFX ejecute alguna acción cuando el usuario de la aplicación hace clic en el botón.</p>
+<p>El control Button JavaFX está representado por la <em><strong>clase javafx.scene.control.Button</strong></em>.</p>
+<p>Un botón JavaFX puede tener un texto y un icono que indiquen al usuario qué ocurrirá al hacer clic en el botón.</p>
+<h3>Crear un botón</h3>
+<p>Un control de botón se crea instanciaciendo un objeto de la clase Button. Aquí hay un ejemplo de instanciación del botón JavaFX:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Button button = new Button("Mi etiqueta");</code><strong><br /></strong></pre>
+</div>
+</div>
+<p>El texto que se mostrará en el botón se pasa como parámetro al constructor del botón.</p>
+<p>En Scene Builder:</p>
+<p style="padding-left: 30px;">Arrastramos de la sección Controls el elemento Button a nuestra escena, en este caso hemos añadido dos contenedores, un  HBox y un VBox.</p>
+<p style="padding-left: 30px;"><img src="button_01_SB.png" alt="" width="600" height="447" /></p>
+<p style="padding-left: 30px;">Una vez seleccionado el botón, a la derecha, en la sección propierties, tenemos la propiedad texto:</p>
+<p style="padding-left: 30px;"><img src="button_02.png" width="599" height="354" /></p>
+<h3>Añadir un botón al a escena</h3>
+<p>Para que un botón JavaFX sea visible, el objeto del botón debe añadirse al gráfico de escena.</p>
+<p>Aquí hay un ejemplo que adjunta un botón JavaFX al gráfico de escena:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Button boton = new Button("My Button");
+Scene scene = new Scene(boton, 200, 200);</code></pre>
+</div>
+</div>
+<p>NOTA: el Botón se añade directamente al objeto Escena. Ocupando la totalidad del la escena. Normalmente se anidaría el Botón dentro de un componente de diseño de algún tipo, por ejemplo HBox.</p>
+<p>El resultado de ejecutar el ejemplo del botón JavaFX anterior es una aplicación que se ve así:</p>
+<p><strong><img src="Ejem01_02.png" width="205" height="227" /></strong></p>
+<p>El componente JavaFX <em><strong>HBox</strong></em> es un componente de diseño que coloca todos sus nodos secundarios (componentes) en una fila horizontal. El componente Java HBox está representado por la<strong> clase javafx.scene.layout.HBox.</strong></p>
+<h3>Crear un HBox</h3>
+<p>Podemos crear el panel de dos formas, con un constructor vacío o añadiendo los componentes que contendrá:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>HBox hbox = new HBox();
+
+Button boton1 = new Button("Botón Número 1");
+Button boton2 = new Button("Número de botón 2");
+
+HBox hbox = new HBox(boton1, boton2);</code></pre>
+</div>
+</div>
+<p>Este ejemplo de HBox distribuirá las dos instancias de Button una al lado de la otra en una fila horizontal.</p>
+<p>En Scene Builder: arrastar el contenedor a la escena.</p>
+<h3>Texto del botón</h3>
+<p>Hay dos formas de configurar el texto de un botón JavaFX. La primera forma es pasar el texto al constructor Button. Ya has visto esto en ejemplos anteriores.</p>
+<p>La segunda forma de configurar el texto del botón y llamar al <strong>método setText()</strong> en la instancia del Botón. Esto se puede hacer después de crear la instancia de Button. Por lo tanto, se puede usar para cambiar el texto de un Botón que ya está visible. Aquí hay un ejemplo de cómo llamar a setText() en un botón JavaFX:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>boton1.setText("Haz click ");</code></pre>
+</div>
+</div>
+<h3>Tamaño del texto del botón</h3>
+<p>Podemos establecer el tamaño del texto de un botón JavaFX. Lo haremos usando la propiedad CSS <em><strong>-fx-text-size</strong></em>.</p>
+<p>Podemos establecer el tamaño desde Scene Bluilder, pero lo correcto será hacer estos cambios desde una hoja de estilo.</p>
+<h3>Ajuste de texto de botón</h3>
+<p>El control Button de JavaFX admite el ajuste al texto del botón. Por ajuste de texto se entiende que si el texto es demasiado largo para mostrarse en una sola línea dentro del botón, el texto se divide en varias líneas.</p>
+<p>Habilita el ajuste de texto en una instancia de JavaFX Button usando el método setWrapText(). El método setWrapText() toma un solo parámetro booleano. Si pasa un valor de verdadero a setWrapText(), habilita el ajuste de texto. Si pasa un valor falso a setWrapText(), deshabilita el ajuste de texto. Aquí hay un ejemplo que habilita el ajuste de texto en un botón JavaFX:</p>
+<p><strong><img src="Ejem01_03.png" alt="" width="207" height="129" /><br /></strong></p>
+<p>En Scene Builder: tenemos un check box para activar esta propiedad (el botón debe tener la altura apropiada).</p>
+<h3>Fuente del botón</h3>
+<p>Puede especificar con qué fuente se debe representar el texto en un botón JavaFX a través de su <strong>método setFont()</strong>.  Aquí hay un ejemplo de cómo configurar una fuente en un botón JavaFX:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Button boton = new Button("Click me!");
+Font font = Font.font("Courier New", FontWeight.BOLD, 36);
+boton.setFont(font);</code></pre>
+</div>
+</div>
+<p>En Scene Builder: tenemos un una propiedad llamada Font, en la que podemos establecer la fuente, el estilo y el tamaño.</p>
+<p><img src="button_03.png" alt="" width="314" height="423" /></p>
+<h3>Modo de botón predeterminado</h3>
+<p style="text-align: justify;">Un botón JavaFX se puede configurar <strong>en un modo predeterminado</strong>. Cuando un botón está en modo predeterminado, se representa de manera diferente, por lo que el usuario puede ver que este es el botón predeterminado. En Windows, el color de fondo del botón cambia, aunque supongo que eso también depende del tema de color utilizado en la aplicación, etc. y puede cambiar en futuras versiones de JavaFX.</p>
+<p>El botón predeterminado está destinado a ser utilizado para la "opción predeterminada" en un cuadro de diálogo o formulario. Por lo tanto, se vuelve más fácil para el usuario seleccionar la elección que probablemente esté haciendo con más frecuencia.</p>
+<p>El botón predeterminado de un cuadro de diálogo o formulario tiene algunos métodos abreviados de teclado adicionales para ayudar al usuario a hacer clic en él:</p>
+<ul>
+<li>Windows y Linux</li>
+</ul>
+<p style="padding-left: 30px;">Si ningún otro botón tiene el foco, al presionar la tecla ENTER del teclado se activará el botón predeterminado.<br />Si el botón predeterminado tiene foco, al presionar la tecla ENTER del teclado se activará el botón predeterminado.</p>
+<ul>
+<li>Mac</li>
+</ul>
+<p style="padding-left: 30px;">Solo se puede activar el botón predeterminado presionando la tecla ENTER del teclado. Todos los demás botones se activan presionando la tecla ESPACIO del teclado.</p>
+<p>La configuración de un botón JavaFX como botón predeterminado se realiza a través de su <strong>método setDefaultButton()</strong>. Aquí hay un ejemplo de configuración de un botón JavaFX como botón predeterminado:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>boton.setDefaultButton(true);</code></pre>
+</div>
+</div>
+<p>En Scene Builder: tenemos un check box para activar esta propiedad "Default button".</p>
+<h3>Imagen del botón</h3>
+<p style="text-align: justify;">Es posible mostrar una imagen dentro de un botón al lado del texto del botón. La clase Button de JavaFX contiene un constructor que puede tomar un Nodo como parámetro extra. Aquí hay un ejemplo de etiqueta JavaFX que agrega una imagen al botón usando un componente JavaFX ImageView:<code>
+</code></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>        Image image = new Image(getClass().getResource("/view/menu.png").toString());
+        ImageView imageView = new ImageView(image);
+        Button boton3 = new Button("Mi botón 3",imageView);  </code></pre>
+</div>
+</div>
+<p>Resultado:<br /><img src="Ejem01_04.png" alt="" width="407" height="130" /></p>
+<p>En Scene Builder: podemos añadir un control ImageView y  arrastrarlo dentro del botón:</p>
+<p><img src="Button_04.png" alt="" width="308" height="246" /></p>
+<h3>Eventos de botón</h3>
+<p>Para responder al clic de un botón, debemos adjuntar un detector de eventos al objeto Botón. Lo haremos a través del <strong>método setOnAction(), </strong>y como argumento instanciaremos un objeto de la clase <strong>EvenHandler</strong> y reescribiendo el <strong>método handle()</strong> de dicha clase.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>button.setOnAction(new EventHandler() {
+    @Override
+    public void handle(ActionEvent actionEvent) {
+        //... do something in here.
+    }
+});</code></pre>
+</div>
+</div>
+<p>Así es como se ve adjuntar un detector de eventos de clic con una <strong>expresión Java Lambda</strong>:<br /><strong></strong></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>boton.setOnAction(actionEvent -&gt;  {
+    //... do something in here.    
+});</code></pre>
+</div>
+</div>
+<p>En Scene Builder y utilizando un modelo MVC: tendremos un fichero controlador y asociaremos el método como hemos visto en el apartado ManejoEntradaUsuario:</p>
+<p>En el controlador:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>public class FXML_Controller implements Initializable {
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    } 
+    
+    @FXML
+    public void onClickBoton1(ActionEvent actionEvent){
+        // código asociado al evento click sobre el botón
+        System.out.println("Se ha propucido el evento");
+    }
+}</code></pre>
+</div>
+</div>
+<p>Y asociamos ese método al evento On Action del botón correspondiente:</p>
+<p><img src="Button_05.png" alt="" width="667" height="354" /></p>
+<h3>Botón mnemotécnico</h3>
+<p>Puede configurar un mnemotécnico en una instancia de JavaFX Button. Un mnemotécnico es una tecla del teclado que activa el botón cuando se presiona junto con la tecla ALT. Por lo tanto, un mnemotécnico es un atajo de teclado para activar el botón.</p>
+<p style="text-align: justify;">El mnemotécnico de un botón se especifica dentro del texto del botón. Debemos marcar qué tecla se utilizará como mnemotécnica colocando un carácter de subrayado (_) delante del carácter en el texto del botón que desea establecer como mnemotécnico para ese botón. El carácter de subrayado no se mostrará en el texto del botón.  Por ejemplo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>boton.setMnemonicParsing(true);
+boton.setText("_Click");</code></pre>
+</div>
+</div>
+<p>Tenga en cuenta que primero es necesario llamar a <strong>setMnemonicParsing()</strong> en el botón con un valor de true. Esto le indica al botón que analice los mnemotécnicos en el texto del botón. Si llama a este método con un valor falso, el carácter de subrayado en el texto del botón se mostrará como texto y no se interpretará como un mnemotécnico.</p>
+<p>La segunda línea establece el texto _Click en el botón. Esto le dice al botón que use la tecla C como mnemotécnico. Los mnemotécnicos no distinguen entre mayúsculas y minúsculas, por lo que no tiene que ser una C mayúscula la que activa el botón.</p>
+<p>Para activar el botón, ahora puede presionar ALT-C (ambos al mismo tiempo). Eso activará el botón como si hubiera hecho clic con el mouse.</p>
+<p>En Scene Builder:</p>
+<ul>
+<li>Añadir el símbolo _ delante del caracter elegido en la propiedad text</li>
+<li>Marcar el check box indicando que queremos tener esa posibilidad</li>
+</ul>
+<p><img src="Button_06.png" alt="" width="282" height="176" /></p>
+<h3>Deshabilitar botón</h3>
+<p style="text-align: justify;">Podemos deshabilitar un botón JavaFX a través de su método <strong>setDisable()</strong>. El método setDisable() toma como parámetro un boolean que especifica si el botón debe estar deshabilitado o no. Un valor de verdadero significa que el botón se deshabilitará y un valor de falso significa que no se deshabilitará, lo que significa que estará habilitado. <strong></strong></p>
+<p style="text-align: justify;">Tenemos dos check box en Scenne Builder: Disable y Visible (también existe setVisible() como método.</p>
+<p>Ver más en <a href="https://jenkov.com/tutorials/javafx/button.html" target="_blank" rel="noopener">http://tutorials.jenkov.com/javafx/button.html</a></p>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="panel_hbox_y_vbox.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="ejer08textfield.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

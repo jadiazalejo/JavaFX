@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Instalación y configuración del IDE </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-3"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">JavaFX</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li id="active"><a href="instalacin_y_configuracin_del_ide.html" class="active no-ch">Instalación y configuración del IDE</a></li>
+   <li><a href="enlazando_scene_builder_y_netbeans.html" class="no-ch">Enlazando Scene Builder y NetBeans</a></li>
+   <li><a href="creando_nuestra_primera_aplicacin.html" class="no-ch">Creando nuestra primera aplicación</a></li>
+   <li><a href="aplicacin_fx_con_scene_builder.html" class="no-ch">Aplicación FX con Scene Builder</a></li>
+   <li><a href="ejemplos_de_javafx.html" class="daddy">Ejemplos de JavaFX</a>
+   <ul class="other-section">
+      <li><a href="ejer01pruebametodos.html" class="no-ch">Ejer01PruebaMetodos</a></li>
+      <li><a href="ejer02ventanalabel.html" class="no-ch">Ejer02VentanaLabel</a></li>
+      <li><a href="ejer03ventanas.html" class="no-ch">Ejer03Ventanas</a></li>
+      <li><a href="ejer04ventanacompleta.html" class="no-ch">Ejer04VentanaCompleta</a></li>
+      <li><a href="ejer05ventanamaximizada.html" class="no-ch">Ejer05VentanaMaximizada</a></li>
+      <li><a href="ejer06manejoentradausuario.html" class="no-ch">Ejer06ManejoEntradaUsuario</a></li>
+      <li><a href="panel_hbox_y_vbox.html" class="no-ch">Panel HBox y VBox</a></li>
+      <li><a href="ejer07botones.html" class="no-ch">Ejer07Botones</a></li>
+      <li><a href="ejer08textfield.html" class="no-ch">Ejer08TextField</a></li>
+      <li><a href="ejer09ejemploscursor.html" class="no-ch">Ejer09EjemplosCursor</a></li>
+      <li><a href="ejer10accesopropiedades.html" class="no-ch">Ejer10AccesoPropiedades</a></li>
+   </ul>
+   </li>
+   <li><a href="proyectos_javafxscenebuilder.html" class="daddy">Proyectos JavaFX-SceneBuilder</a>
+   <ul class="other-section">
+      <li><a href="textarea_y_passwordfield.html" class="no-ch">TextArea y PasswordField</a></li>
+      <li><a href="togglebutton_checkbox_y_radiobutton.html" class="no-ch">ToggleButton, CheckBox y RadioButton</a></li>
+   </ul>
+   </li>
+   <li><a href="hojas_de_estilo_css_con_javafx.html" class="no-ch">Hojas de estilo CSS con JavaFX</a></li>
+   <li><a href="ejercicios_a_resolver.html" class="no-ch">Ejercicios a resolver</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="introduccin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="enlazando_scene_builder_y_netbeans.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Instalación y configuración del IDE</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id4">
+<div class="iDevice emphasis0">
+<div id="ta4_85" class="block iDevice_content">
+<h2>Entorno JavaFX</h2>
+<p>Tenemos que configurar el entorno JavaFX en el sistema para ejecutar aplicaciones JavaFX. Todas las versiones de Java posteriores a JDK 1.8 son compatibles con JavaFX, por lo que debemos tener instalado JDK 1.8 o posterior en nuestro sistema. Hay varios IDE, como Net-beans o Eclipse, que también son compatibles con la biblioteca JavaFX.</p>
+<p>Concretamente la última versión disponible ahora es JDK 19.</p>
+<h3>JavaFX y NetBeans</h3>
+<p>Vamos a ver cómo crear una aplicación JavaFX en NetBeans. Se utilizaron JavaFX 19, JDK 19 y Apache NetBeans 15 para las capturas de pantalla del IDE.</p>
+<p>A estas alturas del curso ya tendremos instalado:</p>
+<ul>
+<li>Apache Netbeans 15 o posterior</li>
+<li>JDK 19</li>
+</ul>
+<h4>Instalar el plugin JavaFX2</h4>
+<ul>
+<li>JavaFX 2.0 is the next step in the evolution of Java as a rich client platform. It is designed to provide a lightweight, hardware-accelerated Java UI platform for enterprise and business applications.JavaFX 2 Scene Builder</li>
+<li>JavaFX2 Scene Builder support in the form of simple external launcherModules installed:<br />JavaFX 2 Scene Builder, JavaFX 2 Support</li>
+</ul>
+<p><img src="Plugin.png" alt="" width="600" height="379" /></p>
+<p><strong>IMPORTANTE:</strong> es necesario reiniciar el IDE, en windows fué necesario.</p>
+<h4>Proyectos JavaFX con netbeans IDE</h4>
+<p>Sigue estos pasos para crear un proyecto JavaFX utilizando las herramientas IDE para compilarlo y ejecutarlo.</p>
+<ul>
+<li><span style="color: #000000;">Descargar el <a href="https://gluonhq.com/products/javafx/" target="_blank" rel="noopener" style="color: #000000;">SDK de JavaFX</a> apropiado para su sistema operativo.</span></li>
+</ul>
+<p style="padding-left: 30px;"><span style="color: #000000;"><img src="descarga_javaFX.png" width="690" height="258" /></span></p>
+<ul>
+<li><span style="color: #000000;">Descomprímelo en la ubicación deseada, por ejemplo, /Users/your-user/Downloads/javafx-sdk-19. Es <strong>IMPORTANTÍSIMO</strong> que recuerdes la ruta (path) hasta esta librería, el lugar donde lo descomprimas no es importante.<br /></span></li>
+<li>
+<h4><span style="color: #000000;">Crea una nueva biblioteca global en:</span></h4>
+<ul>
+<li><span style="color: #000000;"> Tools -&gt; Libraries -&gt; New Library (abajo a la izquierda) </span></li>
+<li><span style="color: #000000;">Nómbrala <strong>JavaFX</strong> (por ejemplo), debes añadir <strong>Add JAR/Folder</strong> los archivos jar en la carpeta lib de JavaFX 19.</span></li>
+</ul>
+</li>
+</ul>
+<p><img src="instalacionJavaFX01.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="800" height="457" /></p>
+<p><strong>Nota importante:</strong> asegúrate de <strong>no añadir el archivo src.zip</strong>, ya que provocará una excepción al ejecutar el proyecto.</p>
+<ul>
+<li>
+<h4><span style="color: #000000;">Crea un proyecto de Java (JavaApplication NO JavaFX):</span></h4>
+</li>
+</ul>
+<p><span style="color: #000000;"><img src="instalacionJavaFX02.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="799" height="596" />Proporciona un nombre para el proyecto, como <strong>HelloFX,</strong> y una ubicación. Se abrirá un proyecto predeterminado.</span></p>
+<p><span style="color: #000000;"><strong>IMPORTANTE. </strong></span></p>
+<p><span style="color: #000000;"><strong>Advertencia: </strong>no intentes crear un proyecto JavaFX. Las tareas JavaFX Ant de la versión actual de Apache NetBeans aún no están listas para JavaFX 19, a menos que tenga un JDK personalizado que incluya JavaFX.</span></p>
+<ul>
+<li>
+<h4><span style="color: #000000;">Establecer JDK</span></h4>
+<p><span style="color: #000000;">Asegúrate de que Tu proyecto esté configurado para ejecutarse con JDK 17 o posterior. Abrimos las propiedades del proyecto (botón derecho sobre el nombre del proyecto) y <strong>properties</strong><br /></span></p>
+<ul>
+<li>
+<p><span style="color: #000000;"><strong>Properties -&gt; Libraries -&gt;  (campo) Java Platform</strong> y configúralo en tu JDK preferido.<br /></span></p>
+</li>
+</ul>
+</li>
+</ul>
+<p><span style="color: #000000;"><img src="instalacionJavaFX03.png" style="display: block; margin-left: auto; margin-right: auto;" width="801" height="580" /></span></p>
+<ul>
+<li>
+<h4><span style="color: #000000;">Configurar el proyecto.</span></h4>
+<ul>
+<li>
+<h4><span style="color: #000000;">Añadir la biblioteca</span></h4>
+<p><span style="color: #000000;">Iremos a <strong>Properties -&gt; Libraries  -&gt; Classpath -&gt; + -&gt; Add Library</strong> y añadimos la biblioteca JavaFX.</span></p>
+</li>
+</ul>
+</li>
+</ul>
+<p><span style="color: #000000;"><img src="instalacionJavaFX04.png" style="display: block; margin-left: auto; margin-right: auto;" width="800" height="579" /></span></p>
+<ul>
+<li><span style="color: #000000;">Ir a <strong>Properties -&gt; Build -&gt; Compiling</strong>:  asegurarse de anular la selección de la opción <strong>Compile on Save</strong>.</span></li>
+</ul>
+<p><span style="color: #000000;"><img src="instalacionJavaFX05.png" style="display: block; margin-left: auto; margin-right: auto;" width="800" height="584" /></span></p>
+<p><strong>Mi primer proyecto JavaFX.</strong></p>
+<p>Vamos comenzar</p>
+<ol>
+<li>Heredando la clase principal de la clase <strong>Application</strong></li>
+<li>Tendremos que importar las clases de la librería (no confundas con otras clases: es javafx.application.Application</li>
+<li>Implementar el método abstracto <strong>strat(Stage stage)</strong></li>
+</ol>
+<p><img src="instalacionJavaFX06.png" style="display: block; margin-left: auto; margin-right: auto;" width="707" height="567" /></p>
+<ul>
+<li>
+<h4><span style="color: #000000;">Agregar clases JavaFX</span></h4>
+</li>
+</ul>
+<p style="padding-left: 30px;"><span style="color: #000000;">Para trabajar con el modelo MVC, tenemos que añadir un archivo FXML con su controlador y una hoja de estilo.</span></p>
+<p style="padding-left: 30px;"><span style="color: #000000;"><strong>Botón derecho sobre el Package -&gt; new -&gt; Other -&gt; JavaFX -&gt;Empty FXML</strong><br /></span></p>
+<p style="padding-left: 30px;"><span style="color: #000000;"><img src="instalacionJavaFX06-1.png" style="display: block; margin-left: auto; margin-right: auto;" width="570" height="399" /></span></p>
+<p style="padding-left: 30px;"><span style="color: #000000;"><img src="instalacionJavaFX06_2.png" style="display: block; margin-left: auto; margin-right: auto;" width="608" height="419" /></span></p>
+<p style="text-align: center;">Le ponemos un nombre a la Vista (fichero FXML)</p>
+<p><span style="color: #000000;"><img src="instalacionJavaFX06_3.png" style="display: block; margin-left: auto; margin-right: auto;" width="648" height="444" /></span></p>
+<p style="text-align: center;">Le indicamos que queremos utilizar <strong>Use Java Controller</strong></p>
+<p style="padding-left: 30px;"><span style="color: #000000;"><img src="instalacionJavaFX08.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="721" height="490" /></span></p>
+<p style="text-align: center;">Y queremos utilizar un CSS</p>
+<p style="padding-left: 30px;"><span style="color: #000000;"><img src="instalacionJavaFX09.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="721" height="494" /></span></p>
+<p style="padding-left: 30px;"><span style="color: #000000;">Tendremos un proyecto con las siguientes clases:</span></p>
+<p></p>
+<p style="padding-left: 30px;"><span style="color: #000000;"><img src="instalacionJavaFX10.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="669" height="202" /></span></p>
+<p><strong>Advertencia</strong>: si ejecuta ahora el proyecto, se compilará pero obtendrá este error:</p>
+<p><span style="color: #ff0000;"></span>Error: <span style="color: #ff0000;"><strong>JavaFX runtime components are missing, and are required to run this application</strong></span></p>
+<p>Este error se muestra porque Java 19 verifica si la clase principal extiende de javafx.application.Application. Si ese es el caso, es necesario tener el módulo javafx.graphics en la ruta del módulo.</p>
+<h4>SOLUCIÓN: Add VM options</h4>
+<p>Para resolver el problema, Ir a <strong>Properties -&gt; Run</strong> del proyecto y añadir estas opciones en el <strong>campo VM:</strong></p>
+<ul>
+<li><span style="color: #000000;">Para Linux y Mac: --module-path /<strong>path/to</strong>/javafx-sdk-19/lib --add-modules javafx.controls,javafx.fxml</span></li>
+<li><span style="color: #000000;">Para Windows: --module-path "\<strong>path\to</strong>\javafx-sdk-19\lib" --add-modules javafx.controls,javafx.fxml</span></li>
+</ul>
+<p>Donde <strong>/path/to</strong> debes sustituirlo por tu ruta a la librería, por ejemplo:</p>
+<p>--module-path /home/adminroot/Escritorio/JavaFX/javafx-sdk-19/lib/ --add-modules javafx.controls,javafx.fxml</p>
+<p><strong>IMPORTANTE</strong>: un espacio en blanco al final hará que el error continue.</p>
+<p><img src="instalacionJavaFX11.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="800" height="521" /></p>
+<p>Haz clic en aplicar y cierra el cuadro de diálogo.</p>
+<h4>Ejecutar el proyecto</h4>
+<ul>
+<li><span style="color: #000000;">Haz clic en <strong>Run -&gt; Run Project (HelloFX)</strong> para ejecutar el proyecto, ya no debe darnos ningún error. Aunque el proyecto no haga nada por el momento.<br /></span></li>
+</ul>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="introduccin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="enlazando_scene_builder_y_netbeans.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

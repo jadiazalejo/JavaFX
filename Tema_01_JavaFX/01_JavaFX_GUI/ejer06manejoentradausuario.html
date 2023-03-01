@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Ejer06ManejoEntradaUsuario </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-13"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">JavaFX</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="instalacin_y_configuracin_del_ide.html" class="no-ch">Instalación y configuración del IDE</a></li>
+   <li><a href="enlazando_scene_builder_y_netbeans.html" class="no-ch">Enlazando Scene Builder y NetBeans</a></li>
+   <li><a href="creando_nuestra_primera_aplicacin.html" class="no-ch">Creando nuestra primera aplicación</a></li>
+   <li><a href="aplicacin_fx_con_scene_builder.html" class="no-ch">Aplicación FX con Scene Builder</a></li>
+   <li class="current-page-parent"><a href="ejemplos_de_javafx.html" class="current-page-parent daddy">Ejemplos de JavaFX</a>
+   <ul>
+      <li><a href="ejer01pruebametodos.html" class="no-ch">Ejer01PruebaMetodos</a></li>
+      <li><a href="ejer02ventanalabel.html" class="no-ch">Ejer02VentanaLabel</a></li>
+      <li><a href="ejer03ventanas.html" class="no-ch">Ejer03Ventanas</a></li>
+      <li><a href="ejer04ventanacompleta.html" class="no-ch">Ejer04VentanaCompleta</a></li>
+      <li><a href="ejer05ventanamaximizada.html" class="no-ch">Ejer05VentanaMaximizada</a></li>
+      <li id="active"><a href="ejer06manejoentradausuario.html" class="active no-ch">Ejer06ManejoEntradaUsuario</a></li>
+      <li><a href="panel_hbox_y_vbox.html" class="no-ch">Panel HBox y VBox</a></li>
+      <li><a href="ejer07botones.html" class="no-ch">Ejer07Botones</a></li>
+      <li><a href="ejer08textfield.html" class="no-ch">Ejer08TextField</a></li>
+      <li><a href="ejer09ejemploscursor.html" class="no-ch">Ejer09EjemplosCursor</a></li>
+      <li><a href="ejer10accesopropiedades.html" class="no-ch">Ejer10AccesoPropiedades</a></li>
+   </ul>
+   </li>
+   <li><a href="proyectos_javafxscenebuilder.html" class="daddy">Proyectos JavaFX-SceneBuilder</a>
+   <ul class="other-section">
+      <li><a href="textarea_y_passwordfield.html" class="no-ch">TextArea y PasswordField</a></li>
+      <li><a href="togglebutton_checkbox_y_radiobutton.html" class="no-ch">ToggleButton, CheckBox y RadioButton</a></li>
+   </ul>
+   </li>
+   <li><a href="hojas_de_estilo_css_con_javafx.html" class="no-ch">Hojas de estilo CSS con JavaFX</a></li>
+   <li><a href="ejercicios_a_resolver.html" class="no-ch">Ejercicios a resolver</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="ejer05ventanamaximizada.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="panel_hbox_y_vbox.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Ejer06ManejoEntradaUsuario</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id24">
+<div class="iDevice emphasis0">
+<div id="ta24_85" class="block iDevice_content">
+<p><br />Detectar y procesar la entrada de usuario en JavaFX es sencillo. Las acciones del usuario que pueden ser detectadas por el sistema, como pulsaciones de teclas y clics del ratón, se denominan <strong>eventos</strong>. En JavaFX, estas acciones provocan automáticamente la generación de objetos (como KeyEvent y MouseEvent) que almacenan los datos asociados (como la tecla real presionada o la ubicación del puntero del ratón). Cualquier clase JavaFX que implementa la clase EventTarget, como una Scene, <strong>puede "escuchar" eventos y manejarlos</strong>; En los ejemplos que siguen, mostraremos cómo configurar una escena para procesar varios eventos.</p>
+<p>Mirando a través de la documentación de la clase Scene, hay muchos métodos que escuchan para manejar diferentes tipos de entrada de diferentes fuentes.</p>
+<p>Por ejemplo:</p>
+<ul>
+<li>el método<em><strong> setOnKeyPressed()</strong></em> puede asignar un EventHandler que se activará cuando se presione una tecla.</li>
+<li>el método <em><strong>setOnMouseClicked ()</strong></em> puede asignar un EventHandler que se active cuando se presiona un botón del ratón, etc.</li>
+</ul>
+<p>La clase <em><strong>EventHandler</strong></em> tiene un propósito: encapsular un método (llamado handle()) que se llama cuando se produce el evento correspondiente.</p>
+<p>Al crear un EventHandler, se debe especificar el tipo de Evento que maneja: podemos declarar un EventHandler&lt;KeyEvent&gt; o un EventHandler&lt;MouseEvent&gt;, por ejemplo. Además, EventHandlers a menudo se crean como clases internas anónimas, ya que normalmente sólo se utilizan una vez (cuando se pasan como argumento a uno de los métodos enumerados anteriormente).</p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id26">
+<div class="iDevice emphasis0">
+<div id="ta26_85" class="block iDevice_content">
+<h3>Manejo de eventos de de la ventana (Stage)</h3>
+<p>En el siguiente ejemplo podremos ver como ocurren los eventos de antes, durante y después de abrir y cerrar una ventana:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import java.util.concurrent.TimeUnit;
+import javafx.application.Application;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.text.Font;
+import javafx.stage.Stage;
+
+/**
+ * Ejemplo de manejo de eventos emitidos desde un stage.
+ */
+
+public class Ejer08Eventos extends Application {
+
+    @Override
+    public void start(Stage primaryStage) {
+
+        // Configuramos escenario y le añadimos una escena 
+        primaryStage.setTitle("Ventanas con eventos");
+        Scene scene = newScene();
+        primaryStage.setScene(scene);
+
+        // Manejo de eventos emitidos por el escenario
+        primaryStage.setOnShowing(event -&gt; messageAndWait5Seconds("Se va a mostrar la ventana (en 5 segundos)"));
+        primaryStage.setOnShown(event -&gt; System.out.println("Ventana mostrada"));
+        primaryStage.setOnCloseRequest(event -&gt; System.out.println("Recibida petición de cierre de ventana"));
+        primaryStage.setOnHiding(event -&gt; messageAndWait5Seconds("Se va a cerrar la ventana (en 5 segundos)"));
+        primaryStage.setOnHidden(event -&gt; System.out.println("Ventana cerrada"));
+        primaryStage.show();
+    }
+
+    private Scene newScene() {
+        Label label = new Label("¡Hola Mundo, JavaFX!");
+        label.setFont(new Font("Arial", 25));
+        label.setAlignment(Pos.CENTER);
+        Scene scene = new Scene(label, 300, 200);
+        return scene;
+    }
+
+    private void messageAndWait5Seconds(String msg) {
+        System.out.println(msg);
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+}
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id27">
+<div class="iDevice emphasis0">
+<div id="ta27_85" class="block iDevice_content">
+<h3>Manejo de eventos del teclado.</h3>
+<p>En el siguiente ejemplo podemos ver como capturar la pulsación de teclas, con ESC cerraremos la ventana, con ENTER cambiaremos su tamaño y con el resto simplemente mostraremos la tecla pulsada:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import javafx.application.Application;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.input.KeyEvent;
+import javafx.stage.Stage;
+
+public class Ejer10EventosTeclado extends Application {
+
+    @Override
+    public void start(Stage primaryStage) {
+        Group root = new Group();
+        Scene scene = new Scene(root, 300, 250);
+
+        primaryStage.setScene(scene);
+        primaryStage.show();
+
+        // Detectar teclas
+        scene.setOnKeyPressed((KeyEvent keyEvent) -&gt; {
+            // Insertar aquí el código a ejecutar cuando se pulse el ratón
+            switch (keyEvent.getCode().getName()) {
+                case "Esc": {
+                    System.out.println("Tecla reconocida");
+                    System.out.println(keyEvent.getCode().getName());
+                    primaryStage.close();
+                    break;
+                }
+                case "Enter": {
+                    System.out.println("Tecla reconocida");
+                    System.out.println(keyEvent.getCode().getName());
+                    primaryStage.setWidth(primaryStage.getWidth() * 1.5);
+                    break;
+                }
+                default: {
+                    System.out.println("Tecla no reconocida");
+                    System.out.println(keyEvent.getCode().getName());
+                }
+            }
+        });
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id28">
+<div class="iDevice emphasis0">
+<div id="ta28_85" class="block iDevice_content">
+<h3>Manejo de eventos del ratón.</h3>
+<p>En este último ejemplo de eventos capturaremos el evento de presionar el botón del ratón, soltarlo y el lugar donde se pulsó:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import javafx.application.Application;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+
+public class Ejer09EventosRaton extends Application {
+
+    @Override
+    public void start(Stage primaryStage) {
+        Group root = new Group();
+        Scene scene = new Scene(root, 300, 250);
+
+        primaryStage.setScene(scene);
+        primaryStage.show();
+
+        // Detectar ratón pulsado
+        scene.setOnMousePressed((MouseEvent mouseEvent) -&gt; {
+            // Insertar aquí el código a ejecutar cuando se pulse el ratón
+            System.out.println("Ratón pulsado en (x, y): ("
+                    + mouseEvent.getX() + ", " + mouseEvent.getY() + ")");
+        });
+
+        // Detectar ratón soltado
+        scene.setOnMouseReleased((MouseEvent mouseEvent) -&gt; {
+            // Insertar aquí el código a ejecutar cuando se suelte el ratón
+            System.out.println("Ratón soltado en (x, y): ("
+                    + mouseEvent.getX() + ", " + mouseEvent.getY() + ")");
+        });
+
+        // Detectar clic en ratón (pulsado y soltado)
+        scene.setOnMouseClicked((MouseEvent mouseEvent) -&gt; {
+            // Insertar aquí el código a ejecutar cuando se haga clic en el ratón
+            System.out.println("Ratón clicado en (x, y): ("
+                    + mouseEvent.getX() + ", " + mouseEvent.getY() + ")");
+            // También se puede comprobar sobre qué botón se ha actuado,
+            //  válido para cualquier acción (pressed, released, clicked, etc)
+            if (mouseEvent.getButton() == MouseButton.PRIMARY) {
+                System.out.println("Botón principal");
+            } else if (mouseEvent.getButton() == MouseButton.SECONDARY) {
+                System.out.println("Botón secundario");
+            }
+        });
+
+        /* Más información:
+            En la API de JavaFX para la clase Scene se puede ver los distintos
+            métodos existentes para detectar eventos del ratón. Son aquellos
+            cuyo nombre empieza por setOnMouse......
+            https://docs.oracle.com/javase/8/javafx/api/javafx/scene/Scene.html
+         */
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id50">
+<div class="iDevice emphasis0">
+<div id="ta50_85" class="block iDevice_content">
+<h2>Utilizando MVC y Scene Builder.</h2>
+<p>La estructura de nuestro proyecto contendrá los siguientes ficheros:</p>
+<ul>
+<li>Ejer06ManejoEntradaUsuario. Principal, hereda de Application.</li>
+<li>FXML_ManejoEventos. Nuestro FXML, la vista.</li>
+<li>FXML_ManejoEventosController. Nuestro controlador.</li>
+</ul>
+<p>En nuestro programa principal especificaremos nuestra Escenario (Stage) y nuestra escena (Scene), así como los eventos asociados al escenario, esto no podemos hacerlo desde Scene Builder.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>public class Ejer06ManejoEntradaUsuario extends Application {
+
+        public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("FXML_ManejoEventos.fxml"));
+        
+        // Manejo de eventos emitidos por el escenario (Stage)
+        stage.setOnShowing(event -&gt; messageAndWait5Seconds("Se va a mostrar la ventana (en 5 segundos)"));
+        stage.setOnShown(event -&gt; System.out.println("Ventana mostrada"));
+        stage.setOnCloseRequest(event -&gt; System.out.println("Recibida petición de cierre de ventana"));
+        stage.setOnHiding(event -&gt; messageAndWait5Seconds("Se va a cerrar la ventana (en 5 segundos)"));
+        stage.setOnHidden(event -&gt; System.out.println("Ventana cerrada"));
+        
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+ 
+    public static void main(String[] args) {
+        
+        launch(args);
+    }
+    
+    public void messageAndWait5Seconds(String msg) {
+        System.out.println(msg);
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+</div>
+</div>
+<p>Nuestra vista en Scene Builder contendrá una etiqueta (Label) y un botón (Button):</p>
+<p><img src="Eventos_SB.png" alt="" width="699" height="254" /></p>
+<p>Indicaremos en la pestaña controller que fichero hará de controlador, en nuestro caso: FXML_ManejoEventosController</p>
+<p><img src="Eventos_SB_2.png" alt="" width="617" height="272" /></p>
+<p>En el fichero controlador escribimos nuestros métodos:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>public class FXML_ManejoEventosController implements Initializable {
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }    
+
+    @FXML
+    public void keyPressed(KeyEvent keyEvent) {
+            // Insertar aquí el código a ejecutar cuando se pulse el ratón
+            System.out.println("---&gt;"+keyEvent.getText());
+            switch (keyEvent.getCode().getName()) {
+                case "Esc" -&gt;  {
+                    System.out.println("Tecla reconocida");
+                    System.out.println(keyEvent.getCode().getName());
+                }
+                case "Enter" -&gt;  {
+                    System.out.println("Tecla reconocida");
+                    System.out.println(keyEvent.getCode().getName());
+                }
+                default -&gt; {
+                    System.out.println("Tecla no reconocida");
+                    System.out.println(keyEvent.getCode().getName());
+                }
+            }
+    }
+    
+    @FXML
+    public void ratonClicked(MouseEvent mouseEvent) {
+            // Insertar aquí el código a ejecutar cuando se haga clic en el ratón
+            System.out.println("Ratón clicado en (x, y): ("
+                    + mouseEvent.getX() + ", " + mouseEvent.getY() + ")");
+            // También se puede comprobar sobre qué botón se ha actuado,
+            //  válido para cualquier acción (pressed, released, clicked, etc)
+            if (mouseEvent.getButton() == MouseButton.PRIMARY) {
+                System.out.println("Botón principal");
+            } else if (mouseEvent.getButton() == MouseButton.SECONDARY) {
+                System.out.println("Botón secundario");
+            }
+    }
+    
+    @FXML
+    public void ratonReleased(MouseEvent mouseEvent){
+            // Insertar aquí el código a ejecutar cuando se suelte el ratón
+            System.out.println("Ratón soltado en (x, y): ("
+                    + mouseEvent.getX() + ", " + mouseEvent.getY() + ")");
+    }
+}</code></pre>
+</div>
+</div>
+<p><strong>IMPORTANTE</strong>: Los métodos que asociaremos en la vista deben tener la anotación @FXML. Esa anotación indica que el elemento que aparece a continuación de él está asociado a algún elemento del archivo FXML. </p>
+<p>Asociaremos al botón los eventos de pulsar una tecla, hacer click con el ratón y soltar el botón del ratón.</p>
+<p>Para ello, en la sección code del botón, buscamos los eventos que nos interesan y seleccionamos el método.</p>
+<ul>
+<li>On Key Pressed</li>
+<li>On Mouse Clicked</li>
+<li>On Mouse Released</li>
+</ul>
+<p><img src="Eventos_SB_3.png" alt="" width="693" height="687" /></p>
+<p>Y el resultado, al pulsar con el ratón sobre el botón.</p>
+<p><img src="Eventos_SB_4.png" alt="" width="701" height="318" /></p>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="ejer05ventanamaximizada.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="panel_hbox_y_vbox.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

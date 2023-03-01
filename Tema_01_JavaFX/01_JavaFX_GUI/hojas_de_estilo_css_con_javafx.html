@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Hojas de estilo CSS con JavaFX </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-23"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">JavaFX</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="instalacin_y_configuracin_del_ide.html" class="no-ch">Instalación y configuración del IDE</a></li>
+   <li><a href="enlazando_scene_builder_y_netbeans.html" class="no-ch">Enlazando Scene Builder y NetBeans</a></li>
+   <li><a href="creando_nuestra_primera_aplicacin.html" class="no-ch">Creando nuestra primera aplicación</a></li>
+   <li><a href="aplicacin_fx_con_scene_builder.html" class="no-ch">Aplicación FX con Scene Builder</a></li>
+   <li><a href="ejemplos_de_javafx.html" class="daddy">Ejemplos de JavaFX</a>
+   <ul class="other-section">
+      <li><a href="ejer01pruebametodos.html" class="no-ch">Ejer01PruebaMetodos</a></li>
+      <li><a href="ejer02ventanalabel.html" class="no-ch">Ejer02VentanaLabel</a></li>
+      <li><a href="ejer03ventanas.html" class="no-ch">Ejer03Ventanas</a></li>
+      <li><a href="ejer04ventanacompleta.html" class="no-ch">Ejer04VentanaCompleta</a></li>
+      <li><a href="ejer05ventanamaximizada.html" class="no-ch">Ejer05VentanaMaximizada</a></li>
+      <li><a href="ejer06manejoentradausuario.html" class="no-ch">Ejer06ManejoEntradaUsuario</a></li>
+      <li><a href="panel_hbox_y_vbox.html" class="no-ch">Panel HBox y VBox</a></li>
+      <li><a href="ejer07botones.html" class="no-ch">Ejer07Botones</a></li>
+      <li><a href="ejer08textfield.html" class="no-ch">Ejer08TextField</a></li>
+      <li><a href="ejer09ejemploscursor.html" class="no-ch">Ejer09EjemplosCursor</a></li>
+      <li><a href="ejer10accesopropiedades.html" class="no-ch">Ejer10AccesoPropiedades</a></li>
+   </ul>
+   </li>
+   <li><a href="proyectos_javafxscenebuilder.html" class="daddy">Proyectos JavaFX-SceneBuilder</a>
+   <ul class="other-section">
+      <li><a href="textarea_y_passwordfield.html" class="no-ch">TextArea y PasswordField</a></li>
+      <li><a href="togglebutton_checkbox_y_radiobutton.html" class="no-ch">ToggleButton, CheckBox y RadioButton</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="hojas_de_estilo_css_con_javafx.html" class="active no-ch">Hojas de estilo CSS con JavaFX</a></li>
+   <li><a href="ejercicios_a_resolver.html" class="no-ch">Ejercicios a resolver</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="togglebutton_checkbox_y_radiobutton.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="ejercicios_a_resolver.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Hojas de estilo CSS con JavaFX</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id42">
+<div class="iDevice emphasis0">
+<div id="ta42_85" class="block iDevice_content">
+<p>JavaFX permite la <strong>personalización</strong> de los elementos graficos de una aplicación Java usando CSS. Veremos cómo se pueden usar archivos de hojas de estilo CSS, aunque también es posible aplicar los estilos directamente desde el código fuente a cada elemento de pantalla.</p>
+<h3>Lista de estilos de la escena</h3>
+<p>La escena (Scene) que se utilice en una aplicación JavaFX ofrece la posibilidad de asignarle una serie de hojas de estilos a través de una lista. A dicha lista se le podría añadir una única hoja de estilos, varias o dejarla vacía.</p>
+<p>Para acceder a dicha lista de hojas de estilos se puede utilizar el método <strong>getStylesheets()</strong> de la clase Scene:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>scene.getStylesheets()</code></pre>
+</div>
+</div>
+<p>Para añadir una hoja de estilos a la lista se puede usar el método <strong>add()</strong> como es habitual en las listas de Java, indicando en este caso el nombre del archivo que contiene los estilos:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>scene.getStylesheets().add("nombreHojaEstilos.css")</code></pre>
+</div>
+</div>
+<p>Hay que tener en cuenta que si no se indica ninguna ruta junto al nombre del archivo, éste debe colocarse en la carpeta src del proyecto.</p>
+<h3>Hoja de estilos dentro de paquetes</h3>
+<p>Lo habitual y recomendable es tener los archivos mejor organizados, por lo que conviene alojar los archivos CSS en un paquete propio. Por ejemplo, se puede crear un paquete (o carpeta) llamada <em><strong>view</strong></em> dentro de los paquetes de fuentes, con idea de alojar diversos recursos de la aplicación como imágenes, sonidos, o los estilos. Incluso dentro de ese paquete se pueden organizar los recursos por categorías, por lo que se puede crear dentro de él otro paquete que se llame, por ejemplo, <em><strong>css</strong></em> donde se alojarán las hojas de estilo. Observa que en la <strong>pestaña projects</strong> de netbeans el <strong>árbol del proyecto</strong> aparece como un único paquete llamado <em><strong>view.css</strong></em>, aunque realmente se trata de una carpeta dentro de otra. Se vería como algo así en :</p>
+<p><img src="css_01.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="373" height="255" /></p>
+<p>Mientras que en la <strong>pestaña Files de NetBeans</strong> se vería la estructura real en carpetas:</p>
+<p><img src="css_02.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="361" height="286" /></p>
+<p>Así que para que la aplicación cargue una hoja de estilos ubicada en un paquete dentro de los paquetes de fuentes, debes indicar el nombre del archivo precedido de la ruta de acceso:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>scene.getStylesheets().add("view/css/estilo1.css");</code></pre>
+</div>
+</div>
+<h3>Hoja de estilos en paquete dentro del paquete principal</h3>
+<p>Otra posible manera de organizar este tipo de archivos (y otros tipos de archivos de recursos) es alojándolos en paquetes dentro del paquete de la clase principal del proyecto. Por ejemplo creando los paquetes resources y css.</p>
+<p>Aunque aparece como un paquete independiente, realmente es una carpeta dentro de la que contiene la clase Main.java. Este tipo de estructura de paquetes se visualiza mejor si cambias el modo de vista de los paquetes Java como árbol reducido.</p>
+<p>En estos casos, en lugar de indicar la ruta completa del archivo, conviene indicar la ruta relativa desde la carpeta donde se encuentre la clase Java que va a hacer referencia al archivo CSS. Esto debe hacerse utilizando el método <strong>getClass().getResource().toExternalForm()</strong> de la siguiente manera:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>scene.getStylesheets().add(getClass().getResource("resources/css/estilo1.css").toExternalForm());</code></pre>
+</div>
+</div>
+<h3>Vaciar la lista de estilos</h3>
+<p>La escena de la aplicación puede tener varias hojas de estilos asociadas si se van añadiendo a la lista más de una hoja.</p>
+<p>Si en un momento determinado deseas vaciar completamente la lista de hojas de estilos (para dejar de nuevo los estilos predefinidos) puedes utilizar <strong>el método clear()</strong> que se encuentra disponible como en otros tipos de listas en Java.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>scene.getStylesheets().clear();</code></pre>
+</div>
+</div>
+<h3>Definir hoja de estilos</h3>
+<p>Dentro de las hojas de estilos encontraremos tres elementos: <strong>clases</strong>, <strong>identificadores</strong> y<strong> pseudo-clases</strong>. Las clases se reconocen con un <strong>.nombre-de-clase</strong> y afectan a todos los elementos de esa misma clase.</p>
+<h4>Clases o selectores</h4>
+<p>En java fx las clases coinciden con los nombres de los elementos, y en el caso de tener dos palabras se separarán por un guión medio. Así, si se quiere que todos los elementos de tupo button tengan el mismo aspecto se define su clase con las propiedades determinadas. Lo mismo pasaría con el resto de elementos</p>
+<div class="highlighted-code language-css">
+<div>
+<pre><code>.root{
+}
+.button{
+}
+.label{
+}
+.radio-button{
+}</code></pre>
+</div>
+</div>
+<p>Existe una clase especial que recibe el nombre de root, la cual afecta a toda la escena completa. Una vez se han definido las clases se definirán las propiedades que se quieren configurar para cada una de los elementos. Hay que tener en cuenta que todas las propiedades empiezan con -fx seguido del nombre de la propiedad</p>
+<div class="highlighted-code language-css">
+<div>
+<pre><code>.root{
+-fx-font-size: 16px;
+-fx-font-family: "Verdana";
+-fx-base: mintcream;
+-fx-background: whitesmoke;
+}
+.button{
+-fx-text-fill: BLACK;
+-fx-alignment: center;
+-fx-background-color: gainsboro;
+}
+.label{
+-fx-text-fill: green;
+-fx-font-family: "Arial";
+-fx-font-size: 20pt;
+}</code></pre>
+</div>
+</div>
+<p>De esta forma toda escena tendrá las propiedades que marca la clase .root, los botones tendrán las propiedades de la clase .button y las etiquetas tendrán las propiedades de la clase .label. en este último elemento se puede ver como la propiedad -fx-font-size queda sobrescrita de la otorgada por la clase .root</p>
+<h4>Pseudo-clases</h4>
+<p>Son elementos muy parecidos a las clases, con la diferencia que indican el comportamiento gráfico de los elementos en un momento concreto. Inicialmente existen las siguientes pseudo clases: <strong>disabled, focused, hover, pressed, show-mnemonic</strong> que definen los estados de deshabitado, con el foco seleccionado, seleccionado, presionado y mostrando la abreviatura respectivamente. Para poder indicar el comportamiento que tendrá una pseudo clase de un elemento concreto tan solo es necesario incluir<strong> :estado</strong> a la clase concreta</p>
+<div class="highlighted-code language-css">
+<div>
+<pre><code>.button:pressed {
+-fx-text-fill: WHITE;
+-fx-background-color: gray;
+}</code></pre>
+</div>
+</div>
+<p>De esta forma cuando el botón sea presionado el texto tendrá un color de blanco y el fondo del botón pasará a ser gris</p>
+<h4>Elementos</h4>
+<p>En el caso de querer definir el comportamiento gráfico de un elemento concreto sin que le afecte el de su clase correspondiente se aplica un elemento. Para ello tan solo hay que crear un nuevo bloque con<strong> #nombrebloque</strong> en el archivo CSS y setear el id al elemento del nombre crea (no confundir con el fx-id). Para poder setear el id se puede realizar por código o bien mediante el archivo xml</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>#subtitulo{
+-fx-font-size: 15pt;
+-fx-font-style: italic;
+-fx-text-fill: lightseagreen;
+}</code></pre>
+</div>
+</div>
+<p>De esta forma el elemento cuyo id sea subtitulo tendrá esa apariencia, sobre escribiendo las definidas en su clase correspondiente</p>
+<p>Para poder asignar una hoja de estilos a una escena se ejecutan los métodos <strong>getSytlesheets().add()</strong> o mediante SceneBuilder.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>scene.getStylesheets().add(getClass().getResource("recursos/css/stylecss.css").toExternalForm());</code><code></code></pre>
+</div>
+</div>
+<p>En el artículo <a href="https://docs.oracle.com/javase/8/javafx/api/javafx/scene/doc-files/cssref.html" target="_blank" rel="noopener">JavaFX CSS Reference Guide</a> puedes encontrar todas las propiedades y los posibles valores que se le puede asignar a cada propiedad.</p>
+<h3>Proyecto de ejemplo</h3>
+<p>El siguiente código corresponde a una aplicación con 3 botones que permiten modificar la apariencia de los mismos dependiendo del botón que se pulse. Es decir, como si se cambiara el "tema" de la aplicación.</p>
+<p><img src="css_05.png" alt="" width="723" height="278" /><br /><img src="css_03.png" alt="" width="725" height="277" /></p>
+<p><img src="css_04.png" alt="" width="723" height="276" /><br />La estructura del proyecto podría ser la siguiente:</p>
+<p><img src="css_06.png" alt="" width="366" height="272" /></p>
+<p>Las hojas de estilo:</p>
+<h4>estilo_1.css</h4>
+<div class="highlighted-code language-css">
+<div>
+<pre><code>#titulo { -fx-font-family: "Hervetica"; 
+         -fx-font-style: italic;
+         -fx-font-size: 36px;
+         -fx-text-fill: #FFFFFF;
+}
+
+#fondo { -fx-background-color: #000000; }
+
+Button { -fx-background-color: #008287;
+         -fx-border-color: #FFFFFF;
+         -fx-border-width: 2;
+         -fx-text-fill: #FFFFFF;
+         -fx-font-family: "Times New Roman";
+         -fx-font-style: italic;
+         -fx-font-size: 28px;
+         -fx-background-radius: 10 10 10 10;
+         -fx-border-radius: 10 10 10 10;
+}
+
+#autor { -fx-font-family: "Hervetica";
+         -fx-text-fill: #FFFF00;
+         -fx-font-size: 12px;
+}
+
+Button:hover { -fx-background-color: #333333;
+               -fx-font-size: 22px;
+}
+
+Button:pressed { -fx-background-color: #FFFFFF;
+	-fx-text-fill: #000000;
+	-fx-font-weight: bold;
+}</code></pre>
+</div>
+</div>
+<h4>estilo_2.css</h4>
+<div class="highlighted-code language-css">
+<div>
+<pre><code>#titulo { -fx-font-family: "Berlin Sans FB"; 
+         -fx-font-style: italic;
+         -fx-font-size: 36px;
+         -fx-text-fill: #FFFFFF;
+}
+
+#fondo { -fx-background-color: #660099; }
+
+Button { -fx-background-color: #02CF08;
+         -fx-border-color: #FFFFFF;
+         -fx-border-width: 2;
+         -fx-text-fill: #FFCC00;
+         -fx-font-family: "Comic Sans MS";
+         -fx-font-style: italic;
+         -fx-font-size: 18px;
+         -fx-background-radius: 10 10 10 10;
+         -fx-border-radius: 10 10 10 10;
+}
+
+#autor { -fx-font-family: "Berlin Sans FB";
+         -fx-text-fill: #0097D7;
+         -fx-font-size: 12px;
+}
+
+Button:hover { -fx-background-color: #333333;
+               -fx-font-size: 22px;
+}
+
+Button:pressed { -fx-background-color: #FFFFFF;
+	-fx-text-fill: #000000;
+	-fx-font-weight: bold;
+}</code></pre>
+</div>
+</div>
+<p>Nuestro FXML en Scene Builder:</p>
+<p><img src="css_07.png" alt="" width="799" height="517" /></p>
+<p>Recordar:</p>
+<ul>
+<li>Asignar los id al AnchorPane y los botones (panel, btnEstilo1, btnEstilo2 y btnEstilo3)</li>
+<li>Cuando tengamos el Controlador, asociar el método correspondiente a los botones.</li>
+</ul>
+<p>El fichero Controlador:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>public class FXMLUsosCSSController implements Initializable {
+
+    @FXML private AnchorPane panel;
+        
+    @FXML Button btnEstilo1;
+    @FXML Button btnEstilo2;
+    @FXML Button btnEstilo3;
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }    
+    
+    @FXML 
+    private void primerEstilo(ActionEvent event) {
+       panel.getStylesheets().clear();
+       panel.getStylesheets().add("/view/CSS/estilo_1.css");
+    }
+
+    @FXML 
+    private void segundoEstilo(ActionEvent event) {
+       panel.getStylesheets().clear();
+       panel.getStylesheets().add("/view/CSS/estilo_2.css");
+    }
+
+    @FXML 
+    private void tercerEstilo(ActionEvent event) {
+       panel.getStylesheets().clear();
+    }    
+    
+}
+</code></pre>
+</div>
+</div>
+<p>Y el programa principal:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>public class EjemploUsoCss extends Application{
+
+     @Override
+  public void start(Stage primaryStage) {
+    FXMLLoader fxml = new FXMLLoader(getClass().getResource("/view/FXMLUsosCSS.fxml"));
+    try {
+      AnchorPane root = fxml.&lt;AnchorPane&gt;load();
+      Scene scene = new Scene(root);
+      primaryStage.setScene(scene);
+      primaryStage.setTitle(getClass().getSimpleName());
+      primaryStage.show();
+      
+    } catch (IOException e) {
+      System.out.println("Error al cargar el fxml.");
+      e.printStackTrace();
+    }
+  }
+
+  public static void main(String[] args) {
+    launch(args);
+  }
+    
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id43">
+<div class="iDevice emphasis0">
+<div id="ta43_85" class="block iDevice_content">
+<h4>Más información</h4>
+<ul>
+<li><a href="https://docs.oracle.com/javase/8/javafx/user-interface-tutorial/apply-css.htm" target="_blank" rel="noopener">Styling UI Controls with CSS (docs.oracle.com)</a></li>
+<li><a href="https://docs.oracle.com/javase/8/javafx/layout-tutorial/style_css.htm" target="_blank" rel="noopener">Styling Layout Panes with CSS (docs.oracle.com)</a></li>
+<li><a href="https://docs.oracle.com/javase/8/javafx/api/javafx/scene/doc-files/cssref.html" target="_blank" rel="noopener">JavaFX CSS Reference Guide (docs.oracle.com)</a></li>
+</ul>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="togglebutton_checkbox_y_radiobutton.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="ejercicios_a_resolver.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

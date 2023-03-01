@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Creando nuestra primera aplicación </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-8"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">JavaFX</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="instalacin_y_configuracin_del_ide.html" class="no-ch">Instalación y configuración del IDE</a></li>
+   <li><a href="enlazando_scene_builder_y_netbeans.html" class="no-ch">Enlazando Scene Builder y NetBeans</a></li>
+   <li id="active"><a href="creando_nuestra_primera_aplicacin.html" class="active no-ch">Creando nuestra primera aplicación</a></li>
+   <li><a href="aplicacin_fx_con_scene_builder.html" class="no-ch">Aplicación FX con Scene Builder</a></li>
+   <li><a href="ejemplos_de_javafx.html" class="daddy">Ejemplos de JavaFX</a>
+   <ul class="other-section">
+      <li><a href="ejer01pruebametodos.html" class="no-ch">Ejer01PruebaMetodos</a></li>
+      <li><a href="ejer02ventanalabel.html" class="no-ch">Ejer02VentanaLabel</a></li>
+      <li><a href="ejer03ventanas.html" class="no-ch">Ejer03Ventanas</a></li>
+      <li><a href="ejer04ventanacompleta.html" class="no-ch">Ejer04VentanaCompleta</a></li>
+      <li><a href="ejer05ventanamaximizada.html" class="no-ch">Ejer05VentanaMaximizada</a></li>
+      <li><a href="ejer06manejoentradausuario.html" class="no-ch">Ejer06ManejoEntradaUsuario</a></li>
+      <li><a href="panel_hbox_y_vbox.html" class="no-ch">Panel HBox y VBox</a></li>
+      <li><a href="ejer07botones.html" class="no-ch">Ejer07Botones</a></li>
+      <li><a href="ejer08textfield.html" class="no-ch">Ejer08TextField</a></li>
+      <li><a href="ejer09ejemploscursor.html" class="no-ch">Ejer09EjemplosCursor</a></li>
+      <li><a href="ejer10accesopropiedades.html" class="no-ch">Ejer10AccesoPropiedades</a></li>
+   </ul>
+   </li>
+   <li><a href="proyectos_javafxscenebuilder.html" class="daddy">Proyectos JavaFX-SceneBuilder</a>
+   <ul class="other-section">
+      <li><a href="textarea_y_passwordfield.html" class="no-ch">TextArea y PasswordField</a></li>
+      <li><a href="togglebutton_checkbox_y_radiobutton.html" class="no-ch">ToggleButton, CheckBox y RadioButton</a></li>
+   </ul>
+   </li>
+   <li><a href="hojas_de_estilo_css_con_javafx.html" class="no-ch">Hojas de estilo CSS con JavaFX</a></li>
+   <li><a href="ejercicios_a_resolver.html" class="no-ch">Ejercicios a resolver</a></li>
+   <li><a href="bibliografa.html" class="no-ch">Bibliografía</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="enlazando_scene_builder_y_netbeans.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="aplicacin_fx_con_scene_builder.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Creando nuestra primera aplicación</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id10">
+<div class="iDevice emphasis0">
+<div id="ta10_85" class="block iDevice_content">
+<p>Vamos a escribir una aplicación JavaFX simple que imprime hola mundo en la consola al hacer clic en el botón que se muestra en el escenario. Y lo haremos  con un solo fichero, donde la Vista y el Controlador estarán juntos, de esta manera iremos conociendo la estructura del proyecto. En el siguiente punto utilizaremos un entorno gráfico para diseñar nuestro proyecto, además separaremos la Vista del Controlador.</p>
+<p>Importante: este proceso se repetirá cada vez que crees una nueva aplicación:</p>
+<ul>
+<li><span style="color: #000000;">Crea una Java Aplication.</span></li>
+<li><span style="color: #000000;">Añade la librería JavaFX.</span></li>
+<li><span style="color: #000000;">Modifica el check de Compile on save de las propiedades.</span></li>
+<li><span style="color: #000000;">Añade la ruta del campo VM de properties - &gt; RUN</span></li>
+<li><span style="color: #000000;">Cuidado con las clases seleccionadas en los import, deben ser de la clase javafx.</span></li>
+</ul>
+<h3>Paso 1: Heredar de javafx.application.Application y sobreescribir el método abstracto start().</h3>
+<p>El <strong>método start()</strong> es el punto de partida para construir una aplicación JavaFX, por lo tanto, primero debemos sobreescribir el método de inicio de la clase javafx.application.Application.</p>
+<p>El objeto de la clase <em><strong>javafx.stage.Stage</strong></em> se pasa como parámetro al método start(), por ello, hay que importar esta clase.</p>
+<p>JavaFX.application.Application debe importarse para sobreescribir el método de inicio.</p>
+<p>Borra la linea: throw new UnsupportedOperationException</p>
+<p>El código se verá como sigue.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>    package application;   
+
+    import javafx.application.Application;  
+    import javafx.stage.Stage;  
+
+    public class Hello_World extends Application{  
+      
+        @Override  
+        public void start(Stage stage) throws Exception {  
+            // TODO Auto-generated method stub  
+           
+        }  
+    }  </code></pre>
+</div>
+</div>
+<h3>Paso 2: crear un botón.</h3>
+<p>Se puede crear un botón instanciando un objeto de la clase <em><strong>javafx.scene.control.Button</strong></em>. Para esto, tenemos que importar (import) esta clase a nuestro código y modificar el texto de la propiedad Text del botón, lo haremos en el constructor de la clase Button.</p>
+<p>El código será el siguiente:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import javafx.scene.control.Button;  
+...
+@Override  
+    public void start(Stage stage) throws Exception {  
+ 
+        Button btn1=new Button("Hola MUNDO!");  
+          
+    }  </code></pre>
+</div>
+</div>
+<p><span style="font-size: 14pt;"><strong>Importante</strong></span>: recuerda que los import son de la clase <strong>import javafx.scene.control.Button;</strong></p>
+<h3>Paso 3: Crear un layout y añadir el botón.</h3>
+<p>JavaFX proporciona muchos layouts. Necesitamos implementar uno de ellos para poder visualizar los controles correctamente. Existe en el nivel superior del escenario gráfico que se puede ver como un nodo raíz. Todos los demás nodos (botones, textos, etc.) deben añadirse a este layout.</p>
+<p>En esta aplicación implementaremos el layout <em><strong>StackPane</strong></em>. Se puede implementar instanciando un objeto de la clase javafx.scene.layout.StackPane, veremos más tipos de layouts con detalle, ahora no es importante.</p>
+<p>El código será el siguiente:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import javafx.application.Application;  
+import javafx.scene.control.Button;  
+import javafx.stage.Stage;  
+import javafx.scene.layout.StackPane;  
+public class Hello_World extends Application{  
+  
+    @Override  
+    public void start(Stage stage) throws Exception {  
+
+        Button btn1=new Button("Hola MUNDO!");  
+        StackPane root=new StackPane();  
+        root.getChildren().add(btn1);  
+    }  
+}  </code></pre>
+</div>
+</div>
+<h3>Paso 4: crear una Scene.</h3>
+<p>El diseño debe agregarse a una escena. <em><strong>Scene</strong></em> permanece en <strong>el nivel más alto</strong> en la jerarquía de la estructura de la aplicación. Se puede crear instanciando un objeto de la clase<strong> javafx.scene.Scene</strong>. Necesitamos pasar el objeto de diseño (el layout) al constructor de la clase de escena.</p>
+<p>Nuestro código de aplicación ahora se verá como sigue.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>   @Override  
+    public void start(Stage stage) throws Exception {  
+
+        Button btn1=new Button("Hola MUNDO!");  
+        StackPane root=new StackPane();  
+        root.getChildren().add(btn1);  
+        Scene scene=new Scene(root);      
+    }  </code></pre>
+</div>
+</div>
+<p>También podemos pasar el ancho y el alto del escenario requerido para la escena en el constructor de la clase Scene.</p>
+<p style="padding-left: 30px;"><strong>Scene scene=new Scene(root,300,200); </strong></p>
+<h3>Paso 5: preparar el Stage</h3>
+<p>La clase javafx.stage.Stage proporciona algunos métodos importantes que deben llamarse para establecer algunos atributos para el escenario.</p>
+<ul>
+<li>Añadiremos la escena al escenariocon el método <strong>setScene(scene);</strong>  </li>
+<li>Podemos establecer el título del stage <strong></strong><em><strong>setTitle() </strong></em>.</li>
+<li>También necesitamos llamar al método<strong></strong><em><strong> show()</strong></em> sin el cual no se mostrará el escenario.</li>
+</ul>
+<p>El código será el siguiente:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>@Override
+    public void start(Stage stage) throws Exception {
+
+        Button btn1 = new Button("Hola MUNDO !"); 
+        StackPane root=new StackPane();  
+        root.getChildren().add(btn1);  
+        Scene scene=new Scene(root,300,200); 
+        stage.setScene(scene);  
+        stage.setTitle("Primera Aplicación JavaFX");  
+        stage.show();  
+    }</code></pre>
+</div>
+</div>
+<h3>Paso 6: crear un evento para el botón.</h3>
+<p>Como nuestra aplicación debe visualizar "Hola MUNDO !" cuando se pulse sobre el botón, mejor dicho, cuando ocurra el evento de botón pulsado.</p>
+<p>Necesitamos crear un evento para el botón. Para este propósito, llamaremos al método <em><strong>setOnAction()</strong></em> en el botón y definiremos <strong>un controlador de eventos</strong> de clase anónima como parámetro para el método.</p>
+<p>En esta ocasión lo haremos así, en ejemplos posteriores tendremos un Controlador de eventos separado.</p>
+<p>Dentro de esta clase anónima <strong>EventHandler</strong>, definiremos un método <strong>handle()</strong> que contendrá el código de cómo se maneja el evento.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>btn1.setOnAction(new EventHandler&lt;ActionEvent&gt;() {  
+            @Override  
+            public void handle(ActionEvent arg0) {  
+                // TODO Auto-generated method stub  
+                System.out.println("Hola Mundo");  
+            }  
+        }); </code></pre>
+</div>
+</div>
+<p>El método<strong> start()</strong> quedará así:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>@Override
+    public void start(Stage stage) throws Exception {
+
+        Button btn1 = new Button("Hola MUNDO !");
+        btn1.setOnAction(new EventHandler&lt;ActionEvent&gt;() {  
+            @Override  
+            public void handle(ActionEvent arg0) {  
+                // TODO Auto-generated method stub  
+                System.out.println("Hola Mundo");  
+            }  
+        });  
+        StackPane root=new StackPane();  
+        root.getChildren().add(btn1);  
+        Scene scene=new Scene(root,300,200); 
+        stage.setScene(scene);  
+        stage.setTitle("Primera Aplicación JavaFX");  
+        stage.show();  
+    }</code></pre>
+</div>
+</div>
+<h3>Paso 7: Crear el método principal.</h3>
+<p>Hasta ahora, hemos configurado todas las cosas necesarias para desarrollar una aplicación JavaFX básica, pero esta aplicación aún está incompleta. Todavía no hemos creado el método principal. Por lo tanto, al final, necesitamos crear un método principal en el que lanzaremos la aplicación, es decir, llamaremos al <strong><em>método launch()</em></strong> y le pasaremos los argumentos de la línea de comando (args).</p>
+<p>El código ahora quedará como sigue.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package hola_mundo;
+
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+
+public class Hola_Mundo extends Application {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+
+        Button btn1 = new Button("Hola MUNDO !");
+        btn1.setOnAction(new EventHandler&lt;ActionEvent&gt;() {  
+            @Override  
+            public void handle(ActionEvent arg0) {  
+                // TODO Auto-generated method stub  
+                System.out.println("Hola Mundo");  
+            }  
+        });  
+        StackPane root=new StackPane();  
+        root.getChildren().add(btn1);  
+        Scene scene=new Scene(root,300,200); 
+        stage.setScene(scene);  
+        stage.setTitle("Primera Aplicación JavaFX");  
+        stage.show();  
+    }
+
+}</code></pre>
+</div>
+</div>
+<p>IMPORTANTE: Recuerda modificar en las propiedades del proyecto -&gt; RUN  el campo <strong>VM Options:</strong> para que la ejecución sea posible, esta es mi path, tu deberás escribir el tuyo:</p>
+<p><img src="first-javafx-application2.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="735" height="452" /></p>
+<p>La aplicación producirá el siguiente resultado en la pantalla:</p>
+<p><img src="HolaMundo.png" style="display: block; margin-left: auto; margin-right: auto;" width="309" height="247" /></p>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="enlazando_scene_builder_y_netbeans.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="aplicacin_fx_con_scene_builder.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>
